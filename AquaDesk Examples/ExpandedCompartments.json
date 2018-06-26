@@ -1,0 +1,46 @@
+{
+    "count": 16,
+    "links":
+    {
+      "prev": null,
+      "next": "/eco/compartments/expand?page=2&pagesize=3"
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "BS",
+            "name": "Bodem / Sediment",
+            "definition": [
+                {
+                    "standardcode": "AQUO",
+                    "codeinstandard": "BS",
+                    "reference": "http://domeintabellen-idsw.rws.nl/"
+                }
+            ]
+        },
+        {
+            "code": "LT",
+            "name": "Lucht",
+            "definition": [
+                {
+                    "standardcode": "AQUO",
+                    "codeinstandard": "LT",
+                    "reference": "http://domeintabellen-idsw.rws.nl/"
+                }
+            ]
+        },
+        {
+            "code": "NT",
+            "name": "Niet van toepassing",
+            "definition": [
+                {
+                    "standardcode": "AQUO",
+                    "codeinstandard": "NT",
+                    "reference": "http://domeintabellen-idsw.rws.nl/"
+                }
+            ]
+        }
+    ]
+}

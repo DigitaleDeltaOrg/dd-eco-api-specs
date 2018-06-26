@@ -1,0 +1,110 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    52.5829301079993,
+                    5.01948433385143,
+                    0
+                ]
+            },
+            "properties": {
+                "measuredvalue": 1,
+                "classifiedvalue": "",
+                "calculatedvalue": 1,
+                "measuredunit": "PROCENT",
+                "calculatedunit": "PROCENT",
+                "compartment": "OW",
+                "limitsymbol": "0",
+                "measurementattributes": null,
+                "measurementdate": "2014-09-09T00:00:00",
+                "measurementobject": "570201",
+                "measurementpackage": null,
+                "measurementpurpose": "MT",
+                "methods": null,
+                "note": null,
+                "organisation": "HHN",
+                "parameter": "Draadalgen",
+                "parametertype": "BiologicalGroup",
+                "projects": null,
+                "quantity": "BEDKG",
+                "status": "60",
+                "taxontype": null,
+                "collectiondate": "2014-09-09T00:00:00"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    52.5436033920471,
+                    5.0317405324146,
+                    0
+                ]
+            },
+            "properties": {
+                "measuredvalue": 0,
+                "classifiedvalue": "",
+                "calculatedvalue": 0,
+                "measuredunit": "PROCENT",
+                "calculatedunit": "PROCENT",
+                "compartment": "OW",
+                "limitsymbol": "0",
+                "measurementattributes": null,
+                "measurementdate": "2014-09-09T00:00:00",
+                "measurementobject": "5N9711",
+                "measurementpackage": null,
+                "measurementpurpose": "MT",
+                "methods": null,
+                "note": null,
+                "organisation": "HHN",
+                "parameter": "Draadalgen",
+                "parametertype": "BiologicalGroup",
+                "projects": null,
+                "quantity": "BEDKG",
+                "status": "60",
+                "taxontype": null,
+                "collectiondate": "2014-09-09T00:00:00"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    52.5056906994118,
+                    5.06948489764371,
+                    0
+                ]
+            },
+            "properties": {
+                "measuredvalue": 0.1,
+                "classifiedvalue": "",
+                "calculatedvalue": 0.1,
+                "measuredunit": "PROCENT",
+                "calculatedunit": "PROCENT",
+                "compartment": "OW",
+                "limitsymbol": "0",
+                "measurementattributes": null,
+                "measurementdate": "2014-06-10T00:00:00",
+                "measurementobject": "513007",
+                "measurementpackage": null,
+                "measurementpurpose": "MT",
+                "methods": null,
+                "note": null,
+                "organisation": "HHN",
+                "parameter": "Draadalgen",
+                "parametertype": "BiologicalGroup",
+                "projects": null,
+                "quantity": "BEDKG",
+                "status": "60",
+                "taxontype": null,
+                "collectiondate": "2014-06-10T00:00:00"
+            }
+        }
+    ]
+}

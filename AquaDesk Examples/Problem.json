@@ -1,0 +1,17 @@
+{
+  "title": "Query errors",
+  "type": "Filter query syntax",
+  "status": 400,
+  "detail": "See 'errors' field",
+  "errors":
+    [
+        {
+            "ErrorType": "UnknownOperator",
+            "Context": "parameter:badcomparer:\"Test\""
+        },
+        {
+            "ErrorType": "InvalidSyntax",
+            "Context": ""
+        }
+    ]
+}

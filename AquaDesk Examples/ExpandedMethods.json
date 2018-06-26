@@ -1,0 +1,58 @@
+{
+    "count": 46,
+    "links":
+    {
+      "prev": null,
+      "next": "/eco/methods/expand?page=2&pagesize=3"
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "FYTPT_A054",
+            "name": "Fytoplankton A054",
+            "organisation": "RWS",
+            "literature": null,
+            "methodtype": "AM",
+            "methodtypename": "Analyse methode",
+            "definition": [
+                {
+                    "standardcode": "AQUO",
+                    "codeinstandard": "FYTPT_A054",
+                    "reference": "http://domeintabellen-idsw.rws.nl/"
+                }
+            ]
+        },
+        {
+            "code": "FYTPT_S054",
+            "name": "Fytoplankton S052",
+            "organisation": "RWS",
+            "literature": null,
+            "methodtype": "MM",
+            "methodtypename": "Monstermethode",
+            "definition": [
+                {
+                    "standardcode": "AQUO",
+                    "codeinstandard": "FYTPT_S054",
+                    "reference": "http://domeintabellen-idsw.rws.nl/"
+                }
+            ]
+        },
+        {
+            "code": "MCFT-0823",
+            "name": "Macrofyten",
+            "organisation": "ECS.OW",
+            "literature": null,
+            "methodtype": "AM",
+            "methodtypename": "Analyse methode",
+            "definition": [
+                {
+                    "standardcode": "AQUO",
+                    "codeinstandard": "MCFT-0823",
+                    "reference": "http://domeintabellen-idsw.rws.nl/"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "count": 5,
+    "links":
+    {
+      "prev": null,
+      "next": "/eco/organisations?page=2&pagesize=3"
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "RWS",
+            "name": "Rijkswaterstaat",
+            "numericcode": 80
+        },
+        {
+            "code": "HHN",
+            "name": "HHRS Hollands Noorderkwartier",
+            "numericcode": 12
+        },
+        {
+            "code": "ECS.OW",
+            "name": "EcoSys [Ontwikkeling]",
+            "numericcode": 1001
+        }
+    ]
+}

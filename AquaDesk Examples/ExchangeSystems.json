@@ -1,0 +1,25 @@
+{
+  "count": 3,
+  "links":
+  {
+    "prev": null,
+    "next": null
+  },
+  "maxPageSize": 10000,
+  "defaultPageSize": 1000,
+  "minPageSize": 1,
+  "result": [
+      {
+          "code": "EBEOSYS",
+          "name": "EBEOsys"
+      },
+      {
+          "code": "AQUADESK",
+          "name": "AquaDesk"
+      },
+      {
+          "code": "IM-METINGEN",
+          "name": "IM-Metingen"
+      }
+  ]
+}

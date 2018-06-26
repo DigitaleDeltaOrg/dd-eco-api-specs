@@ -1,0 +1,260 @@
+#%RAML 1.0 Library
+# Minimal required types and traits.
+types:
+  Double:
+    description: A value of type Double (float).
+    type: number
+    format: double
+
+  LinkBlock:
+    type: object
+    description: Default block of links for navigation for all collection pages, except GeoJSON.
+    properties:
+      self:
+        description: The URI of the current page.
+        type: string?
+        required: false
+      first:
+        description: Url to the API holding the first page.
+        type: string?
+        required: false
+      prev:
+        description: Url to the API holding the previous page. null if the requested page is the first page.
+        type: string?
+        required: false
+      next:
+        description: Url to the API holding the next page. null if the requested page is the last page.
+        type: string?
+        required: false
+      last:
+        description: Url to the API holding the last page.
+        type: string?
+        required: false
+
+  BaseListResponse:
+    type: object
+    description: Base list response for all collection pages, except GeoJSON.
+    properties:
+      count:
+        description: Number of records satisfying the query parameters.
+        type: integer
+        example: 1123
+        required: true
+      links:
+        type: LinkBlock
+      maxPageSize:
+        description: Maximum page size, as defined by the provider.
+        type: integer
+        required: false
+      defaultPageSize:
+        type: integer
+        description: Default page size that the provider uses, if not provided by the consumer.
+      minPageSize:
+        type: integer
+        description: Minimum page size, as defined by the provider. Cannot be less than 1.
+
+  Filter:
+    type: object
+    description: Specifies a filter(part).
+    properties:
+      FieldName:
+        description: Field name.
+        type: string
+      Comparer:
+        description: Filter comparer.
+        type: string
+      DataType:
+        description: Filter data type.
+        type: string
+
+  Problem:
+    type: object
+    description: Page problem (error, exception)
+    properties:
+      type:
+        description: Error type.
+        required: true
+      typeinfo:
+        description: Link to information on the type of error.
+        required: false
+        type: string
+      status:
+        description: HTTP status code.
+        required: true
+        type: integer
+      title:
+        description: Title of the error.
+        type: string
+        required: true
+      detail:
+        description: Details of the error.
+        type: string
+        required: true
+      instance:
+        description: Unique identification of the error for analysis.
+        type: string?
+        required: false
+      errors:
+        description: Error details.
+        type: FilterError[]
+        required: false
+
+  FilterError:
+    type: object
+    description: Defines the field of an error in the filtering syntax.
+    properties:
+      ErrorType: string
+      Context: string
+
+  GeoJSON:
+    description: A geometry in GeoJSON format.
+    type: string
+
+  Geometry:
+    type: object
+    description: A geometry in WKT. Digital Delta currently only supports the Point type.
+    properties:
+      type:
+        description: The geometry type. Must have the value "Point".
+        type: string
+        example: "Point"
+      coordinates:
+        type: Double[]
+        description: An array of doubles, representing a coordinate.
+        example: [ 4.234, 52.3423 ]
+
+  Measurement:
+    type: object
+    description: Defines a single measurement.
+    properties:
+      organisation:
+        description: The code of the organisations that owns the data.
+        type: string
+      measurementobject:
+        description: The location where the measurements were sampled.
+        type: string
+      locationgeography:
+        description: Coordinates of the measurementobject associated with the measurement if it
+                     differentiates from the measurement object.
+        type: GeoJSON
+        required: false
+      measurementgeography:
+        description: Coordinates of the geographycal position on which the measurement took place.
+        type: GeoJSON
+        required: false
+      measurementpackage:
+        description: The measurement package used for the measurement.
+        type: string?
+        required: false
+      measurementpurpose:
+        description: The purpose of the measurement.
+        type: string?
+        required: false
+      methods:
+        description: The methods used for sampling and analysing.
+        type: string[]
+        required: false
+      status:
+        description: Status of the measurement.
+        type: string
+        required: false
+      compartment:
+        description: The compartment where the sample was taken from.
+        type: string
+      measurementdate:
+        description: Date/time of the measurement.
+        type: datetime-only
+      quantity:
+        description: The quantity the measured value is expressed in.
+        type: string
+      parametertype:
+        description: Type of parameter measured.
+        type: string
+        required: false
+      parametergroup:
+        description: The parameter group used for measuring.
+        type: string?
+        required: false
+      taxontype:
+        description: The type of taxon if the parameter was a taxon.
+        type: string?
+        required: false
+      parameter:
+        description: The code of the parameter measured.
+        type: string
+        required: false
+      note:
+        description: Specification of the measurement.
+        type: string?
+        required: false
+      limitsymbol:
+        description: Limit symbol as a specification of the measured value.
+        type: string?
+        required: false
+      measuredvalue:
+        description: The value measured.
+        type: number
+        required: false
+      measuredunit:
+        description: The unit of the measured value.
+        type: string
+      calculatedvalue:
+        description: The calculated value (mostly micro-biology).
+        type: number
+        required: false
+      calculatedunit:
+        description: The unit of the calculated value.
+        type: string
+        required: false
+      classifiedvalue:
+        description: Classification of the measurement.
+        type: string
+        required: false
+      projects:
+        description: Projects for which the measurement took place.
+        type: string[]
+        required: false
+      measurementattributes:
+        description: Qualification of what was measured, i.e. gender, life form.
+        type: string[]
+        required: false
+      collectiondate:
+        description: The date the measurement took place.
+        type: datetime-only
+      changedate:
+        description: Measurement change date.
+        type: datetime-only?
+
+  MeasurementsListResponse:
+    description: Base list response for measurements.
+    type: BaseListResponse
+    properties:
+      result: Measurement[]
+
+# Define the traits.
+traits:
+  expandable:
+    description: Defines query parameters for expandable requests.
+    queryParameters:
+      expand:
+        type: string
+        required: false
+        description: Expands the data.
+  filterable:
+    description: Defines query parameters for filterable requests.
+    queryParameters:
+      filter:
+        type: string
+        required: false
+        description: Filter the data, based on the filter. See Search syntax.
+  pageable:
+    description: Defines query parameters for pageable requests.
+    queryParameters:
+      page:
+        type: integer
+        required: false
+        description: Page number, starting with 1.
+      pagesize:
+        type: integer
+        required: false
+        description: Page size. Minimum, maximum and default is defined by provider. Minimum can never be lower than 1.

@@ -1,0 +1,31 @@
+{
+  "count": 62,
+  "links":
+  {
+    "prev": null,
+    "next": "/eco/taxongroups?page=2&pagesize=3"
+  },
+  "maxPageSize": 10000,
+  "defaultPageSize": 1000,
+  "minPageSize": 1,
+  "result": [
+      {
+          "code": "CRYPT",
+          "name": "Cryptophytes",
+          "taxontype": "FYTPT",
+          "taxontypename": "Phytoplankton"
+      },
+      {
+          "code": "PROKA",
+          "name": "Prokaryotes",
+          "taxontype": "FYTPT",
+          "taxontypename": "Phytoplankton"
+      },
+      {
+          "code": "EUGLE",
+          "name": "Euglenophytes",
+          "taxontype": "FYTPT",
+          "taxontypename": "Phytoplankton"
+      }
+  ]
+}

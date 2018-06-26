@@ -1,0 +1,172 @@
+  [
+    {
+        "FieldName": "code",
+        "Comparer": "eq",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "code",
+        "Comparer": "ne",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "code",
+        "Comparer": "like",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "code",
+        "Comparer": "startswith",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "code",
+        "Comparer": "endswith",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "code",
+        "Comparer": "in",
+        "DataType": "ArrayOfStringType"
+    },
+    {
+        "FieldName": "code",
+        "Comparer": "notin",
+        "DataType": "ArrayOfStringType"
+    },
+    {
+        "FieldName": "name",
+        "Comparer": "eq",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "name",
+        "Comparer": "ne",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "name",
+        "Comparer": "like",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "name",
+        "Comparer": "startswith",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "name",
+        "Comparer": "endswith",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "name",
+        "Comparer": "in",
+        "DataType": "ArrayOfStringType"
+    },
+    {
+        "FieldName": "name",
+        "Comparer": "notin",
+        "DataType": "ArrayOfStringType"
+    },
+    {
+        "FieldName": "attributetype",
+        "Comparer": "eq",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "attributetype",
+        "Comparer": "ne",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "attributetype",
+        "Comparer": "like",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "attributetype",
+        "Comparer": "startswith",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "attributetype",
+        "Comparer": "endswith",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "attributetype",
+        "Comparer": "in",
+        "DataType": "ArrayOfStringType"
+    },
+    {
+        "FieldName": "attributetype",
+        "Comparer": "notin",
+        "DataType": "ArrayOfStringType"
+    },
+    {
+        "FieldName": "attributetypename",
+        "Comparer": "eq",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "attributetypename",
+        "Comparer": "ne",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "attributetypename",
+        "Comparer": "like",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "attributetypename",
+        "Comparer": "startswith",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "attributetypename",
+        "Comparer": "endswith",
+        "DataType": "StringType"
+    },
+    {
+        "FieldName": "attributetypename",
+        "Comparer": "in",
+        "DataType": "ArrayOfStringType"
+    },
+    {
+        "FieldName": "attributetypename",
+        "Comparer": "notin",
+        "DataType": "ArrayOfStringType"
+    },
+    {
+        "FieldName": "changedate",
+        "Comparer": "eq",
+        "DataType": "DateType"
+    },
+    {
+        "FieldName": "changedate",
+        "Comparer": "ne",
+        "DataType": "DateType"
+    },
+    {
+        "FieldName": "changedate",
+        "Comparer": "lt",
+        "DataType": "DateType"
+    },
+    {
+        "FieldName": "changedate",
+        "Comparer": "le",
+        "DataType": "DateType"
+    },
+    {
+        "FieldName": "changedate",
+        "Comparer": "gt",
+        "DataType": "DateType"
+    },
+    {
+        "FieldName": "changedate",
+        "Comparer": "ge",
+        "DataType": "DateType"
+    }
+]

@@ -1,0 +1,31 @@
+{
+    "count": 67,
+    "links":
+    {
+      "prev": null,
+      "next": "/eco/monitoringnetworks?page=2&pagesize=3"
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "1",
+            "name": "TestMeetnet",
+            "organisation": "ECS.OW",
+            "description": null
+        },
+        {
+            "code": "5",
+            "name": "Test",
+            "organisation": "ECS.OW",
+            "description": null
+        },
+        {
+            "code": "TMJ",
+            "name": "TestMeetnetJochim",
+            "organisation": "ECS.OW",
+            "description": null
+        }
+    ]
+}

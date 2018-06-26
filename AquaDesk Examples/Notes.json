@@ -1,0 +1,28 @@
+{
+    "count": 8,
+    "links":
+    {
+    "prev": null,
+    "next": "/eco/notes?page=2&pagesize=3"
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "NO1",
+            "note": "Notitie 1",
+            "organisation": "ECS.OW"
+        },
+        {
+            "code": "CO3",
+            "note": "CO3",
+            "organisation": "HHN"
+        },
+        {
+            "code": "FLPRB",
+            "note": "FLPRB",
+            "organisation": "HHN"
+        }
+    ]
+}

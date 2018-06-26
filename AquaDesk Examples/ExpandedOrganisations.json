@@ -1,0 +1,49 @@
+{
+    "count": 5,
+    "links":
+    {
+      "prev": null,
+      "next": "/eco/organisations/expand?page=2&pagesize=3"
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "RWS",
+            "name": "Rijkswaterstaat",
+            "numericcode": 80,
+            "definition": [
+                {
+                    "standardcode": "AQUO",
+                    "codeinstandard": "80",
+                    "reference": "http://domeintabellen-idsw.rws.nl/"
+                }
+            ]
+        },
+        {
+            "code": "HHN",
+            "name": "HHRS Hollands Noorderkwartier",
+            "numericcode": 12,
+            "definition": [
+                {
+                    "standardcode": "AQUO",
+                    "codeinstandard": "12",
+                    "reference": "http://domeintabellen-idsw.rws.nl/"
+                }
+            ]
+        },
+        {
+            "code": "ECS.OW",
+            "name": "EcoSys [Ontwikkeling]",
+            "numericcode": 1001,
+            "definition": [
+                {
+                    "standardcode": "AQUO",
+                    "codeinstandard": "1001",
+                    "reference": "http://domeintabellen-idsw.rws.nl/"
+                }
+            ]
+        }
+    ]
+}

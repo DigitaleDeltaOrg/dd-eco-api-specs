@@ -1,0 +1,53 @@
+{
+    "count": 67,
+    "links":
+    {
+      "prev": null,
+      "next": "/eco/monitoringnetworks/expand?page=2&pagesize=3"
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "1",
+            "name": "TestMeetnet",
+            "organisation": "ECS.OW",
+            "description": null,
+            "locations": [
+                "BRA-01",
+                "STA-01",
+                "ALK-09",
+                "BER-09",
+                "TST"
+            ],
+            "definition": []
+        },
+        {
+            "code": "5",
+            "name": "Test",
+            "organisation": "ECS.OW",
+            "description": null,
+            "locations": [
+                "GAT-01",
+                "MEP-01"
+            ],
+            "definition": []
+        },
+        {
+            "code": "TMJ",
+            "name": "TestMeetnetJochim",
+            "organisation": "ECS.OW",
+            "description": null,
+            "locations": [
+                "BRA-01",
+                "GAT-01",
+                "KAN-01",
+                "MEP-01",
+                "SLO-01",
+                "ALK-09"
+            ],
+            "definition": []
+        }
+    ]
+}

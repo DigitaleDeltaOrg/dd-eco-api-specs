@@ -1,0 +1,37 @@
+{
+    "count": 25622,
+    "links":
+    {
+      "prev": null,
+      "next": "/eco/parameters?page=2&pagesize=3"
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "Alytes",
+            "name": "Alytes",
+            "type": "Taxon",
+            "taxontype": "AMFBE",
+            "taxongroup": null,
+            "authors": "Wagler, 1830"
+        },
+        {
+            "code": "Alytes obstetricans",
+            "name": "Alytes obstetricans",
+            "type": "Taxon",
+            "taxontype": "AMFBE",
+            "taxongroup": null,
+            "authors": "(Laurenti, 1768)"
+        },
+        {
+            "code": "Amphibia",
+            "name": "Amphibia",
+            "type": "Taxon",
+            "taxontype": "AMFBE",
+            "taxongroup": null,
+            "authors": "Linnaeus, 1758"
+        }
+    ]
+}

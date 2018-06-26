@@ -1,0 +1,34 @@
+{
+    "count": 10961,
+    "links":
+    {
+      "prev": null,
+      "next": "/eco/measurementobjects/expand?page=2&pagesize=3"
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "AFGDM_0001",
+            "description": "NEDHMT",
+            "organisation": "RWS",
+            "definition": [],
+            "monitoringnetworks": []
+        },
+        {
+            "code": "AFGDM_0002",
+            "description": "VEEN",
+            "organisation": "RWS",
+            "definition": [],
+            "monitoringnetworks": []
+        },
+        {
+            "code": "AFGDM_0003",
+            "description": "POEDRIJN",
+            "organisation": "RWS",
+            "definition": [],
+            "monitoringnetworks": []
+        }
+    ]
+}

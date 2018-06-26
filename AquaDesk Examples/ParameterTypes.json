@@ -1,0 +1,33 @@
+{
+    "count": 5,
+    "links":
+    {
+      "prev": null,
+      "next": null
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "BiologicalGroup",
+            "name": "BiologicalGroup"
+        },
+        {
+            "code": "Taxon",
+            "name": "Taxon"
+        },
+        {
+            "code": "ChemicalGroup",
+            "name": "ChemicalGroup"
+        },
+        {
+            "code": "Chemical",
+            "name": "Chemical"
+        },
+        {
+            "code": "PhysicalProperty",
+            "name": "PhysicalProperty"
+        }
+    ]
+}

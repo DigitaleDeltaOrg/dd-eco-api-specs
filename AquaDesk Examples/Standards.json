@@ -1,0 +1,43 @@
+{
+    "count": 5,
+    "links":
+    {
+      "prev": null,
+      "next": null
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "institute": "ECS",
+            "standardcode": "ECOSYS",
+            "reference": "https://www.ecosys.nl",
+            "standardstype": "Open"
+        },
+        {
+            "institute": "ECS",
+            "standardcode": "AQUADESK",
+            "reference": "https://www.aquadesk.nl",
+            "standardstype": "Open"
+        },
+        {
+            "institute": "IHW",
+            "standardcode": "AQUO",
+            "reference": "https://www.aquo.nl",
+            "standardstype": "Open"
+        },
+        {
+            "institute": "RWS",
+            "standardcode": "TWN",
+            "reference": "http://sofus.ecosys.nl/taxabase.htm",
+            "standardstype": "Open"
+        },
+        {
+            "institute": "ACS",
+            "standardcode": "CAS",
+            "reference": "https://www.cas.org",
+            "standardstype": "Open"
+        }
+    ]
+}

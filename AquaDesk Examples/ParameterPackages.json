@@ -1,0 +1,18 @@
+{
+    "count": 1,
+    "links":
+    {
+      "prev": null,
+      "next": null
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "changedate": "2018-04-11T14:21:16.67",
+            "code": "OEVRPTN",
+            "name": "Oeverplanten"
+        }
+    ]
+}

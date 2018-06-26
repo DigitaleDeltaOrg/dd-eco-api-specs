@@ -1,0 +1,647 @@
+#%RAML 1.0 Extension
+  title: Digital Delta Eco Extensions - Discovery
+  version: 0.9
+  usage: Digital Delta Eco discovery interface. Extends Measurement.
+  extends: DigitalDeltaEcoMeasurements.raml
+  mediaType: [ application/json ]
+  documentation:
+    - title: Documentation
+      content: !include Documentation.md
+
+  uses: # Minimal types and definitions
+    Minimal: Libraries/Measurements.raml
+    Extended: Libraries/Discovery.raml
+
+  /eco:
+    /compartments:
+      description:
+        Retrieves a list of compartments (AQUO).
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.CompartmentsListResponse
+                example: !include AquaDesk Examples/Compartments.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /expand:
+        description:
+          Retrieves an expanded list of monitoring networks (a collection of measurement objects) within the provider's system.
+        get:
+          is: [ Minimal.pageable, Minimal.filterable ]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Extended.ExpandedCompartmentsListResponse
+                  example: !include AquaDesk Examples/ExpandedCompartments.json
+
+            400:
+              body:
+                application/json:
+                  type: Minimal.Problem
+                  example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /measurementobjects:
+      description:
+        Retrieves a list of measurement objects within the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.MeasurementObjectsListResponse
+                example: !include AquaDesk Examples/MeasurementObjects.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /geojson:
+        description:
+          Retrieves a list of measurement objects within the provider's system as a GeoJSON FeatureCollection.
+        get:
+          is: [ Minimal.pageable, Minimal.filterable ]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: object
+                  example: !include AquaDesk Examples/MeasurementObjectsGeoJSON.json
+
+            400:
+              body:
+                application/json:
+                 type: Minimal.Problem
+                 example: !include AquaDesk Examples/Problem.json
+      /expand:
+        description:
+          Retrieves an expanded list of measurement objects within the provider's system.
+        get:
+          is: [ Minimal.pageable, Minimal.filterable ]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Extended.ExpandedMeasurementObjectsListResponse
+                  example: !include AquaDesk Examples/ExpandedMeasurementObjects.json
+
+            400:
+              body:
+                application/json:
+                  type: Minimal.Problem
+                  example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /organisations:
+      description:
+        Retrieves a list of organisations within the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.OrganisationsListResponse
+                example: !include AquaDesk Examples/Organisations.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /expand:
+        description:
+          Retrieves an expanded list of organisations within the provider's system.
+        get:
+          is: [ Minimal.pageable, Minimal.filterable ]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Extended.ExpandedOrganisationsListResponse
+                  example: !include AquaDesk Examples/ExpandedOrganisations.json
+
+            400:
+              body:
+                application/json:
+                  type: Minimal.Problem
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /parameters:
+      description:
+        Retrieves a list of parameters available in the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.ParametersListResponse
+                example: !include AquaDesk Examples/Parameters.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /expand:
+        description:
+          Retrieves an expanded list of parameters available in the provider's system.
+        get:
+          is: [ Minimal.pageable, Minimal.filterable ]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Extended.ExpandedParametersListResponse
+                  example: !include AquaDesk Examples/ExpandedParameters.json
+
+            400:
+              body:
+                application/json:
+                 type: Minimal.Problem
+                 example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /quantities:
+      description:
+        Retrieves a list of quantities available in the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.QuantitiesListResponse
+                example: !include AquaDesk Examples/Quantities.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /expand:
+        description:
+          Retrieves an expanded list of quantities available in the provider's system.
+        get:
+          is: [ Minimal.pageable, Minimal.filterable ]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Extended.ExpandedQuantitiesListResponse
+                  example: !include AquaDesk Examples/ExpandedQuantities.json
+
+            400:
+              body:
+                application/json:
+                  type: Minimal.Problem
+                  example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /units:
+      description:
+        Retrieves a list of units of masurement available in the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.UnitsListResponse
+                example: !include AquaDesk Examples/Units.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /measurementpackages:
+      description:
+        Retrieves a list of measurement packages.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.MeasurementPackagesListResponse
+                example: !include AquaDesk Examples/MeasurementPackages.json
+          400:
+            body:
+              application/json:
+                  type: Minimal.Problem
+      /expand:
+        description:
+          Retrieves an expanded list of monitoring networks (a collection of measurement objects) within the provider's system.
+        get:
+          is: [ Minimal.pageable, Minimal.filterable ]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Extended.ExpandedMeasurementPackagesListResponse
+                  example: !include AquaDesk Examples/ExpandedMeasurementPackages.json
+            400:
+              body:
+                application/json:
+                  type: Minimal.Problem
+                  example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /exchangesystems:
+      description:
+        Retrieves a list of exchange systems available in the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.ExchangeSystemsListResponse
+                example: !include AquaDesk Examples/ExchangeSystems.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /institutes:
+      description:
+        Retrieves a list of institutes within the provider's system. An institute defines or manages one or more standards.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.InstitutesListResponse
+                example: !include AquaDesk Examples/Institutes.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /methods:
+      description:
+        Retrieves a list of methods used by the organisations in the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.MethodsListResponse
+                example: !include AquaDesk Examples/Methods.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /expand:
+        description:
+          Retrieves an expanded list of methods used by the organisations in the provider's system.
+        get:
+          is: [ Minimal.pageable, Minimal.filterable ]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Extended.ExpandedMethodsListResponse
+                  example: !include AquaDesk Examples/ExpandedMethods.json
+
+            400:
+              body:
+                application/json:
+                  type: Minimal.Problem
+                  example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /monitoringnetworks:
+      description:
+        Retrieves a list of monitoring networks (a collection of measurement objects) within the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.MonitoringNetworksListResponse
+                example: !include AquaDesk Examples/MonitoringNetworks.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /expand:
+        description:
+          The expanded items include a list of measurement objects that are part of the monitoring network.
+        get:
+          is: [ Minimal.pageable, Minimal.filterable ]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Extended.ExpandedMonitoringNetworksListResponse
+                  example: !include AquaDesk Examples/ExpandedMonitoringNetworks.json
+
+            400:
+              body:
+                application/json:
+                  type: Minimal.Problem
+                  example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /notes:
+      description:
+        Retrieves a standardised notes within organisations available in the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.OrganisationNotesListResponse
+                example: !include AquaDesk Examples/Notes.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /parameterpackages:
+      description:
+        Retrieves a list of parameter packages available in the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.ParameterPackagesListResponse
+                example: !include AquaDesk Examples/ParameterPackages.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /expand:
+        description:
+          Retrieves an expanded list of parameter packages available in the provider's system.
+        get:
+          is: [ Minimal.pageable, Minimal.filterable ]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Extended.ExpandedParameterPackagesListResponse
+                  example: !include AquaDesk Examples/ExpandedParameterPackages.json
+
+            400:
+              body:
+                application/json:
+                  type: Minimal.Problem
+                  example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /parametertypes:
+      description:
+        Retrieves a list of parameter types available in the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.ParameterTypesListResponse
+                example: !include AquaDesk Examples/ParameterTypes.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /projects:
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.ProjectsListResponse
+                example: !include AquaDesk Examples/Projects.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /filters:
+          get:
+            responses:
+              200:
+                body:
+                  application/json:
+                    type: Minimal.Filter[]
+                    example: !include AquaDesk Examples/Filter.json
+
+    /taxongroups:
+      description:
+        Retrieves a list of taxon groups available in the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.TaxonGroupsListResponse
+                example: !include AquaDesk Examples/TaxonGroups.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /taxontypes:
+      description:
+        Retrieves a list of taxon types available in the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.TaxonTypesListResponse
+                example: !include AquaDesk Examples/TaxonTypes.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /standards:
+      description:
+        Retrieves a list of standards within the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.StandardsListResponse
+                example: !include AquaDesk Examples/Standards.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                type: Minimal.Filter[]
+                example: !include AquaDesk Examples/Filter.json

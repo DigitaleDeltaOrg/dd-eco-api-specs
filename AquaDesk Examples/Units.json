@@ -1,0 +1,23 @@
+{
+  "count": 23,
+  "links":
+  {
+    "prev": null,
+    "next": "/eco/units?page=2&pagesize=2"
+  },
+  "maxPageSize": 10000,
+  "defaultPageSize": 1000,
+  "minPageSize": 1,
+  "result": [
+      {
+          "code": "178",
+          "name": "dimensieloos",
+          "symbol": null
+      },
+      {
+          "code": "179",
+          "name": "exemplaren",
+          "symbol": null
+      }
+  ]
+}

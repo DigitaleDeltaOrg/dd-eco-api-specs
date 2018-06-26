@@ -1,0 +1,26 @@
+{
+    "count": 1,
+    "links":
+    {
+      "prev": null,
+      "next": null
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "OEVRPTN",
+            "name": "Oeverplanten",
+            "parametertype": "Taxon",
+            "taxontype": "MACFT",
+            "parameters": [
+                "Abies procera",
+                "Stachys sylvatica",
+                "Syringa"
+            ],
+            "definition": [],
+            "changedate": "2018-04-11T14:20:07.173"
+        }
+    ]
+}

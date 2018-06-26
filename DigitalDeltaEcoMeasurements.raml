@@ -1,0 +1,58 @@
+#%RAML 1.0
+title: Digital Delta Eco Extensions - Measurements
+version: 0.9
+securitySchemes:
+  basic:
+    type: Basic Authentication
+baseUri: https://ddecotest.aquadesk.nl
+mediaType: [ application/json ]
+documentation:
+  - title: Documentation
+    content: !include Documentation.md
+
+uses: # Minimal types and definitions
+  Minimal: Libraries/Measurements.raml
+
+/eco:
+  /measurements:
+    description:
+      Retrieves a list of measurements.
+    get:
+      is: [ Minimal.pageable, Minimal.filterable ]
+      responses:
+        200:
+          body:
+            application/json:
+              type: Minimal.MeasurementsListResponse
+              example: !include AquaDesk Examples/Measurements.json
+
+        400:
+          body:
+            application/json:
+              type: Minimal.Problem
+              example: !include AquaDesk Examples/Problem.json
+    /geojson:
+      description:
+        Retrieves a list of measurements as a GeoJSON FeatureCollection.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: object
+                example: !include AquaDesk Examples/MeasurementsGeoJSON.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+    /filters:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Minimal.Filter[]
+                example: !include AquaDesk Examples/Filter.json

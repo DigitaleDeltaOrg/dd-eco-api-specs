@@ -1,0 +1,31 @@
+{
+    "count": 13,
+    "links":
+    {
+      "prev": null,
+      "next": "/eco/measurementpackages?page=1&pagesize=3"
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "changedate": "2018-04-11T13:41:38.227",
+            "code": "FP.AC",
+            "description": null,
+            "name": "Fytoplankton abundantie (cellen)"
+        },
+        {
+            "changedate": "2018-04-11T13:41:38.227",
+            "code": "DT.AB",
+            "description": null,
+            "name": "Diatomeeën abundantie"
+        },
+        {
+            "changedate": "2018-04-11T13:41:38.227",
+            "code": "ME.AB",
+            "description": null,
+            "name": "Macro-evertebraten abundantie"
+        }
+    ]
+}

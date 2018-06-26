@@ -1,0 +1,2039 @@
+{
+	"info": {
+		"_postman_id": "eaf499d6-d4bc-4da0-ba3b-b6f078ed6557",
+		"name": "Digital Delta Eco 1.0",
+		"description": "REST requests for Digital Delta Eco 1.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Attributes",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "Attributes Filter Examples",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/attributes?filter=attributetype:eq:\"LV\"",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"attributes"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "attributetype:eq:\"LV\""
+										}
+									]
+								},
+								"description": "Attributes filter Examples"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Attributes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/attributes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"attributes"
+							]
+						},
+						"description": "Attributes"
+					},
+					"response": []
+				},
+				{
+					"name": "Attributes Expand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/attributes/expand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"attributes",
+								"expand"
+							]
+						},
+						"description": "Attributes Expand"
+					},
+					"response": []
+				},
+				{
+					"name": "Attributes Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/attributes/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"attributes",
+								"filters"
+							]
+						},
+						"description": "Attributes Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Compartments",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "Compartments Examples",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/compartments?filter=changedate:gt:'2000-01-01'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"compartments"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "changedate:gt:'2000-01-01'"
+										}
+									]
+								},
+								"description": "Compartments Examples"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Compartments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/compartments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"compartments"
+							]
+						},
+						"description": "Compartments"
+					},
+					"response": []
+				},
+				{
+					"name": "Compartments Expand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/compartments/expand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"compartments",
+								"expand"
+							]
+						},
+						"description": "Compartments Expand"
+					},
+					"response": []
+				},
+				{
+					"name": "Compartments Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/compartments/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"compartments",
+								"filters"
+							]
+						},
+						"description": "Compartments Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ExchangeSystems",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "ExchangeSystems Filter Examples",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/exchangesystems?filter=changedate:gt:'2000-01-01'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"exchangesystems"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "changedate:gt:'2000-01-01'"
+										}
+									]
+								},
+								"description": "ExchangeSystems Filter Examples"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "ExchangeSystems",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/exchangesystems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"exchangesystems"
+							]
+						},
+						"description": "ExchangeSystems"
+					},
+					"response": []
+				},
+				{
+					"name": "ExchangeSystems Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/exchangesystems/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"exchangesystems",
+								"filters"
+							]
+						},
+						"description": "ExchangeSystems Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Institutes",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "ExchangeSystems",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/institutes?filter=changedate:gt:'2000-01-01'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"institutes"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "changedate:gt:'2000-01-01'"
+										}
+									]
+								},
+								"description": "ExchangeSystems"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Institutes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/institutes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"institutes"
+							]
+						},
+						"description": "Institutes"
+					},
+					"response": []
+				},
+				{
+					"name": "Institutes Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/institutes/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"institutes",
+								"filters"
+							]
+						},
+						"description": "Institutes Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MeasurementObjects",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "MeasurementObjects",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/measurementobjects?filter=organisation:eq:'RWS'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"measurementobjects"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "organisation:eq:'RWS'"
+										}
+									]
+								},
+								"description": "MeasurementObjects"
+							},
+							"response": []
+						},
+						{
+							"name": "MeasurementObjects Expand Filter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/measurementobjects/expand?filter=organisation:eq:'RWS'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"measurementobjects",
+										"expand"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "organisation:eq:'RWS'"
+										}
+									]
+								},
+								"description": "MeasurementObjects Expand Filter"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "MeasurementObjects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/measurementobjects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"measurementobjects"
+							]
+						},
+						"description": "MeasurementObjects"
+					},
+					"response": []
+				},
+				{
+					"name": "MeasurementObjects Expand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/measurementobjects/expand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"measurementobjects",
+								"expand"
+							]
+						},
+						"description": "MeasurementObjects Expand"
+					},
+					"response": []
+				},
+				{
+					"name": "MeasurementObjects Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/measurementobjects/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"measurementobjects",
+								"filters"
+							]
+						},
+						"description": "MeasurementObjects Filters"
+					},
+					"response": []
+				},
+				{
+					"name": "MeasurementObjects GeoJSON",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/measurementobjects/geojson",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"measurementobjects",
+								"geojson"
+							]
+						},
+						"description": "MeasurementObjects GeoJSON"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MeasurementPackages",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "MeasurementPackages Filter Example",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/measurementpackages?filter=code:like:'AF.'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"measurementpackages"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "code:like:'AF.'"
+										}
+									]
+								},
+								"description": "MeasurementPackages Filter Example"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "MeasurementPackages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/measurementpackages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"measurementpackages"
+							]
+						},
+						"description": "MeasurementPackages"
+					},
+					"response": []
+				},
+				{
+					"name": "MeasurementPackages Expand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/measurementpackages/expand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"measurementpackages",
+								"expand"
+							]
+						},
+						"description": "MeasurementPackages Expand"
+					},
+					"response": []
+				},
+				{
+					"name": "MeasurementPackages Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/measurementpackages/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"measurementpackages",
+								"filters"
+							]
+						},
+						"description": "MeasurementPackages Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Measurements",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "Measurements Filter on Organisation and Parameter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/measurements?filter=organisation:eq:\"HHN\";parameter:startswith:'Cry'&pageSize=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"measurements"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "organisation:eq:\"HHN\";parameter:startswith:'Cry'"
+										},
+										{
+											"key": "pageSize",
+											"value": "100"
+										}
+									]
+								},
+								"description": "Measurements Filter on Organisation and Parameter"
+							},
+							"response": []
+						},
+						{
+							"name": "Measurements Filter on Organisation and Parameter as GeoJSON",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/measurements/geoJSON?filter=organisation:eq:\"HHN\";parameter:startswith:'Cry'&pageSize=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"measurements",
+										"geoJSON"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "organisation:eq:\"HHN\";parameter:startswith:'Cry'"
+										},
+										{
+											"key": "pageSize",
+											"value": "100"
+										}
+									]
+								},
+								"description": "Measurements Filter on Organisation and Parameter as GeoJSON"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Measurements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/measurements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"measurements"
+							]
+						},
+						"description": "Measurements"
+					},
+					"response": []
+				},
+				{
+					"name": "Measurements Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/units/filters?bla=123&blaat=hjsdkfsdf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"units",
+								"filters"
+							],
+							"query": [
+								{
+									"key": "bla",
+									"value": "123"
+								},
+								{
+									"key": "blaat",
+									"value": "hjsdkfsdf"
+								}
+							]
+						},
+						"description": "Measurements Filters"
+					},
+					"response": []
+				},
+				{
+					"name": "Measurements GeoJSON",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/measurements/geojson",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"measurements",
+								"geojson"
+							]
+						},
+						"description": "Measurements Filters GeoJSON"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notes",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "Notes Filter Example",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/notes?filter=organisation:eq:\"RWS\"",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"notes"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "organisation:eq:\"RWS\""
+										}
+									]
+								},
+								"description": "Notes Filter Example"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Notes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/notes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"notes"
+							]
+						},
+						"description": "Notes"
+					},
+					"response": []
+				},
+				{
+					"name": "Notes Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/notes/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"notes",
+								"filters"
+							]
+						},
+						"description": "Notes Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Organisations",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "Organisations Code Filter ",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/organisations?filter=code:like:\"WS\"",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"organisations"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "code:like:\"WS\""
+										}
+									]
+								},
+								"description": "Organisations Code Filter"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Organisations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/organisations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"organisations"
+							]
+						},
+						"description": "Organisations"
+					},
+					"response": []
+				},
+				{
+					"name": "Organisations Expand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/organisations/expand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"organisations",
+								"expand"
+							]
+						},
+						"description": "Organisations Expand"
+					},
+					"response": []
+				},
+				{
+					"name": "Organisations Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/organisations/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"organisations",
+								"filters"
+							]
+						},
+						"description": "Organisations Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ParameterPackages",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "ParameterPackages Filter Example",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/parameterpackages?filter=code:eq:'test'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"parameterpackages"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "code:eq:'test'"
+										}
+									]
+								},
+								"description": "ParameterPackages Filter Example"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "ParameterPackages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/parameterpackages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"parameterpackages"
+							]
+						},
+						"description": "ParameterPackages"
+					},
+					"response": []
+				},
+				{
+					"name": "ParameterPackages Expand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/parameterpackages/expand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"parameterpackages",
+								"expand"
+							]
+						},
+						"description": "ParameterPackages Expand"
+					},
+					"response": []
+				},
+				{
+					"name": "ParameterPackages Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/parameterpackages/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"parameterpackages",
+								"filters"
+							]
+						},
+						"description": "ParameterPackages Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ParameterTypes",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "ParameterTypes Filter Example",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/parametertypes?filter=code:eq:'Taxon'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"parametertypes"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "code:eq:'Taxon'"
+										}
+									]
+								},
+								"description": "Parameter Types Filter Example"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "ParameterTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/parametertypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"parametertypes"
+							]
+						},
+						"description": "Parameter Types"
+					},
+					"response": []
+				},
+				{
+					"name": "ParameterTypes Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/parametertypes/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"parametertypes",
+								"filters"
+							]
+						},
+						"description": "Parameter Types Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Parameters",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "Parameters Filter Example",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/parameters?filter=type:eq:'BiologicalGroup'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"parameters"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "type:eq:'BiologicalGroup'"
+										}
+									]
+								},
+								"description": "Parameters Filter Example"
+							},
+							"response": []
+						},
+						{
+							"name": "Parameters Filter Example 2",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/parameters?filter=type:eq:'BiologicalGroup';code:like:'Flab'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"parameters"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "type:eq:'BiologicalGroup';code:like:'Flab'"
+										}
+									]
+								},
+								"description": "Parameters Filter Example 2"
+							},
+							"response": []
+						},
+						{
+							"name": "Parameters Filter Example 3",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/parameters?filter=taxontype:eq:'AMFBE'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"parameters"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "taxontype:eq:'AMFBE'"
+										}
+									]
+								},
+								"description": "Parameters Filter Example 3"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Parameters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/parameters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"parameters"
+							]
+						},
+						"description": "Parameters"
+					},
+					"response": []
+				},
+				{
+					"name": "Parameters Expand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/parameters/expand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"parameters",
+								"expand"
+							]
+						},
+						"description": "Parameters Expand"
+					},
+					"response": []
+				},
+				{
+					"name": "Parameters Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/parameters/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"parameters",
+								"filters"
+							]
+						},
+						"description": "Parameters Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "Projects Filter Example",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/projects?filter:organisation:eq:'RWS'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"projects"
+									],
+									"query": [
+										{
+											"key": "filter:organisation:eq:'RWS'",
+											"value": null
+										}
+									]
+								},
+								"description": "Projects Filter Example"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"projects"
+							]
+						},
+						"description": "Projects"
+					},
+					"response": []
+				},
+				{
+					"name": "Projects Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/projects/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"projects",
+								"filters"
+							]
+						},
+						"description": "Projects Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purposes",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "Purposes Filter Example",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/purposes?filter=code:eq:'MT'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"purposes"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "code:eq:'MT'"
+										}
+									]
+								},
+								"description": "Purposes Filter Example"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Purposes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/purposes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"purposes"
+							]
+						},
+						"description": "Purposes"
+					},
+					"response": []
+				},
+				{
+					"name": "Purposes Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/purposes/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"purposes",
+								"filters"
+							]
+						},
+						"description": "Purposes Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Standards",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "Standards Filter Example",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/standards?filter=institute:eq:'RWS'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"standards"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "institute:eq:'RWS'"
+										}
+									]
+								},
+								"description": "Standards Filter Example"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Standards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/standards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"standards"
+							]
+						},
+						"description": "Standards"
+					},
+					"response": []
+				},
+				{
+					"name": "Standards Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/standards/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"standards",
+								"filters"
+							]
+						},
+						"description": "Standards Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quantities",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "Quantities Filter Example",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/quantities?filter=name:like:'Intensiteit'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"quantities"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "name:like:'Intensiteit'"
+										}
+									]
+								},
+								"description": "Quantities Filter Example"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Quantities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/quantities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"quantities"
+							]
+						},
+						"description": "Quantities"
+					},
+					"response": []
+				},
+				{
+					"name": "Quantities Expand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/quantities/expand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"quantities",
+								"expand"
+							]
+						},
+						"description": "Quantities Expand"
+					},
+					"response": []
+				},
+				{
+					"name": "Quantities Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/quantities/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"quantities",
+								"filters"
+							]
+						},
+						"description": "Quantities Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TaxonGroups",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "TaxonGroups Filter Example",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/TaxonGroups?filter=taxontype:eq:'FYTPT'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"TaxonGroups"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "taxontype:eq:'FYTPT'"
+										}
+									]
+								},
+								"description": "TaxonGroups Filter Example"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "TaxonGroups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/TaxonGroups",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"TaxonGroups"
+							]
+						},
+						"description": "TaxonGroups"
+					},
+					"response": []
+				},
+				{
+					"name": "TaxonGroups Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/TaxonGroups/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"TaxonGroups",
+								"filters"
+							]
+						},
+						"description": "TaxonGroups Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TaxonTypes",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "TaxonTypes Filter Example",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/TaxonTypes?filter=code:eq:'ZOOPT'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"TaxonTypes"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "code:eq:'ZOOPT'"
+										}
+									]
+								},
+								"description": "TaxonTypes Filter Example"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "TaxonTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/TaxonTypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"TaxonTypes"
+							]
+						},
+						"description": "TaxonTypes"
+					},
+					"response": []
+				},
+				{
+					"name": "TaxonTypes Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/TaxonTypes/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"TaxonTypes",
+								"filters"
+							]
+						},
+						"description": "TaxonTypes Filters"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Units",
+			"description": "",
+			"item": [
+				{
+					"name": "Filter Examples",
+					"description": "",
+					"item": [
+						{
+							"name": "Units Filters Unsupported Parameters",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/units/filters?bla=123&blaat=hjsdkfsdf",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"units",
+										"filters"
+									],
+									"query": [
+										{
+											"key": "bla",
+											"value": "123"
+										},
+										{
+											"key": "blaat",
+											"value": "hjsdkfsdf"
+										}
+									]
+								},
+								"description": "Units Filters Unsupported Parameters"
+							},
+							"response": []
+						},
+						{
+							"name": "Units Filter Example",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:64444/eco/units?filter=symbol:eq:'G'",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "64444",
+									"path": [
+										"eco",
+										"units"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "symbol:eq:'G'"
+										}
+									]
+								},
+								"description": "Units Filter Example"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Units",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/Units",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"Units"
+							]
+						},
+						"description": "Units"
+					},
+					"response": []
+				},
+				{
+					"name": "Units Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:64444/eco/Units/filters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "64444",
+							"path": [
+								"eco",
+								"Units",
+								"filters"
+							]
+						},
+						"description": "Units Filters"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

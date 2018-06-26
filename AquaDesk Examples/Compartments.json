@@ -1,0 +1,25 @@
+{
+    "count": 16,
+    "links":
+    {
+      "prev": null,
+      "next": "/eco/compartments?page=2&pagesize=3"
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "BS",
+            "name": "Bodem / Sediment"
+        },
+        {
+            "code": "LT",
+            "name": "Lucht"
+        },
+        {
+            "code": "NT",
+            "name": "Niet van toepassing"
+        }
+    ]
+}

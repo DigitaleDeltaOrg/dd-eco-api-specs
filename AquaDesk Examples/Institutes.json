@@ -1,0 +1,33 @@
+{
+    "count": 4,
+    "links":
+    {
+      "prev": null,
+      "next": null
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "ECS",
+            "name": "EcoSys",
+            "reference": "https://www.ecosys.nl"
+        },
+        {
+            "code": "RWS",
+            "name": "Rijkswaterstaat",
+            "reference": "https://www.rijkswaterstaat.nl"
+        },
+        {
+            "code": "IHW",
+            "name": "Informatiehuis Water",
+            "reference": "https://www.ihw.nl"
+        },
+        {
+            "code": "CAS",
+            "name": "American Chemical Society",
+            "reference": "https://www.cas.org/"
+        }
+    ]
+}

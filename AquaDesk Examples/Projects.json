@@ -1,0 +1,41 @@
+{
+  "count": 12,
+  "links":
+  {
+    "prev": "/eco/projects?page=1&pagesize=8",
+    "next": null
+  },
+  "maxPageSize": 10000,
+  "defaultPageSize": 1000,
+  "minPageSize": 1,
+  "result": [
+      {
+          "code": "P-KRW2017",
+          "name": "P-Meetnet KRW 2017",
+          "organisation": "ECS.HD",
+          "start": "2017-01-01",
+          "end": "2018-01-01"
+      },
+      {
+          "code": "P-BOLLEN",
+          "name": "Project bestrijdingsmiddelen bollenteelt",
+          "organisation": "ECS.HD",
+          "start": "2017-01-01",
+          "end": "2018-01-01"
+      },
+      {
+          "code": "MWTL_M2016",
+          "name": "Macev 2016 test zonder xy",
+          "organisation": "RWS",
+          "start": "2016-01-01",
+          "end": "2017-01-01"
+      },
+      {
+          "code": "MWTL_M2015",
+          "name": "Macrofauna 2015",
+          "organisation": "RWS",
+          "start": "2015-01-01",
+          "end": "2016-01-01"
+      }
+  ]
+}

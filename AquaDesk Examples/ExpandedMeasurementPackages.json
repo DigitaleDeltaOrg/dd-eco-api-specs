@@ -1,0 +1,77 @@
+{
+    "count": 13,
+    "links":
+    {
+      "prev": null,
+      "next": "/eco/measurementpackages/expand?page=2&pagesize=3"
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "FP.AC",
+            "name": "Fytoplankton abundantie (cellen)",
+            "description": null,
+            "parametertypes": [
+                "DIATM",
+                "FYTPT"
+            ],
+            "parameters": [],
+            "quantitytypes": [
+                "AANTPVLME"
+            ],
+            "attributetypes": [
+                "LV"
+            ],
+            "exchangesystems": [
+                "AQUADESK",
+                "IM-METINGEN"
+            ],
+            "parameterpackage": null,
+            "changedate": "2018-04-11T13:45:15.147"
+        },
+        {
+            "code": "DT.AB",
+            "name": "Diatomeeën abundantie",
+            "description": null,
+            "parametertypes": [
+                "DIATM"
+            ],
+            "parameters": [],
+            "quantitytypes": [
+                "AANTL",
+                "AANTFTE"
+            ],
+            "attributetypes": [
+                ""
+            ],
+            "exchangesystems": [
+                "AQUADESK"
+            ],
+            "parameterpackage": null,
+            "changedate": "2018-04-11T13:45:15.147"
+        },
+        {
+            "code": "ME.AB",
+            "name": "Macro-evertebraten abundantie",
+            "description": null,
+            "parametertypes": [
+                "MACEV"
+            ],
+            "parameters": [],
+            "quantitytypes": [
+                "AANTL"
+            ],
+            "attributetypes": [
+                "GS",
+                "LS"
+            ],
+            "exchangesystems": [
+                "AQUADESK"
+            ],
+            "parameterpackage": null,
+            "changedate": "2018-04-11T13:45:15.147"
+        }
+    ]
+}

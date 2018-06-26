@@ -1,0 +1,56 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    51.7581204207227,
+                    5.15835627200311,
+                    0
+                ]
+            },
+            "properties": {
+                "description": "NEDHMT",
+                "organisation": "RWS",
+                "code": "AFGDM_0001",
+                "monitoringnetworks": []
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    51.7800422641779,
+                    5.11187400090377,
+                    0
+                ]
+            },
+            "properties": {
+                "description": "VEEN",
+                "organisation": "RWS",
+                "code": "AFGDM_0002",
+                "monitoringnetworks": []
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    51.7848913705971,
+                    5.07416374190305,
+                    0
+                ]
+            },
+            "properties": {
+                "description": "POEDRIJN",
+                "organisation": "RWS",
+                "code": "AFGDM_0003",
+                "monitoringnetworks": []
+            }
+        }
+    ]
+}

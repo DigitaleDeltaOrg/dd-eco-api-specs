@@ -1,0 +1,58 @@
+{
+    "count": 25622,
+    "links":
+    {
+      "prev": null,
+      "next": "/eco/parameters/expand?page=2&pagesize=3"
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "code": "Alytes",
+            "name": "Alytes",
+            "type": "Taxon",
+            "taxontype": "AMFBE",
+            "taxongroup": null,
+            "authors": "Wagler, 1830",
+            "definition": [
+                {
+                    "standardcode": "TWN",
+                    "codeinstandard": "1000008633",
+                    "reference": "http://sofus.ecosys.nl/Taxus/TaxaShow.exe/ShowPage?TaxonCode=1000008633&Literature=NO"
+                }
+            ]
+        },
+        {
+            "code": "Alytes obstetricans",
+            "name": "Alytes obstetricans",
+            "type": "Taxon",
+            "taxontype": "AMFBE",
+            "taxongroup": null,
+            "authors": "(Laurenti, 1768)",
+            "definition": [
+                {
+                    "standardcode": "TWN",
+                    "codeinstandard": "1000008634",
+                    "reference": "http://sofus.ecosys.nl/Taxus/TaxaShow.exe/ShowPage?TaxonCode=1000008634&Literature=NO"
+                }
+            ]
+        },
+        {
+            "code": "Amphibia",
+            "name": "Amphibia",
+            "type": "Taxon",
+            "taxontype": "AMFBE",
+            "taxongroup": null,
+            "authors": "Linnaeus, 1758",
+            "definition": [
+                {
+                    "standardcode": "TWN",
+                    "codeinstandard": "1000008635",
+                    "reference": "http://sofus.ecosys.nl/Taxus/TaxaShow.exe/ShowPage?TaxonCode=1000008635&Literature=NO"
+                }
+            ]
+        }
+    ]
+}

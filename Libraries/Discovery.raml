@@ -1,0 +1,634 @@
+#%RAML 1.0 Library
+# Types for the extended definition.
+uses:
+  Minimal: Measurements.raml
+types:
+# Base items
+  Compartment:
+    type: object
+    description: Defines a compartment&colon; a part of the living environment.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+
+  Definition:
+    type: object
+    description: Defines a standard and code for an entity.
+    required: false
+    properties:
+      standardcode:
+        type: string
+        required: false
+      codeinstandard:
+        type: string
+        required: false
+      reference:
+        description: Link to the specific item within the standard.
+        type: string
+        required: false
+
+  ExchangeSystem:
+    type: object
+    description: Defines what system the measurement was intented for.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+
+  Institute:
+    type: object
+    description: Defines a standardisation institute.
+    properties:
+      code:
+        description: Code of the institute.
+        type: string
+        required: true
+      name:
+        description: Name of the institute.
+        type: string
+        required: true
+      reference:
+        description: URL of the institute.
+        type: string
+        required: false
+
+  MeasurementAttribute:
+    type: object
+    description: Defines an attribute (property) of a measurement.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+      attributetype:
+        type: string
+      attributetypeName:
+        type: string
+
+  MeasurementObject:
+    type: object
+    description: Defines a measurement object (location).
+    properties:
+      code:
+        type: string
+      description:
+        type: string?
+      organisation:
+        type: string
+
+  Organisation:
+    type: object
+    description: Defines a organisation&colon; the owner of data, methods, notes, locations or measurement networks.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+      numericcode:
+        type: number
+        required: false
+
+  OrganisationNote:
+    type: object
+    description: Defines a note attached to a measurement.
+    properties:
+      code:
+        type: string
+      note:
+        type: string
+      organisation:
+        type: string
+
+  Parameter:
+    type: object
+    description: Defines a measured parameter.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+      taxontype:
+        type: string?
+        required: false
+      taxongroup:
+        type: string?
+        required: false
+      authors:
+        type: string?
+        required: false
+      changedate:
+        type: datetime-only?
+        required: false
+
+  ParameterGroup:
+    type: object
+    description: Defines a parameter group&colon; a collection of parameters with similar properties.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+
+  ParameterPackage:
+    type: object
+    description: Defines a parameter package&colon; a set of parameters that need to be measured. Used for planning.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+      changedate:
+        type: datetime-only?
+        required: false
+      description:
+        type: string?
+        required: false
+      parameters:
+        type: string[]
+        required: false
+
+  ParameterType:
+    type: object
+    description: Standardised type of a parameter, e.g. chemical, taxon.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+
+  Quantity:
+    type: object
+    description: Defines a quantity in which a measurement can be expressed.
+    properties:
+      name:
+        type: string
+      code:
+        type: string
+      values:
+        type: string[]
+
+  Unit:
+    type: object
+    description: Defines a unit of measurement.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+      symbol:
+        type: string?
+        required: false
+
+  MeasurementPackage:
+    type: object
+    description: Defines a measurement package.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string?
+        required: false
+      changedate:
+        type: datetime-only?
+        required: false
+
+  MeasurementPurpose:
+    type: object
+    description: Defines a measurement purpose.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+
+  Method:
+    type: object
+    description: Defines a measurement method.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+      organisation:
+        type: string?
+      literature:
+        type: string?
+        required: false
+      methodtype:
+        type: string?
+      methodtypename:
+        type: string?
+
+  MonitoringNetwork:
+    type: object
+    description: Defines a collection of measurement objects.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string?
+        required: false
+      organisation:
+        type: string
+
+  Project:
+    type: object
+    description: Defines a project for which a measurement was taken.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+      organisation:
+        type: string
+      start:
+        type: date-only
+      end:
+        type: date-only
+
+  Purpose:
+    type: object
+    description: Defines the purpose of a measurement.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+
+  Standard:
+    type: object
+    description: Defines a standard for measurements, parameters, units, etc.
+    properties:
+      institute:
+        description: Code of the institute.
+        type: string
+      standardcode:
+        description: code of the instituteCode.
+        type: string
+        required: true
+      reference:
+        description: Link to the standard.
+        type: string
+        required: false
+      standardstype:
+        description: Type of standard
+        type: string
+        required: false
+
+  TaxonGroup:
+    type: object
+    description: Defines a taxonomic group.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+      taxontype:
+        type: string
+      taxontypename:
+        type: string
+
+  TaxonType:
+    type: object
+    description: Defines a taxonomic type.
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+
+# Expanded items
+  ExpandedEntityBase:
+    type: Definition[]
+    required: true
+
+  ExpandedCompartment:
+    type: Compartment
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+
+  ExpandedInstitute:
+    type: Institute
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+
+  ExpandedMeasurementAttribute:
+    type: MeasurementAttribute
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+
+  ExpandedMeasurementObject:
+    type: MeasurementObject
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+      monitoringnetworks:
+        type: string[]
+
+  ExpandedMeasurementPackage:
+    type: MeasurementPackage
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: false
+      parametertypes:
+        type: string[]
+        required: false
+      parameters:
+        type: string[]
+        required: false
+      quantitytypes:
+        type: string[]
+        required: false
+      attributetypes:
+        type: string[]
+        required: false
+      exchangesystems:
+        type: string[]
+        required: false
+      parameterpackage:
+        type: string?
+        required: false
+
+  ExpandedMeasurementPurpose:
+    type: MeasurementPurpose
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+
+  ExpandedMethod:
+    type: Method
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+
+  ExpandedMonitoringNetwork:
+    type: MonitoringNetwork
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+      locations:
+        type: string[]
+
+  ExpandedOrganisation:
+    type: Organisation
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+
+  ExpandedParameter:
+    type: Parameter
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+
+  ExpandedParameterPackage:
+    type: ParameterPackage
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: false
+      parametertype:
+        type: string?
+        required: false
+      taxontype:
+        type: string?
+        required: false
+      parametertypes:
+        type: string[]
+        required: false
+
+  ExpandedParameterType:
+    type: ParameterType
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+
+  ExpandedProject:
+    type: Project
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+
+  ExpandedPurpose:
+    type: Purpose
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+
+  ExpandedQuantity:
+    type: Quantity
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+
+  ExpandedStandard:
+    type: Standard
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+
+  ExpandedUnit:
+    type: Unit
+    properties:
+      definition:
+        type: ExpandedEntityBase
+        required: true
+
+# List responses
+  CompartmentsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: Compartment[]
+
+  ExchangeSystemsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExchangeSystem[]
+
+  InstitutesListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: Institute[]
+
+  MeasurementObjectsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: MeasurementObject[]
+
+  MeasurementPackagesListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: MeasurementPackage[]
+
+  MethodsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: Method[]
+
+  MonitoringNetworksListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: MonitoringNetwork[]
+
+  OrganisationsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: Organisation[]
+
+  OrganisationNotesListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: OrganisationNote[]
+
+  ParameterPackagesListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ParameterPackage[]
+
+  ParametersListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: Parameter[]
+
+  ParameterTypesListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ParameterType[]
+
+  ProjectsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: Project[]
+
+  PurposesListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: Purpose[]
+
+  QuantitiesListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: Quantity[]
+
+  StandardsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: Standard[]
+
+  TaxonGroupsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: TaxonGroup[]
+
+  TaxonTypesListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: TaxonType[]
+
+  UnitsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: Unit[]
+
+# Expanded list responses
+  ExpandedCompartmentsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExpandedCompartment[]
+
+  ExpandedInstitutesListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExpandedInstitute[]
+
+  ExpandedMeasurementObjectsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExpandedMeasurementObject[]
+
+  ExpandedMeasurementPackagesListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExpandedMeasurementPackage[]
+
+  ExpandedMeasurementsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: Minimal.GeoJSON[]
+
+  ExpandedMethodsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExpandedMethod[]
+
+  ExpandedMonitoringNetworksListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExpandedMonitoringNetwork[]
+
+  ExpandedOrganisationsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExpandedOrganisation[]
+
+  ExpandedParameterPackagesListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExpandedParameterPackage[]
+
+  ExpandedParametersListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExpandedParameter[]
+
+  ExpandedParameterTypesListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExpandedParameterType[]
+
+  ExpandedPurposesListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExpandedPurpose[]
+
+  ExpandedQuantitiesListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExpandedQuantity[]
+
+  ExpandedStandardsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExpandedStandard[]
+
+  ExpandedUnitsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: ExpandedUnit[]

@@ -1,0 +1,28 @@
+{
+  "count": 66,
+  "links":
+  {
+    "prev": null,
+    "next": "/eco/quantities?page=2&pagesize=3"
+  },
+  "maxPageSize": 10000,
+  "defaultPageSize": 1000,
+  "minPageSize": 1,
+  "result": [
+      {
+          "name": "Aantal",
+          "code": "AANTL",
+          "values": []
+      },
+      {
+          "name": "Aantal per oppervlakte",
+          "code": "AANTPOPVTE",
+          "values": []
+      },
+      {
+          "name": "Aantal per volume",
+          "code": "AANTPVLME",
+          "values": []
+      }
+  ]
+}
