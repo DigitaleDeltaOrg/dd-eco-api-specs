@@ -13,6 +13,24 @@
     Extended: Libraries/Discovery.raml
 
   /eco:
+    /endpoints:
+      description:
+        Retrieves a list of available endpoints.
+      get:
+        is: [ Minimal.pageable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.EndpointsListResponse
+                example: !include AquaDesk Examples/Endpoints.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+
     /compartments:
       description:
         Retrieves a list of compartments (AQUO).

@@ -1,0 +1,96 @@
+{
+    "count": 21,
+    "links": {
+        "prev": null,
+        "next": null
+    },
+    "maxPageSize": 10000,
+    "defaultPageSize": 1000,
+    "minPageSize": 1,
+    "result": [
+        {
+            "baseuri": "/eco/compartments",
+            "description": "Aquo Compartments."
+        },
+        {
+            "baseuri": "/eco/exchangesystems",
+            "description": "Exchange systems for which the measurements are meant."
+        },
+        {
+            "baseuri": "/eco/institutes",
+            "description": "Standardisation institutes."
+        },
+        {
+            "baseuri": "/eco/measurementattributes",
+            "description": "Measurement attributes, where possible Aquo standard."
+        },
+        {
+            "baseuri": "/eco/measurements",
+            "description": "Organiastion measurements."
+        },
+        {
+            "baseuri": "/eco/measurementobjects",
+            "description": "Organisation measurement objects: extended locations."
+        },
+        {
+            "baseuri": "/eco/measurementpackages",
+            "description": "Measurement packages."
+        },
+        {
+            "baseuri": "/eco/methods",
+            "description": "Analisys and Measurement methods."
+        },
+        {
+            "baseuri": "/eco/monitoringnetworks",
+            "description": "Organisation monitoring networks."
+        },
+        {
+            "baseuri": "/eco/notes",
+            "description": "Organisation notes for measurements."
+        },
+        {
+            "baseuri": "/eco/organisations",
+            "description": "Organisations are owners of measurements."
+        },
+        {
+            "baseuri": "/eco/parameterpackages",
+            "description": "Parameter packages."
+        },
+        {
+            "baseuri": "/eco/parameters",
+            "description": "Parameters, where possible, Aquo compatible. Contains biological taxa, chemicals, biological groups, chemical mixtures and physical objects."
+        },
+        {
+            "baseuri": "/eco/parametertypes",
+            "description": "Parameter types."
+        },
+        {
+            "baseuri": "/eco/projects",
+            "description": "Organisation projects."
+        },
+        {
+            "baseuri": "/eco/purpose",
+            "description": "Measurement purposes."
+        },
+        {
+            "baseuri": "/eco/quantity",
+            "description": "Quantities for measurements, if possible, Aquo standard."
+        },
+        {
+            "baseuri": "/eco/standards",
+            "description": "Standards used for measurements, parameters, units, quantities, attributes, etc."
+        },
+        {
+            "baseuri": "/eco/taxongroup",
+            "description": "Taxonomical groups."
+        },
+        {
+            "baseuri": "/eco/taxontypes",
+            "description": "Taxonomical types."
+        },
+        {
+            "baseuri": "/eco/unit",
+            "description": "Measurement units."
+        }
+    ]
+}

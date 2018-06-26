@@ -29,6 +29,15 @@ types:
         type: string
         required: false
 
+  Endpoint:
+    type: object
+    description: Defines an available endpoint.
+    properties:
+      baseuri:
+        type: string
+      description:
+        type: string
+
   ExchangeSystem:
     type: object
     description: Defines what system the measurement was intented for.
@@ -466,6 +475,11 @@ types:
     type: Minimal.BaseListResponse
     properties:
       result: Compartment[]
+
+  EndpointsListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: Endpoint[]
 
   ExchangeSystemsListResponse:
     type: Minimal.BaseListResponse
