@@ -7,3 +7,5 @@ The AquaDesk Examples directory contains samples of query results from AquaDesk,
 
 HTML renders of the RAML specification are provided for easy reading.
 These static HTML pages are generated with [RAML2HTML](https://github.com/raml2html).
+
+Please see the [wiki](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki) for more details.
