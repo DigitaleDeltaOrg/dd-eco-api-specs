@@ -51,20 +51,10 @@ Some suggestions:
 ## Editors
 <a name="Editors"></a>
 
-
-
-
 | Editor | Comment |
 | --- | --- |
 | [api-designer](https://github.com/mulesoft/api-designer) | Browser-based. No search features. |
-| [atom](https://atom.io/) editor with [api-workbench](https://atom.io/packages/api-workbench) package and (optionally) the [markdown-preview package](https://atom.io/packages/markdown-preview) | Full-featured editor, but sometimes painfully slow with large files. |
-| | |
-
-| Documentation generator | Comment |
-| --- | --- |
-| [raml2html](https://www.npmjs.com/package/raml2html) | Generates static single-page HTML from a RAML definition. |
-| [api-console](https://github.com/mulesoft/api-console) | Generates dynamic single=page HTML from a RAML definition. Generates HUGE files. Can also serve the files. Allows dynamic requests to be send to a server. |  
-
+| [atom](https://atom.io/) editor with [api-workbench](https://atom.io/packages/api-workbench) package and (optionally) the [markdown-preview package](https://atom.io/packages/markdown-preview) | Full-featured editor, but sometimes painfully slow with large files. | 
 
 For more suggestions see: [RAML Developers Design page](https://raml.org/developers/design-your-api).
 
