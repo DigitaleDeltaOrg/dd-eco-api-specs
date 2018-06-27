@@ -56,6 +56,8 @@ Some suggestions:
 | --- | --- |
 | [api-designer](https://github.com/mulesoft/api-designer) | Browser-based. No search features. |
 | [atom](https://atom.io/) editor with [api-workbench](https://atom.io/packages/api-workbench) package and (optionally) the [markdown-preview package](https://atom.io/packages/markdown-preview) | Full-featured editor, but sometimes painfully slow with large files. |
+| | |
+
 
 For more suggestions see: [RAML Developers Design page](https://raml.org/developers/design-your-api).
 
