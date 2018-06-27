@@ -96,7 +96,7 @@ This level is required.
 ## Discovery Level
 <a name="Discovery"></a>
 The Discovery level is build on top of the Measurements level. Its purpose is to allow discovery of query parameters.
-All end-points are optional, as is the whole level.
+All end-points are optional, except for the Endpoints end-point, as is the whole level.
 
 # Implementation topics
 <a name="Implementation"></a>
