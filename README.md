@@ -1,4 +1,4 @@
-# Digital Delta Eco API definitions.
+# Digital Delta Eco API specification.
 Defines specifications for retrieving measurements and discovery of query parameters, specified in [RAML](https://raml.org).
 This is a specialized version of the Digital Delta API, focusing on ecological data.
 
