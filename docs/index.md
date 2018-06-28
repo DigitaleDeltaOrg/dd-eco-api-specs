@@ -2,19 +2,15 @@
 <a name="Introduction"></a>
 This specification is a proposal for an extension to the Digital Delta API, specifically for parameter-based queries for mainly [ecological measurements](#EcologicalMeasurements), as opposed to the time-series focused approach that the original DD API used.
 
-Please see the [wiki](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki) for information beyond this specification.
+The spefication uses the [RAML 1.0 syntax](https://raml.org).
 
-To make filtering easy, the [Filter Syntax](#FilterSyntax) is developed.
-A sample implementation in C# for the Filter Syntax, including NUnit tests, is provided in this repository. See [Contents](#Contents).
+Please see the [wiki](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki) for information beyond this document.
+
+To make filtering easy, the [Filter Syntax](#FilterSyntax) is developed. A sample implementation in C# for the Filter Syntax, including NUnit tests, is provided in this repository. See [Contents](#Contents).
 
 The document describes the required parts ([Measurements level](#Measurements)) and optional (discovery) parts ([Discovery level](#Discovery)).
 
-Minimal only contains the definitions needed to retrieve measurements. The user will need to know the exact codes or names of the items to query.
-
-Extended provides definitions to discover information, such as finding the codes for parameters, find the measurement objects belonging to a monitoring network, etc. It is build on top of the [Measurements level](#Measurements) specification.
-Every end-point, except the end-point named Endpoints in the [Discovery level](#Discovery) specification is optional.
-
-Providers (providers of data via this API) can use the definition to implement their own connector for this specification to allow their customers to be consumers of their data.
+Providers (providers of data via this API) can use the definition to implement their own connector for this specification to allow their customers to comsume of their data.
 Consumers (requesters of data via this API) can use the definition to connect to providers.
 The samples given are based on the AquaDesk implementation of this specification.
 The [tools](#Tools) section provides information concerning suggested tools for easier using of and building solutions for this specification.
