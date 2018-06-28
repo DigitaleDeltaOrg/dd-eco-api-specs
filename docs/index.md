@@ -2,6 +2,8 @@
 <a name="Introduction"></a>
 This specification is a proposal for an extension to the Digital Delta API, specifically for parameter-based queries for mainly [ecological measurements](#EcologicalMeasurements), as opposed to the time-series focused approach that the original DD API used.
 
+Please see the [wiki](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki) for information beyond this specification.
+
 To make filtering easy, the [Filter Syntax](#FilterSyntax) is developed.
 A sample implementation in C# for the Filter Syntax, including NUnit tests, is provided in this repository. See [Contents](#Contents).
 
