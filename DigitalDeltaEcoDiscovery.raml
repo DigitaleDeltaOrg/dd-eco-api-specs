@@ -5,8 +5,20 @@
   extends: DigitalDeltaEcoMeasurements.raml
   mediaType: [ application/json ]
   documentation:
-    - title: Documentation
-      content: !include Documentation.md
+    - title: About
+      content: !include https://raw.githubusercontent.com/wiki/DigitaleDeltaOrg/dd-eco-api-specs/About-Digital-Delta-Eco-API.md
+    - title: Ecological Measurements
+      content: !include https://raw.githubusercontent.com/wiki/DigitaleDeltaOrg/dd-eco-api-specs/Ecological-Measurements.md
+    - title: Measurement level
+      content: !include https://raw.githubusercontent.com/wiki/DigitaleDeltaOrg/dd-eco-api-specs/Measurement-level.md
+    - title: Discovery level
+      content: !include https://raw.githubusercontent.com/wiki/DigitaleDeltaOrg/dd-eco-api-specs/Discovery-level.md
+    - title: Implementation topics
+      content: !include https://raw.githubusercontent.com/wiki/DigitaleDeltaOrg/dd-eco-api-specs/Implementation-Topics.md
+    - title: Contents of the Repository
+      content: !include https://raw.githubusercontent.com/wiki/DigitaleDeltaOrg/dd-eco-api-specs/Contents-of-the-Repository.md
+    - title: Change History
+      content: !include https://raw.githubusercontent.com/wiki/DigitaleDeltaOrg/dd-eco-api-specs/Change-History-(Specification).md
 
   uses: # Minimal types and definitions
     Minimal: Libraries/Measurements.raml

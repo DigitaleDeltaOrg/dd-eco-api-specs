@@ -1,6 +1,6 @@
 # Digital Delta Eco API specification.
-Defines specifications for retrieving measurements and discovery of query parameters, specified in [RAML](https://raml.org).
-This is a specialised version of the Digital Delta API, focusing on [ecological data](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Ecological-Measurements).
+Defines specifications for retrieving measurements and discovery of query parameters, written in [RAML](https://raml.org).
+This is a specialised version of the [Digital Delta API](https://github.com/DigitaleDeltaOrg/dd-api-spec), focusing on [ecological data](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Ecological-Measurements).
 
 The directory PostMan Scripts contains a [PostMan](https://getpostman.com) 2.1 collection, with sample requests.
 The [AquaDesk Examples directory](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/tree/master/AquaDesk%20Examples) contains samples of query results from AquaDesk, which implements a complete set of Extended end-points.
