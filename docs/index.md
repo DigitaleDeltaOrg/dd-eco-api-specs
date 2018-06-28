@@ -92,12 +92,13 @@ The API is split into two levels:
 The Measurements level contains one end-point: Measurements.
 This end-point is used to retrieve measurements.
 No discovery end-points exist in this level: it is assumed that all knowledge concerning query parameters is known by the requester.
-This level is required.
+This level is required. The specification can be found [here](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/blob/master/DigitalDeltaEcoMeasurements.raml).
+
 
 ## Discovery Level
 <a name="Discovery"></a>
 The Discovery level is build on top of the Measurements level. Its purpose is to allow discovery of query parameters.
-All end-points are optional, except for the Endpoints end-point, as is the whole level.
+All end-points are optional, except for the Endpoints end-point, as is the whole level. The specification can be found [here](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/blob/master/DigitalDeltaEcoDiscovery.raml).
 
 # Implementation topics
 <a name="Implementation"></a>
