@@ -195,7 +195,7 @@ The field 'errors' is optional and can contain further information concerning th
 The minimum &lt;page&gt; is 1.
 The provider specifies minimum, maximum and default &lt;pagesize&gt;.
 If &lt;pagesize&gt; is not specified, &lt;pagesize&gt; is the provider-specified default page size.
-If &lt;page&gt; is not specified, page&gt; is assumed to be 1.
+If &lt;page&gt; is not specified, &lt;page&gt; is assumed to be 1.
 
 ### Paging process
 <a name="PagingLogicPagingProcess"></a>
