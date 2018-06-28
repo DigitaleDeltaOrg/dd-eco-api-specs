@@ -31,12 +31,32 @@ types:
 
   Endpoint:
     type: object
-    description: Defines an available endpoint.
+    description: Defines an available end-point.
     properties:
       baseuri:
+        required: true
         type: string
+        description: Base address of the end-point.
       description:
+        required: true
         type: string
+        description: Description of the end-point.
+      filterable:
+        required: true
+        type: boolean
+        description: Supports filtering.
+      pageable:
+        required: true
+        type: boolean
+        description: Supports paging.
+      expandable:
+        required: true
+        type: boolean
+        description: Supports the /expand specifier.
+      geoJSON:
+        required: true
+        type: boolean
+        description: Supports the /geojson specifier.
 
   ExchangeSystem:
     type: object

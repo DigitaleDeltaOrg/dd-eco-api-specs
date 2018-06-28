@@ -10,87 +10,171 @@
     "result": [
         {
             "baseuri": "/eco/compartments",
-            "description": "Aquo Compartments."
+            "description": "Aquo Compartments.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": true,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/exchangesystems",
-            "description": "Exchange systems for which the measurements are meant."
+            "description": "Exchange systems for which the measurements are meant.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": false,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/institutes",
-            "description": "Standardisation institutes."
+            "description": "Standardisation institutes.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": false,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/measurementattributes",
-            "description": "Measurement attributes, where possible Aquo standard."
+            "description": "Measurement attributes, where possible Aquo standard.",
+            "filterable": true,
+            "pageable": false,
+            "expandable": true,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/measurements",
-            "description": "Organiastion measurements."
+            "description": "Organiastion measurements.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": true,
+            "geoJSON": true
         },
         {
             "baseuri": "/eco/measurementobjects",
-            "description": "Organisation measurement objects: extended locations."
+            "description": "Organisation measurement objects: extended locations.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": true,
+            "geoJSON": true
         },
         {
             "baseuri": "/eco/measurementpackages",
-            "description": "Measurement packages."
+            "description": "Measurement packages.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": true,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/methods",
-            "description": "Analisys and Measurement methods."
+            "description": "Analisys and Measurement methods.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": true,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/monitoringnetworks",
-            "description": "Organisation monitoring networks."
+            "description": "Organisation monitoring networks.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": true,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/notes",
-            "description": "Organisation notes for measurements."
+            "description": "Organisation notes for measurements.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": false,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/organisations",
-            "description": "Organisations are owners of measurements."
+            "description": "Organisations are owners of measurements.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": true,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/parameterpackages",
-            "description": "Parameter packages."
+            "description": "Parameter packages.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": true,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/parameters",
-            "description": "Parameters, where possible, Aquo compatible. Contains biological taxa, chemicals, biological groups, chemical mixtures and physical objects."
+            "description": "Parameters, where possible, Aquo compatible. Contains biological taxa, chemicals, biological groups, chemical mixtures and physical objects.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": true,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/parametertypes",
-            "description": "Parameter types."
+            "description": "Parameter types.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": false,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/projects",
-            "description": "Organisation projects."
+            "description": "Organisation projects.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": false,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/purpose",
-            "description": "Measurement purposes."
+            "description": "Measurement purposes.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": true,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/quantity",
-            "description": "Quantities for measurements, if possible, Aquo standard."
+            "description": "Quantities for measurements, if possible, Aquo standard.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": true,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/standards",
-            "description": "Standards used for measurements, parameters, units, quantities, attributes, etc."
+            "description": "Standards used for measurements, parameters, units, quantities, attributes, etc.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": false,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/taxongroup",
-            "description": "Taxonomical groups."
+            "description": "Taxonomical groups.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": false,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/taxontypes",
-            "description": "Taxonomical types."
+            "description": "Taxonomical types.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": false,
+            "geoJSON": false
         },
         {
             "baseuri": "/eco/unit",
-            "description": "Measurement units."
+            "description": "Measurement units.",
+            "filterable": true,
+            "pageable": true,
+            "expandable": false,
+            "geoJSON": false
         }
     ]
 }
