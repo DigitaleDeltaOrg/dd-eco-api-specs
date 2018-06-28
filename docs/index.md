@@ -2,6 +2,8 @@
 <a name="Introduction"></a>
 This specification is a proposal for an extension to the Digital Delta API, specifically for parameter-based queries for mainly [ecological measurements](#EcologicalMeasurements), as opposed to the time-series focused approach that the original DD API used.
 
+Please see the [wiki](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki) for information beyond this specification.
+
 To make filtering easy, the [Filter Syntax](#FilterSyntax) is developed.
 A sample implementation in C# for the Filter Syntax, including NUnit tests, is provided in this repository. See [Contents](#Contents).
 
@@ -92,12 +94,13 @@ The API is split into two levels:
 The Measurements level contains one end-point: Measurements.
 This end-point is used to retrieve measurements.
 No discovery end-points exist in this level: it is assumed that all knowledge concerning query parameters is known by the requester.
-This level is required.
+This level is required. The specification can be found [here](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/blob/master/DigitalDeltaEcoMeasurements.raml).
+
 
 ## Discovery Level
 <a name="Discovery"></a>
 The Discovery level is build on top of the Measurements level. Its purpose is to allow discovery of query parameters.
-All end-points are optional, except for the Endpoints end-point, as is the whole level.
+All end-points are optional, except for the Endpoints end-point, as is the whole level. The specification can be found [here](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/blob/master/DigitalDeltaEcoDiscovery.raml).
 
 # Implementation topics
 <a name="Implementation"></a>
