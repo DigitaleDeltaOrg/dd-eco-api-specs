@@ -2,6 +2,11 @@
 
 This specification describes the Digital Delta Eco API. It is meant for both implementers and consumers of the Digital Delta Eco specifications.
 
+## About the Digital Delta Eco specification
+
+This specification defines a standardised method for retrieving (and providing) [ecological measurements](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Ecological-Measurements).
+Please see the [wiki](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki) for a full description.
+
 ## Getting Started
 
 The specification is written in [RAML 1.0](https://raml.org), a 'language' to define [REST](https://nl.wikipedia.org/wiki/Representational_state_transfer) (REpresentational State Transfer) service.
