@@ -24,9 +24,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/attributes?filter=attributetype:eq:\"LV\"",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"attributes"
@@ -55,9 +55,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/attributes",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"attributes"
@@ -77,9 +77,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/attributes/expand",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"attributes",
@@ -100,9 +100,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/attributes/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"attributes",
@@ -133,9 +133,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/compartments?filter=changedate:gt:'2000-01-01'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"compartments"
@@ -164,9 +164,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/compartments",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"compartments"
@@ -186,9 +186,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/compartments/expand",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"compartments",
@@ -209,9 +209,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/compartments/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"compartments",
@@ -242,9 +242,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/exchangesystems?filter=changedate:gt:'2000-01-01'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"exchangesystems"
@@ -273,9 +273,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/exchangesystems",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"exchangesystems"
@@ -295,9 +295,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/exchangesystems/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"exchangesystems",
@@ -328,9 +328,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/institutes?filter=changedate:gt:'2000-01-01'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"institutes"
@@ -359,9 +359,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/institutes",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"institutes"
@@ -381,9 +381,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/institutes/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"institutes",
@@ -414,9 +414,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/measurementobjects?filter=organisation:eq:'RWS'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"measurementobjects"
@@ -442,9 +442,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/measurementobjects/expand?filter=organisation:eq:'RWS'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"measurementobjects",
@@ -474,9 +474,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/measurementobjects",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"measurementobjects"
@@ -496,9 +496,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/measurementobjects/expand",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"measurementobjects",
@@ -519,9 +519,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/measurementobjects/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"measurementobjects",
@@ -542,9 +542,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/measurementobjects/geojson",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"measurementobjects",
@@ -575,9 +575,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/measurementpackages?filter=code:like:'AF.'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"measurementpackages"
@@ -606,9 +606,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/measurementpackages",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"measurementpackages"
@@ -628,9 +628,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/measurementpackages/expand",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"measurementpackages",
@@ -651,9 +651,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/measurementpackages/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"measurementpackages",
@@ -684,9 +684,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/measurements?filter=organisation:eq:\"HHN\";parameter:startswith:'Cry'&pageSize=100",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"measurements"
@@ -716,9 +716,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/measurements/geoJSON?filter=organisation:eq:\"HHN\";parameter:startswith:'Cry'&pageSize=100",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"measurements",
@@ -752,9 +752,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/measurements",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"measurements"
@@ -774,9 +774,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/units/filters?bla=123&blaat=hjsdkfsdf",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"units",
@@ -807,9 +807,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/measurements/geojson",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"measurements",
@@ -840,9 +840,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/notes?filter=organisation:eq:\"RWS\"",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"notes"
@@ -871,9 +871,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/notes",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"notes"
@@ -893,9 +893,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/notes/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"notes",
@@ -926,9 +926,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/organisations?filter=code:like:\"WS\"",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"organisations"
@@ -957,9 +957,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/organisations",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"organisations"
@@ -979,9 +979,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/organisations/expand",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"organisations",
@@ -1002,9 +1002,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/organisations/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"organisations",
@@ -1035,9 +1035,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/parameterpackages?filter=code:eq:'test'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"parameterpackages"
@@ -1066,9 +1066,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/parameterpackages",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"parameterpackages"
@@ -1088,9 +1088,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/parameterpackages/expand",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"parameterpackages",
@@ -1111,9 +1111,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/parameterpackages/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"parameterpackages",
@@ -1144,9 +1144,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/parametertypes?filter=code:eq:'Taxon'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"parametertypes"
@@ -1175,9 +1175,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/parametertypes",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"parametertypes"
@@ -1197,9 +1197,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/parametertypes/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"parametertypes",
@@ -1230,9 +1230,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/parameters?filter=type:eq:'BiologicalGroup'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"parameters"
@@ -1258,9 +1258,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/parameters?filter=type:eq:'BiologicalGroup';code:like:'Flab'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"parameters"
@@ -1286,9 +1286,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/parameters?filter=taxontype:eq:'AMFBE'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"parameters"
@@ -1317,9 +1317,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/parameters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"parameters"
@@ -1339,9 +1339,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/parameters/expand",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"parameters",
@@ -1362,9 +1362,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/parameters/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"parameters",
@@ -1395,9 +1395,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/projects?filter:organisation:eq:'RWS'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"projects"
@@ -1426,9 +1426,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/projects",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"projects"
@@ -1448,9 +1448,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/projects/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"projects",
@@ -1481,9 +1481,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/purposes?filter=code:eq:'MT'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"purposes"
@@ -1512,9 +1512,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/purposes",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"purposes"
@@ -1534,9 +1534,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/purposes/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"purposes",
@@ -1567,9 +1567,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/standards?filter=institute:eq:'RWS'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"standards"
@@ -1598,9 +1598,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/standards",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"standards"
@@ -1620,9 +1620,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/standards/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"standards",
@@ -1653,9 +1653,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/quantities?filter=name:like:'Intensiteit'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"quantities"
@@ -1684,9 +1684,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/quantities",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"quantities"
@@ -1706,9 +1706,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/quantities/expand",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"quantities",
@@ -1729,9 +1729,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/quantities/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"quantities",
@@ -1762,9 +1762,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/TaxonGroups?filter=taxontype:eq:'FYTPT'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"TaxonGroups"
@@ -1793,9 +1793,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/TaxonGroups",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"TaxonGroups"
@@ -1815,9 +1815,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/TaxonGroups/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"TaxonGroups",
@@ -1848,9 +1848,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/TaxonTypes?filter=code:eq:'ZOOPT'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"TaxonTypes"
@@ -1879,9 +1879,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/TaxonTypes",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"TaxonTypes"
@@ -1901,9 +1901,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/TaxonTypes/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"TaxonTypes",
@@ -1934,9 +1934,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/units/filters?bla=123&blaat=hjsdkfsdf",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"units",
@@ -1967,9 +1967,9 @@
 									"raw": "https://ddecotest.aquadesk.nl/eco/units?filter=symbol:eq:'G'",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"ddecotest.aquadesk.nl"
 									],
-									"port": "64444",
+									"port": "443",
 									"path": [
 										"eco",
 										"units"
@@ -1998,9 +1998,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/Units",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"Units"
@@ -2020,9 +2020,9 @@
 							"raw": "https://ddecotest.aquadesk.nl/eco/Units/filters",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"ddecotest.aquadesk.nl"
 							],
-							"port": "64444",
+							"port": "443",
 							"path": [
 								"eco",
 								"Units",
