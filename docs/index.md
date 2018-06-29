@@ -5,6 +5,7 @@ This specification describes the Digital Delta Eco API. It is meant for both imp
 ## About the Digital Delta Eco specification
 
 This specification defines a standardised method for retrieving (and providing) [ecological measurements](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Ecological-Measurements).
+Please see the [wiki](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki) for a full description.
 
 ## Getting Started
 
