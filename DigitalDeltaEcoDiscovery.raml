@@ -326,6 +326,7 @@
                 application/json:
                   type: Extended.ExpandedMeasurementPackagesListResponse
                   example: !include AquaDesk Examples/ExpandedMeasurementPackages.json
+
             400:
               body:
                 application/json:
@@ -559,6 +560,32 @@
               application/json:
                 type: Extended.ParameterTypesListResponse
                 example: !include AquaDesk Examples/ParameterTypes.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /purposes:
+      description:
+        Retrieves a list of (measurement)purposes available in the provider's system.
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.PurposesListResponse
+                example: !include AquaDesk Examples/Purposes.json
 
           400:
             body:

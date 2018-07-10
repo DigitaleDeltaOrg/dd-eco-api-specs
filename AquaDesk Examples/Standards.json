@@ -1,42 +1,53 @@
 {
-    "count": 5,
-    "links":
-    {
-      "prev": null,
-      "next": null
+    "totalObjectCount": 5,
+    "links": {
+        "self": "/eco/standards?page=1&pagesize=1000",
+        "prev": null,
+        "next": null,
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
     },
-    "maxPageSize": 10000,
-    "defaultPageSize": 1000,
-    "minPageSize": 1,
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "StandardsListResponse"
+    },
     "result": [
         {
+            "changedate": "2018-01-01T00:00:00",
             "institute": "ECS",
-            "standardcode": "ECOSYS",
             "reference": "https://www.ecosys.nl",
+            "standardcode": "ECOSYS",
             "standardstype": "Open"
         },
         {
+            "changedate": "2018-01-01T00:00:00",
             "institute": "ECS",
-            "standardcode": "AQUADESK",
             "reference": "https://www.aquadesk.nl",
+            "standardcode": "AQUADESK",
             "standardstype": "Open"
         },
         {
+            "changedate": "2018-01-01T00:00:00",
             "institute": "IHW",
-            "standardcode": "AQUO",
             "reference": "https://www.aquo.nl",
+            "standardcode": "AQUO",
             "standardstype": "Open"
         },
         {
+            "changedate": "2018-01-01T00:00:00",
             "institute": "RWS",
-            "standardcode": "TWN",
             "reference": "http://sofus.ecosys.nl/taxabase.htm",
+            "standardcode": "TWN",
             "standardstype": "Open"
         },
         {
+            "changedate": "2018-01-01T00:00:00",
             "institute": "ACS",
-            "standardcode": "CAS",
             "reference": "https://www.cas.org",
+            "standardcode": "CAS",
             "standardstype": "Open"
         }
     ]

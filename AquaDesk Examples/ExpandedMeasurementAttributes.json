@@ -1,9 +1,9 @@
 {
-    "totalObjectCount": 3,
+    "totalObjectCount": 19,
     "links": {
-        "self": "/eco/organisations/expand?page=1&pagesize=1000",
+        "self": "/eco/attributes/expand?page=1&pagesize=3",
         "prev": null,
-        "next": null,
+        "next": "/eco/attributes/expand?page=2&pagesize=3",
         "maxPageSize": 10000,
         "defaultPageSize": 1000,
         "minPageSize": 1
@@ -12,50 +12,53 @@
         "name": "EcoSys",
         "supportUrl": "www.ecosys.nl",
         "apiVersion": "0.9.1",
-        "responseType": "ExpandedOrganisationsListResponse"
+        "responseType": "ExpandedMeasurementAttributesListResponse"
     },
     "result": [
         {
-            "code": "RWS",
-            "name": "Rijkswaterstaat",
-            "numericcode": 80,
+            "code": "LV-CEL",
+            "name": "Cel",
+            "attributetype": "LV",
+            "attributetypename": "Levensvorm",
+            "changedate": "2018-07-09T16:31:39.613",
             "definition": [
                 {
                     "standardCode": "AQUO",
-                    "codeinstandard": "80",
+                    "codeinstandard": "LV-CEL",
                     "reference": "http://domeintabellen-idsw.rws.nl/",
                     "changedate": "0001-01-01T00:00:00"
                 }
-            ],
-            "changedate": "2018-07-09T16:39:11.72"
+            ]
         },
         {
-            "code": "HHN",
-            "name": "HHRS Hollands Noorderkwartier",
-            "numericcode": 12,
+            "code": "LV-COE",
+            "name": "Coenobium",
+            "attributetype": "LV",
+            "attributetypename": "Levensvorm",
+            "changedate": "2018-07-09T16:31:39.613",
             "definition": [
                 {
                     "standardCode": "AQUO",
-                    "codeinstandard": "12",
+                    "codeinstandard": "LV-COE",
                     "reference": "http://domeintabellen-idsw.rws.nl/",
                     "changedate": "0001-01-01T00:00:00"
                 }
-            ],
-            "changedate": "2018-07-09T16:39:11.72"
+            ]
         },
         {
-            "code": "ECS",
-            "name": "EcoSys",
-            "numericcode": 1000,
+            "code": "LV-FIL",
+            "name": "Filament",
+            "attributetype": "LV",
+            "attributetypename": "Levensvorm",
+            "changedate": "2018-07-09T16:31:39.613",
             "definition": [
                 {
                     "standardCode": "AQUO",
-                    "codeinstandard": "1000",
+                    "codeinstandard": "LV-FIL",
                     "reference": "http://domeintabellen-idsw.rws.nl/",
                     "changedate": "0001-01-01T00:00:00"
                 }
-            ],
-            "changedate": "2018-07-09T16:39:11.72"
+            ]
         }
     ]
 }

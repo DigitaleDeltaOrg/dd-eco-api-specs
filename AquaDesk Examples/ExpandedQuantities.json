@@ -1,49 +1,61 @@
 {
-  "count": 66,
-  "links":
-  {
-    "prev": null,
-    "next": "/eco/quantities/expand?page=2&pagesize=3"
-  },
-  "maxPageSize": 10000,
-  "defaultPageSize": 1000,
-  "minPageSize": 1,
-  "result": [
-      {
-          "name": "Aantal",
-          "code": "AANTL",
-          "values": [],
-          "definition": [
-              {
-                  "standardcode": "AQUO",
-                  "codeinstandard": "AANTL",
-                  "reference": "http://domeintabellen-idsw.rws.nl/"
-              }
-          ]
-      },
-      {
-          "name": "Aantal per oppervlakte",
-          "code": "AANTPOPVTE",
-          "values": [],
-          "definition": [
-              {
-                  "standardcode": "AQUO",
-                  "codeinstandard": "AANTPOPVTE",
-                  "reference": "http://domeintabellen-idsw.rws.nl/"
-              }
-          ]
-      },
-      {
-          "name": "Aantal per volume",
-          "code": "AANTPVLME",
-          "values": [],
-          "definition": [
-              {
-                  "standardcode": "AQUO",
-                  "codeinstandard": "AANTPVLME",
-                  "reference": "http://domeintabellen-idsw.rws.nl/"
-              }
-          ]
-      }
-  ]
+    "totalObjectCount": 53,
+    "links": {
+        "self": "/eco/quantities/expand?page=1&pagesize=3",
+        "prev": null,
+        "next": "/eco/quantities/expand?page=2&pagesize=3",
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
+    },
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "ExpandedQuantitiesListResponse"
+    },
+    "result": [
+        {
+            "name": "Aantal",
+            "code": "AANTL",
+            "values": [],
+            "definition": [
+                {
+                    "standardCode": "AQUO",
+                    "codeinstandard": "AANTL",
+                    "reference": "http://domeintabellen-idsw.rws.nl/",
+                    "changedate": "0001-01-01T00:00:00"
+                }
+            ],
+            "changedate": "2018-07-09T16:42:03.743"
+        },
+        {
+            "name": "Aantal per oppervlakte",
+            "code": "AANTPOPVTE",
+            "values": [],
+            "definition": [
+                {
+                    "standardCode": "AQUO",
+                    "codeinstandard": "AANTPOPVTE",
+                    "reference": "http://domeintabellen-idsw.rws.nl/",
+                    "changedate": "0001-01-01T00:00:00"
+                }
+            ],
+            "changedate": "2018-07-09T16:42:03.743"
+        },
+        {
+            "name": "Aantal per volume",
+            "code": "AANTPVLME",
+            "values": [],
+            "definition": [
+                {
+                    "standardCode": "AQUO",
+                    "codeinstandard": "AANTPVLME",
+                    "reference": "http://domeintabellen-idsw.rws.nl/",
+                    "changedate": "0001-01-01T00:00:00"
+                }
+            ],
+            "changedate": "2018-07-09T16:42:03.743"
+        }
+    ]
 }

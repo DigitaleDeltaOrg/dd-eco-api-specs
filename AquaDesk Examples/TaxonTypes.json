@@ -1,25 +1,89 @@
 {
-  "count": 13,
-  "links":
-  {
-    "prev": null,
-    "next": "/eco/taxontypes?page=2&pagesize=3"
-  },
-  "maxPageSize": 10000,
-  "defaultPageSize": 1000,
-  "minPageSize": 1,
-  "result": [
-      {
-          "code": "ZOOPT",
-          "name": "Zooplankton"
-      },
-      {
-          "code": "DIATM",
-          "name": "Diatoms"
-      },
-      {
-          "code": "FYTPT",
-          "name": "Phytoplankton"
-      }
-  ]
+    "totalObjectCount": 14,
+    "links": {
+        "self": "/eco/taxontypes?page=1&pagesize=1000",
+        "prev": null,
+        "next": null,
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
+    },
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "TaxonTypesListResponse"
+    },
+    "result": [
+        {
+            "changedate": "2018-07-09T16:43:00.243",
+            "code": "ZOOPT",
+            "name": "Zooplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:43:00.243",
+            "code": "DIATM",
+            "name": "Diatoms"
+        },
+        {
+            "changedate": "2018-07-09T16:43:00.243",
+            "code": "FYTPT",
+            "name": "Phytoplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:43:00.243",
+            "code": "MACEV",
+            "name": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:43:00.243",
+            "code": "MACAG",
+            "name": "Macroalgae"
+        },
+        {
+            "changedate": "2018-07-09T16:43:00.243",
+            "code": "VOGLS",
+            "name": "Birds"
+        },
+        {
+            "changedate": "2018-07-09T16:43:00.243",
+            "code": "NEMTD",
+            "name": "Nematodes"
+        },
+        {
+            "changedate": "2018-07-09T16:43:00.243",
+            "code": "VISSN",
+            "name": "Fish"
+        },
+        {
+            "changedate": "2018-07-09T16:43:00.243",
+            "code": "VLIND",
+            "name": "Butterflies"
+        },
+        {
+            "changedate": "2018-07-09T16:43:00.243",
+            "code": "ZOOGD",
+            "name": "Mammals"
+        },
+        {
+            "changedate": "2018-07-09T16:43:00.243",
+            "code": "REPTL",
+            "name": "Reptiles"
+        },
+        {
+            "changedate": "2018-07-09T16:43:00.243",
+            "code": "AMFBE",
+            "name": "Amphibia"
+        },
+        {
+            "changedate": "2018-07-09T16:43:00.243",
+            "code": "MACFT",
+            "name": "Macrophytes"
+        },
+        {
+            "changedate": "2018-07-09T16:43:00.243",
+            "code": "HITAX",
+            "name": "Higher taxa"
+        }
+    ]
 }

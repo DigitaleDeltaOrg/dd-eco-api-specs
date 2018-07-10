@@ -1,17 +1,19 @@
 {
-  "title": "Query errors",
-  "type": "Filter query syntax",
-  "status": 400,
-  "detail": "See 'errors' field",
-  "errors":
-    [
+    "type": "Filter query syntax",
+    "typeinfo": null,
+    "title": "Query syntax",
+    "status": 400,
+    "detail": "See 'errors' attribute.",
+    "instance": null,
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1"
+    },
+    "errors": [
         {
-            "ErrorType": "UnknownOperator",
-            "Context": "parameter:badcomparer:\"Test\""
-        },
-        {
-            "ErrorType": "InvalidSyntax",
-            "Context": ""
+            "errortype": "InvalidSyntax",
+            "context": "unsupportedfiltertest"
         }
     ]
 }

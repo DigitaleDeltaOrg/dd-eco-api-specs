@@ -1,58 +1,70 @@
 {
-    "count": 46,
-    "links":
-    {
-      "prev": null,
-      "next": "/eco/methods/expand?page=2&pagesize=3"
+    "totalObjectCount": 94,
+    "links": {
+        "self": "/eco/methods/expand?page=1&pagesize=3",
+        "prev": null,
+        "next": "/eco/methods/expand?page=2&pagesize=3",
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
     },
-    "maxPageSize": 10000,
-    "defaultPageSize": 1000,
-    "minPageSize": 1,
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "ExpandedMethodsListResponse"
+    },
     "result": [
         {
-            "code": "FYTPT_A054",
-            "name": "Fytoplankton A054",
-            "organisation": "RWS",
-            "literature": null,
-            "methodtype": "AM",
-            "methodtypename": "Analyse methode",
-            "definition": [
-                {
-                    "standardcode": "AQUO",
-                    "codeinstandard": "FYTPT_A054",
-                    "reference": "http://domeintabellen-idsw.rws.nl/"
-                }
-            ]
-        },
-        {
-            "code": "FYTPT_S054",
-            "name": "Fytoplankton S052",
+            "code": "MACEV_S001",
+            "name": "913.00.B005 vs 1.0 dd 31-12-1996",
             "organisation": "RWS",
             "literature": null,
             "methodtype": "MM",
-            "methodtypename": "Monstermethode",
+            "methodtypename": "Monster methode",
             "definition": [
                 {
-                    "standardcode": "AQUO",
-                    "codeinstandard": "FYTPT_S054",
-                    "reference": "http://domeintabellen-idsw.rws.nl/"
+                    "standardCode": "AQUO",
+                    "codeinstandard": "MACEV_S001",
+                    "reference": "http://domeintabellen-idsw.rws.nl/",
+                    "changedate": "0001-01-01T00:00:00"
                 }
-            ]
+            ],
+            "changedate": "2018-07-09T16:37:16.623"
         },
         {
-            "code": "MCFT-0823",
-            "name": "Macrofyten",
-            "organisation": "ECS.OW",
+            "code": "MACEV_S003",
+            "name": "913.00.B005 vs 3.0 dd 07-07-2003",
+            "organisation": "RWS",
             "literature": null,
-            "methodtype": "AM",
-            "methodtypename": "Analyse methode",
+            "methodtype": "MM",
+            "methodtypename": "Monster methode",
             "definition": [
                 {
-                    "standardcode": "AQUO",
-                    "codeinstandard": "MCFT-0823",
-                    "reference": "http://domeintabellen-idsw.rws.nl/"
+                    "standardCode": "AQUO",
+                    "codeinstandard": "MACEV_S003",
+                    "reference": "http://domeintabellen-idsw.rws.nl/",
+                    "changedate": "0001-01-01T00:00:00"
                 }
-            ]
+            ],
+            "changedate": "2018-07-09T16:37:16.623"
+        },
+        {
+            "code": "MACEV_S004",
+            "name": "913.00.B003 vs 1.0 dd 31-12-1996",
+            "organisation": "RWS",
+            "literature": null,
+            "methodtype": "MM",
+            "methodtypename": "Monster methode",
+            "definition": [
+                {
+                    "standardCode": "AQUO",
+                    "codeinstandard": "MACEV_S004",
+                    "reference": "http://domeintabellen-idsw.rws.nl/",
+                    "changedate": "0001-01-01T00:00:00"
+                }
+            ],
+            "changedate": "2018-07-09T16:37:16.623"
         }
     ]
 }

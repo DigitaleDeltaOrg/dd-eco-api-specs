@@ -6,34 +6,44 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    52.5829301079993,
-                    5.01948433385143,
+                    51.3186009063121,
+                    6.11332785564352,
                     0
                 ]
             },
             "properties": {
                 "measuredvalue": 1,
                 "classifiedvalue": "",
-                "calculatedvalue": 1,
-                "measuredunit": "PROCENT",
-                "calculatedunit": "PROCENT",
+                "calculatedvalue": 17,
+                "measuredunit": "N",
+                "calculatedunit": "N/ML",
                 "compartment": "OW",
                 "limitsymbol": "0",
-                "measurementattributes": null,
-                "measurementdate": "2014-09-09T00:00:00",
-                "measurementobject": "570201",
+                "measurementattributes": [
+                    "LV-CEL"
+                ],
+                "measurementdate": "2009-03-10T13:00:00",
+                "measurementobject": "ZNDMS_0001",
                 "measurementpackage": null,
                 "measurementpurpose": "MT",
-                "methods": null,
+                "methods": [],
                 "note": null,
-                "organisation": "HHN",
-                "parameter": "Draadalgen",
-                "parametertype": "BiologicalGroup",
-                "projects": null,
-                "quantity": "BEDKG",
+                "organisation": "RWS",
+                "parameter": "Ceratoneis closterium",
+                "parametertype": "Taxon",
+                "projects": [],
+                "quantity": "AANTPVLME",
                 "status": "60",
-                "taxontype": null,
-                "collectiondate": "2014-09-09T00:00:00"
+                "taxontype": "FYTPT",
+                "collectiondate": "2009-03-10T13:00:00",
+                "changedate": "2018-02-23T11:11:35",
+                "measurementgeography": "POINT (6.11332785564352 51.3186009063121)",
+                "taxongroup": "ARAPH",
+                "externalreference": "2009103130",
+                "measurementsetattributes": [
+                    "AM=FYTPT_A006",
+                    "MM=FYTPT_S003"
+                ]
             }
         },
         {
@@ -41,34 +51,44 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    52.5436033920471,
-                    5.0317405324146,
+                    51.3186009063121,
+                    6.11332785564352,
                     0
                 ]
             },
             "properties": {
-                "measuredvalue": 0,
+                "measuredvalue": 1,
                 "classifiedvalue": "",
-                "calculatedvalue": 0,
-                "measuredunit": "PROCENT",
-                "calculatedunit": "PROCENT",
+                "calculatedvalue": 17,
+                "measuredunit": "N",
+                "calculatedunit": "N/ML",
                 "compartment": "OW",
                 "limitsymbol": "0",
-                "measurementattributes": null,
-                "measurementdate": "2014-09-09T00:00:00",
-                "measurementobject": "5N9711",
+                "measurementattributes": [
+                    "LV-CEL"
+                ],
+                "measurementdate": "2009-03-10T13:00:00",
+                "measurementobject": "ZNDMS_0001",
                 "measurementpackage": null,
                 "measurementpurpose": "MT",
-                "methods": null,
-                "note": null,
-                "organisation": "HHN",
-                "parameter": "Draadalgen",
-                "parametertype": "BiologicalGroup",
-                "projects": null,
-                "quantity": "BEDKG",
+                "methods": [],
+                "note": "Pc022",
+                "organisation": "RWS",
+                "parameter": "Chlorophyta",
+                "parametertype": "Taxon",
+                "projects": [],
+                "quantity": "AANTPVLME",
                 "status": "60",
-                "taxontype": null,
-                "collectiondate": "2014-09-09T00:00:00"
+                "taxontype": "FYTPT",
+                "collectiondate": "2009-03-10T13:00:00",
+                "changedate": "2018-02-23T11:11:35",
+                "measurementgeography": "POINT (6.11332785564352 51.3186009063121)",
+                "taxongroup": "HITAX",
+                "externalreference": "2009103130",
+                "measurementsetattributes": [
+                    "AM=FYTPT_A006",
+                    "MM=FYTPT_S003"
+                ]
             }
         },
         {
@@ -76,34 +96,44 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    52.5056906994118,
-                    5.06948489764371,
+                    51.3186009063121,
+                    6.11332785564352,
                     0
                 ]
             },
             "properties": {
-                "measuredvalue": 0.1,
+                "measuredvalue": 1,
                 "classifiedvalue": "",
-                "calculatedvalue": 0.1,
-                "measuredunit": "PROCENT",
-                "calculatedunit": "PROCENT",
+                "calculatedvalue": 17,
+                "measuredunit": "N",
+                "calculatedunit": "N/ML",
                 "compartment": "OW",
                 "limitsymbol": "0",
-                "measurementattributes": null,
-                "measurementdate": "2014-06-10T00:00:00",
-                "measurementobject": "513007",
+                "measurementattributes": [
+                    "LV-CEL"
+                ],
+                "measurementdate": "2009-03-10T13:00:00",
+                "measurementobject": "ZNDMS_0001",
                 "measurementpackage": null,
                 "measurementpurpose": "MT",
-                "methods": null,
+                "methods": [],
                 "note": null,
-                "organisation": "HHN",
-                "parameter": "Draadalgen",
-                "parametertype": "BiologicalGroup",
-                "projects": null,
-                "quantity": "BEDKG",
+                "organisation": "RWS",
+                "parameter": "Chromulina",
+                "parametertype": "Taxon",
+                "projects": [],
+                "quantity": "AANTPVLME",
                 "status": "60",
-                "taxontype": null,
-                "collectiondate": "2014-06-10T00:00:00"
+                "taxontype": "FYTPT",
+                "collectiondate": "2009-03-10T13:00:00",
+                "changedate": "2018-02-23T11:11:35",
+                "measurementgeography": "POINT (6.11332785564352 51.3186009063121)",
+                "taxongroup": "CHRYS",
+                "externalreference": "2009103130",
+                "measurementsetattributes": [
+                    "AM=FYTPT_A006",
+                    "MM=FYTPT_S003"
+                ]
             }
         }
     ]

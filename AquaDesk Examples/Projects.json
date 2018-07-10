@@ -1,41 +1,43 @@
 {
-  "count": 12,
-  "links":
-  {
-    "prev": "/eco/projects?page=1&pagesize=8",
-    "next": null
-  },
-  "maxPageSize": 10000,
-  "defaultPageSize": 1000,
-  "minPageSize": 1,
-  "result": [
-      {
-          "code": "P-KRW2017",
-          "name": "P-Meetnet KRW 2017",
-          "organisation": "ECS.HD",
-          "start": "2017-01-01",
-          "end": "2018-01-01"
-      },
-      {
-          "code": "P-BOLLEN",
-          "name": "Project bestrijdingsmiddelen bollenteelt",
-          "organisation": "ECS.HD",
-          "start": "2017-01-01",
-          "end": "2018-01-01"
-      },
-      {
-          "code": "MWTL_M2016",
-          "name": "Macev 2016 test zonder xy",
-          "organisation": "RWS",
-          "start": "2016-01-01",
-          "end": "2017-01-01"
-      },
-      {
-          "code": "MWTL_M2015",
-          "name": "Macrofauna 2015",
-          "organisation": "RWS",
-          "start": "2015-01-01",
-          "end": "2016-01-01"
-      }
-  ]
+    "totalObjectCount": 112,
+    "links": {
+        "self": "/eco/projects?page=1&pagesize=3",
+        "prev": null,
+        "next": "/eco/projects?page=2&pagesize=3",
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
+    },
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "ProjectsListResponse"
+    },
+    "result": [
+        {
+            "changedate": "2018-07-09T16:41:35.573",
+            "code": "PILT_D2002",
+            "end": "0001-01-01",
+            "name": "MWTL-Diatomeeën 2002 pilot",
+            "organisation": "RWS",
+            "start": "0001-01-01"
+        },
+        {
+            "changedate": "2018-07-09T16:41:35.573",
+            "code": "PILT_D2003",
+            "end": "0001-01-01",
+            "name": "MWTL-Diatomeeën 2003 pilot",
+            "organisation": "RWS",
+            "start": "0001-01-01"
+        },
+        {
+            "changedate": "2018-07-09T16:41:35.573",
+            "code": "PILT_D2004",
+            "end": "0001-01-01",
+            "name": "MWTL-Diatomeeën 2004 pilot",
+            "organisation": "RWS",
+            "start": "0001-01-01"
+        }
+    ]
 }

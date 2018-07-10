@@ -1,28 +1,37 @@
 {
-  "count": 66,
-  "links":
-  {
-    "prev": null,
-    "next": "/eco/quantities?page=2&pagesize=3"
-  },
-  "maxPageSize": 10000,
-  "defaultPageSize": 1000,
-  "minPageSize": 1,
-  "result": [
-      {
-          "name": "Aantal",
-          "code": "AANTL",
-          "values": []
-      },
-      {
-          "name": "Aantal per oppervlakte",
-          "code": "AANTPOPVTE",
-          "values": []
-      },
-      {
-          "name": "Aantal per volume",
-          "code": "AANTPVLME",
-          "values": []
-      }
-  ]
+    "totalObjectCount": 53,
+    "links": {
+        "self": "/eco/quantities?page=1&pagesize=3",
+        "prev": null,
+        "next": "/eco/quantities?page=2&pagesize=3",
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
+    },
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "QuantitiesListResponse"
+    },
+    "result": [
+        {
+            "changedate": "2018-07-09T16:41:53.26",
+            "code": "AANTL",
+            "name": "Aantal",
+            "values": []
+        },
+        {
+            "changedate": "2018-07-09T16:41:53.26",
+            "code": "AANTPOPVTE",
+            "name": "Aantal per oppervlakte",
+            "values": []
+        },
+        {
+            "changedate": "2018-07-09T16:41:53.26",
+            "code": "AANTPVLME",
+            "name": "Aantal per volume",
+            "values": []
+        }
+    ]
 }

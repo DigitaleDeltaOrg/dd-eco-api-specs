@@ -1,12 +1,19 @@
 {
-    "count": 21,
+    "totalObjectCount": 21,
     "links": {
+        "self": "/eco/endpoints?page=1&pagesize=1000",
         "prev": null,
-        "next": null
+        "next": null,
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
     },
-    "maxPageSize": 10000,
-    "defaultPageSize": 1000,
-    "minPageSize": 1,
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "EndPointsListResponse"
+    },
     "result": [
         {
             "baseuri": "/eco/compartments",
@@ -45,7 +52,7 @@
             "description": "Organiastion measurements.",
             "filterable": true,
             "pageable": true,
-            "expandable": true,
+            "expandable": false,
             "geoJSON": true
         },
         {

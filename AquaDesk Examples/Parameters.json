@@ -1,37 +1,46 @@
 {
-    "count": 25622,
-    "links":
-    {
-      "prev": null,
-      "next": "/eco/parameters?page=2&pagesize=3"
+    "totalObjectCount": 25502,
+    "links": {
+        "self": "/eco/parameters?page=1&pagesize=3",
+        "prev": null,
+        "next": "/eco/parameters?page=2&pagesize=3",
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
     },
-    "maxPageSize": 10000,
-    "defaultPageSize": 1000,
-    "minPageSize": 1,
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "ParametersListResponse"
+    },
     "result": [
         {
+            "authors": "Wagler, 1830",
+            "changedate": "2008-11-25T00:00:00",
             "code": "Alytes",
             "name": "Alytes",
-            "type": "Taxon",
-            "taxontype": "AMFBE",
             "taxongroup": null,
-            "authors": "Wagler, 1830"
+            "taxontype": "AMFBE",
+            "type": "Taxon"
         },
         {
+            "authors": "(Laurenti, 1768)",
+            "changedate": "2008-11-25T00:00:00",
             "code": "Alytes obstetricans",
             "name": "Alytes obstetricans",
-            "type": "Taxon",
-            "taxontype": "AMFBE",
             "taxongroup": null,
-            "authors": "(Laurenti, 1768)"
+            "taxontype": "AMFBE",
+            "type": "Taxon"
         },
         {
+            "authors": "Linnaeus, 1758",
+            "changedate": "2008-11-25T00:00:00",
             "code": "Amphibia",
             "name": "Amphibia",
-            "type": "Taxon",
-            "taxontype": "AMFBE",
             "taxongroup": null,
-            "authors": "Linnaeus, 1758"
+            "taxontype": "AMFBE",
+            "type": "Taxon"
         }
     ]
 }

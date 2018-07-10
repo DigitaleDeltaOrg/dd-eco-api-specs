@@ -1,0 +1,40 @@
+{
+    "totalObjectCount": 19,
+    "links": {
+        "self": "/eco/attributes?page=1&pagesize=3",
+        "prev": null,
+        "next": "/eco/attributes?page=2&pagesize=3",
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
+    },
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "MeasurementAttributesListResponse"
+    },
+    "result": [
+        {
+            "changedate": "2018-07-09T16:31:13.92",
+            "code": "LV-CEL",
+            "attributetype": "LV",
+            "attributetypename": "Levensvorm",
+            "name": "Cel"
+        },
+        {
+            "changedate": "2018-07-09T16:31:13.92",
+            "code": "LV-COE",
+            "attributetype": "LV",
+            "attributetypename": "Levensvorm",
+            "name": "Coenobium"
+        },
+        {
+            "changedate": "2018-07-09T16:31:13.92",
+            "code": "LV-FIL",
+            "attributetype": "LV",
+            "attributetypename": "Levensvorm",
+            "name": "Filament"
+        }
+    ]
+}

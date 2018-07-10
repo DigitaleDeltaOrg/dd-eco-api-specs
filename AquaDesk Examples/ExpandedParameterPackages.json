@@ -1,13 +1,19 @@
 {
-    "count": 1,
-    "links":
-    {
-      "prev": null,
-      "next": null
+    "totalObjectCount": 0,
+    "links": {
+        "self": "/eco/parameterpackages/expand?page=1&pagesize=3",
+        "prev": null,
+        "next": null,
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
     },
-    "maxPageSize": 10000,
-    "defaultPageSize": 1000,
-    "minPageSize": 1,
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "ExpandedParameterPackagesListResponse"
+    },
     "result": [
         {
             "code": "OEVRPTN",

@@ -1,31 +1,37 @@
 {
-    "count": 13,
-    "links":
-    {
-      "prev": null,
-      "next": "/eco/measurementpackages?page=1&pagesize=3"
+    "totalObjectCount": 24,
+    "links": {
+        "self": "/eco/measurementpackages?page=1&pagesize=3",
+        "prev": null,
+        "next": "/eco/measurementpackages?page=2&pagesize=3",
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
     },
-    "maxPageSize": 10000,
-    "defaultPageSize": 1000,
-    "minPageSize": 1,
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "MeasurementPackagesListResponse"
+    },
     "result": [
         {
-            "changedate": "2018-04-11T13:41:38.227",
-            "code": "FP.AC",
+            "changedate": "2018-07-09T17:00:33.477",
+            "code": "AF.AB",
             "description": null,
-            "name": "Fytoplankton abundantie (cellen)"
+            "name": "Amfibieën abundantie"
         },
         {
-            "changedate": "2018-04-11T13:41:38.227",
-            "code": "DT.AB",
+            "changedate": "2018-07-09T17:00:33.477",
+            "code": "BG.BD",
             "description": null,
-            "name": "Diatomeeën abundantie"
+            "name": "Biologische groepen bedekking"
         },
         {
-            "changedate": "2018-04-11T13:41:38.227",
-            "code": "ME.AB",
+            "changedate": "2018-07-09T17:00:33.477",
+            "code": "CS.CC",
             "description": null,
-            "name": "Macro-evertebraten abundantie"
+            "name": "Chemische stoffen concentraties"
         }
     ]
 }

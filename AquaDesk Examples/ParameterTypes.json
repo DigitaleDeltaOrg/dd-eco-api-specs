@@ -1,33 +1,44 @@
 {
-    "count": 5,
-    "links":
-    {
-      "prev": null,
-      "next": null
+    "totalObjectCount": 5,
+    "links": {
+        "self": "/eco/parametertypes?page=1&pagesize=1000",
+        "prev": null,
+        "next": null,
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
     },
-    "maxPageSize": 10000,
-    "defaultPageSize": 1000,
-    "minPageSize": 1,
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "ParameterTypesListResponse"
+    },
     "result": [
         {
             "code": "BiologicalGroup",
-            "name": "BiologicalGroup"
+            "name": "BiologicalGroup",
+            "changedate": "0001-01-01T00:00:00"
         },
         {
             "code": "Taxon",
-            "name": "Taxon"
+            "name": "Taxon",
+            "changedate": "0001-01-01T00:00:00"
         },
         {
             "code": "ChemicalGroup",
-            "name": "ChemicalGroup"
+            "name": "ChemicalGroup",
+            "changedate": "0001-01-01T00:00:00"
         },
         {
             "code": "Chemical",
-            "name": "Chemical"
+            "name": "Chemical",
+            "changedate": "0001-01-01T00:00:00"
         },
         {
             "code": "PhysicalProperty",
-            "name": "PhysicalProperty"
+            "name": "PhysicalProperty",
+            "changedate": "0001-01-01T00:00:00"
         }
     ]
 }

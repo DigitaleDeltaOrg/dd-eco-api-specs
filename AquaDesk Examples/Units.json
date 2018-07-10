@@ -1,23 +1,181 @@
 {
-  "count": 23,
-  "links":
-  {
-    "prev": null,
-    "next": "/eco/units?page=2&pagesize=2"
-  },
-  "maxPageSize": 10000,
-  "defaultPageSize": 1000,
-  "minPageSize": 1,
-  "result": [
-      {
-          "code": "178",
-          "name": "dimensieloos",
-          "symbol": null
-      },
-      {
-          "code": "179",
-          "name": "exemplaren",
-          "symbol": null
-      }
-  ]
+    "totalObjectCount": 27,
+    "links": {
+        "self": "/eco/units?page=1&pagesize=1000",
+        "prev": null,
+        "next": null,
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
+    },
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "UnitsListResponse"
+    },
+    "result": [
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "DIMSLS",
+            "name": "dimensieloos",
+            "symbol": "DIMSLS"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "N",
+            "name": "exemplaren",
+            "symbol": "n"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "N/HA",
+            "name": "exemplaren per hectare",
+            "symbol": "n/ha"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "N/L",
+            "name": "exemplaren per liter",
+            "symbol": "n/l"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "N/ML",
+            "name": "exemplaren per milliliter",
+            "symbol": "n/ml"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "KG/HA",
+            "name": "kilogram per hectare",
+            "symbol": "kg/ha"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "MM3/L",
+            "name": "kubieke millimeter per liter",
+            "symbol": "mm3/l"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "PROCENT",
+            "name": "procent",
+            "symbol": "%"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "UG/L",
+            "name": "microgram per liter",
+            "symbol": "ug/l"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "MG/L",
+            "name": "milligram per liter",
+            "symbol": "mg/l"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "D",
+            "name": "dag",
+            "symbol": "d"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "MS/M",
+            "name": "millisiemens per meter",
+            "symbol": "mS/m"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "FTU",
+            "name": "Formazine Turbidity Unit",
+            "symbol": "FTU"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "M",
+            "name": "meter",
+            "symbol": "m"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "GRAAD",
+            "name": "graad",
+            "symbol": "graad"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "CM",
+            "name": "centimeter",
+            "symbol": "cm"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "M/S",
+            "name": "meter per seconde",
+            "symbol": "m/s"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "CM/S",
+            "name": "centimeter per seconde",
+            "symbol": "cm/s"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "OC",
+            "name": "graad Celcius",
+            "symbol": "oC"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "DM",
+            "name": "decimeter",
+            "symbol": "dm"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "M2",
+            "name": "vierkante meter",
+            "symbol": "m2"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "L",
+            "name": "liter",
+            "symbol": "l"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "NVT",
+            "name": "Niet Van Toepassing",
+            "symbol": "NVT"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "KG",
+            "name": "kilogram",
+            "symbol": "kg"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "G",
+            "name": "gram",
+            "symbol": "g"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "MG",
+            "name": "milligram",
+            "symbol": "mg"
+        },
+        {
+            "changedate": "2018-07-09T16:43:19.107",
+            "code": "UG",
+            "name": "microgram",
+            "symbol": "ug"
+        }
+    ]
 }

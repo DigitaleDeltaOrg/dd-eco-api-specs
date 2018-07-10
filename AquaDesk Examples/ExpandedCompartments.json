@@ -1,44 +1,56 @@
 {
-    "count": 16,
-    "links":
-    {
-      "prev": null,
-      "next": "/eco/compartments/expand?page=2&pagesize=3"
+    "totalObjectCount": 20,
+    "links": {
+        "self": "/eco/compartments/expand?page=1&pagesize=3",
+        "prev": null,
+        "next": "/eco/compartments/expand?page=2&pagesize=3",
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
     },
-    "maxPageSize": 10000,
-    "defaultPageSize": 1000,
-    "minPageSize": 1,
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "ExpandedCompartmentsListResponse"
+    },
     "result": [
         {
             "code": "BS",
             "name": "Bodem / Sediment",
+            "changedate": "2018-07-09T16:33:35.773",
             "definition": [
                 {
-                    "standardcode": "AQUO",
+                    "standardCode": "AQUO",
                     "codeinstandard": "BS",
-                    "reference": "http://domeintabellen-idsw.rws.nl/"
+                    "reference": "http://domeintabellen-idsw.rws.nl/",
+                    "changedate": "0001-01-01T00:00:00"
                 }
             ]
         },
         {
             "code": "LT",
             "name": "Lucht",
+            "changedate": "2018-07-09T16:33:35.773",
             "definition": [
                 {
-                    "standardcode": "AQUO",
+                    "standardCode": "AQUO",
                     "codeinstandard": "LT",
-                    "reference": "http://domeintabellen-idsw.rws.nl/"
+                    "reference": "http://domeintabellen-idsw.rws.nl/",
+                    "changedate": "0001-01-01T00:00:00"
                 }
             ]
         },
         {
             "code": "NT",
             "name": "Niet van toepassing",
+            "changedate": "2018-07-09T16:33:35.773",
             "definition": [
                 {
-                    "standardcode": "AQUO",
+                    "standardCode": "AQUO",
                     "codeinstandard": "NT",
-                    "reference": "http://domeintabellen-idsw.rws.nl/"
+                    "reference": "http://domeintabellen-idsw.rws.nl/",
+                    "changedate": "0001-01-01T00:00:00"
                 }
             ]
         }

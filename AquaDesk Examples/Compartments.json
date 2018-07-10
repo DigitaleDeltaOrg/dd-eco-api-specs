@@ -1,25 +1,34 @@
 {
-    "count": 16,
-    "links":
-    {
-      "prev": null,
-      "next": "/eco/compartments?page=2&pagesize=3"
+    "totalObjectCount": 20,
+    "links": {
+        "self": "/eco/compartments?page=1&pagesize=3",
+        "prev": null,
+        "next": "/eco/compartments?page=2&pagesize=3",
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
     },
-    "maxPageSize": 10000,
-    "defaultPageSize": 1000,
-    "minPageSize": 1,
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "CompartmentsListResponse"
+    },
     "result": [
         {
             "code": "BS",
-            "name": "Bodem / Sediment"
+            "name": "Bodem / Sediment",
+            "changedate": "2018-07-09T16:32:10.82"
         },
         {
             "code": "LT",
-            "name": "Lucht"
+            "name": "Lucht",
+            "changedate": "2018-07-09T16:32:10.82"
         },
         {
             "code": "NT",
-            "name": "Niet van toepassing"
+            "name": "Niet van toepassing",
+            "changedate": "2018-07-09T16:32:10.82"
         }
     ]
 }

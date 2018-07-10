@@ -1,53 +1,73 @@
 {
-    "count": 67,
-    "links":
-    {
-      "prev": null,
-      "next": "/eco/monitoringnetworks/expand?page=2&pagesize=3"
+    "totalObjectCount": 83,
+    "links": {
+        "self": "eco/monitoringnetworks/expand?page=3&pagesize=3",
+        "prev": "eco/monitoringnetworks/expand?page=2&pagesize=3",
+        "next": "eco/monitoringnetworks/expand?page=4&pagesize=3",
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
     },
-    "maxPageSize": 10000,
-    "defaultPageSize": 1000,
-    "minPageSize": 1,
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "ExpandedMonitoringNetworksListResponse"
+    },
     "result": [
         {
-            "code": "1",
-            "name": "TestMeetnet",
-            "organisation": "ECS.OW",
+            "code": "KRW-NL12_120",
+            "name": "NL12_120",
+            "organisation": "HHN",
             "description": null,
             "locations": [
-                "BRA-01",
-                "STA-01",
-                "ALK-09",
-                "BER-09",
-                "TST"
+                "104303",
+                "134202",
+                "134401",
+                "134603",
+                "158103",
+                "158202",
+                "002002",
+                "009001",
+                "021001"
             ],
-            "definition": []
+            "definition": [],
+            "changedate": "2018-07-09T16:38:06.11"
         },
         {
-            "code": "5",
-            "name": "Test",
-            "organisation": "ECS.OW",
+            "code": "KRW-NL12_130",
+            "name": "NL12_130",
+            "organisation": "HHN",
             "description": null,
             "locations": [
-                "GAT-01",
-                "MEP-01"
+                "171101",
+                "171102",
+                "171202",
+                "177101",
+                "177201",
+                "280214",
+                "285401",
+                "BDV027",
+                "072001",
+                "074001"
             ],
-            "definition": []
+            "definition": [],
+            "changedate": "2018-07-09T16:38:06.11"
         },
         {
-            "code": "TMJ",
-            "name": "TestMeetnetJochim",
-            "organisation": "ECS.OW",
+            "code": "KRW-NL12_140",
+            "name": "NL12-140",
+            "organisation": "HHN",
             "description": null,
             "locations": [
-                "BRA-01",
-                "GAT-01",
-                "KAN-01",
-                "MEP-01",
-                "SLO-01",
-                "ALK-09"
+                "184201",
+                "184501",
+                "187202",
+                "081001",
+                "084001"
             ],
-            "definition": []
+            "definition": [],
+            "changedate": "2018-07-09T16:38:06.11"
         }
     ]
 }

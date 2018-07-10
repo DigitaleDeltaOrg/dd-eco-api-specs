@@ -1,7 +1,7 @@
 {
-    "totalObjectCount": 0,
+    "totalObjectCount": 1,
     "links": {
-        "self": "/eco/parameterpackages?page=1&pagesize=3",
+        "self": "/eco/purposes?page=1&pagesize=3",
         "prev": null,
         "next": null,
         "maxPageSize": 10000,
@@ -12,13 +12,13 @@
         "name": "EcoSys",
         "supportUrl": "www.ecosys.nl",
         "apiVersion": "0.9.1",
-        "responseType": "ParameterPackagesListResponse"
+        "responseType": "PurposesListResponse"
     },
     "result": [
         {
-            "changedate": "2018-04-11T14:21:16.67",
-            "code": "OEVRPTN",
-            "name": "Oeverplanten"
+            "changedate": "2018-07-09T16:15:49.51",
+            "code": "MT",
+            "name": "Monitoring"
         }
     ]
 }

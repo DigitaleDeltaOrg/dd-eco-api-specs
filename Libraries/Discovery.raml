@@ -12,21 +12,27 @@ types:
         type: string
       name:
         type: string
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   Definition:
     type: object
     description: Defines a standard and code for an entity.
     required: false
     properties:
-      standardcode:
-        type: string
+      standardCode:
+        type: string | nil
         required: false
       codeinstandard:
-        type: string
+        type: string | nil
         required: false
       reference:
         description: Link to the specific item within the standard.
         type: string
+        required: false
+      changedate:
+        type: datetime-only | nil
         required: false
 
   Endpoint:
@@ -66,6 +72,9 @@ types:
         type: string
       name:
         type: string
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   Institute:
     type: object
@@ -83,6 +92,9 @@ types:
         description: URL of the institute.
         type: string
         required: false
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   MeasurementAttribute:
     type: object
@@ -96,6 +108,9 @@ types:
         type: string
       attributetypeName:
         type: string
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   MeasurementObject:
     type: object
@@ -104,9 +119,13 @@ types:
       code:
         type: string
       description:
-        type: string?
+        type: string | nil
+        required: false
       organisation:
         type: string
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   Organisation:
     type: object
@@ -119,6 +138,9 @@ types:
       numericcode:
         type: number
         required: false
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   OrganisationNote:
     type: object
@@ -130,6 +152,9 @@ types:
         type: string
       organisation:
         type: string
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   Parameter:
     type: object
@@ -142,16 +167,16 @@ types:
       type:
         type: string
       taxontype:
-        type: string?
+        type: string | nil
         required: false
       taxongroup:
-        type: string?
+        type: string | nil
         required: false
       authors:
-        type: string?
+        type: string | nil
         required: false
       changedate:
-        type: datetime-only?
+        type: datetime-only | nil
         required: false
 
   ParameterGroup:
@@ -162,6 +187,9 @@ types:
         type: string
       name:
         type: string
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   ParameterPackage:
     type: object
@@ -172,10 +200,10 @@ types:
       name:
         type: string
       changedate:
-        type: datetime-only?
+        type: datetime-only | nil
         required: false
       description:
-        type: string?
+        type: string | nil
         required: false
       parameters:
         type: string[]
@@ -189,6 +217,9 @@ types:
         type: string
       name:
         type: string
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   Quantity:
     type: object
@@ -200,6 +231,9 @@ types:
         type: string
       values:
         type: string[]
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   Unit:
     type: object
@@ -212,6 +246,9 @@ types:
       symbol:
         type: string?
         required: false
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   MeasurementPackage:
     type: object
@@ -222,10 +259,10 @@ types:
       name:
         type: string
       description:
-        type: string?
+        type: string | nil
         required: false
       changedate:
-        type: datetime-only?
+        type: datetime-only | nil
         required: false
 
   MeasurementPurpose:
@@ -236,6 +273,9 @@ types:
         type: string
       name:
         type: string
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   Method:
     type: object
@@ -246,14 +286,20 @@ types:
       name:
         type: string
       organisation:
-        type: string?
+        type: string | nil
+        required: false
       literature:
-        type: string?
+        type: string | nil
         required: false
       methodtype:
-        type: string?
+        type: string | nil
+        required: false
       methodtypename:
-        type: string?
+        type: string | nil
+        required: false
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   MonitoringNetwork:
     type: object
@@ -264,10 +310,13 @@ types:
       name:
         type: string
       description:
-        type: string?
+        type: string | nil
         required: false
       organisation:
         type: string
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   Project:
     type: object
@@ -282,7 +331,11 @@ types:
       start:
         type: date-only
       end:
-        type: date-only
+        type: date-only | nil
+        required: false
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   Purpose:
     type: object
@@ -292,6 +345,9 @@ types:
         type: string
       name:
         type: string
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   Standard:
     type: object
@@ -312,6 +368,9 @@ types:
         description: Type of standard
         type: string
         required: false
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   TaxonGroup:
     type: object
@@ -325,6 +384,9 @@ types:
         type: string
       taxontypename:
         type: string
+      changedate:
+        type: datetime-only | nil
+        required: false
 
   TaxonType:
     type: object
@@ -334,6 +396,9 @@ types:
         type: string
       name:
         type: string
+      changedate:
+        type: datetime-only | nil
+        required: false
 
 # Expanded items
   ExpandedEntityBase:
@@ -374,12 +439,9 @@ types:
     type: MeasurementPackage
     properties:
       definition:
-        type: ExpandedEntityBase
-        required: false
+        type: ExpandedEntityBase | nil
+        required: true
       parametertypes:
-        type: string[]
-        required: false
-      parameters:
         type: string[]
         required: false
       quantitytypes:
@@ -392,7 +454,7 @@ types:
         type: string[]
         required: false
       parameterpackage:
-        type: string?
+        type: string | nil
         required: false
 
   ExpandedMeasurementPurpose:
@@ -439,10 +501,10 @@ types:
         type: ExpandedEntityBase
         required: false
       parametertype:
-        type: string?
+        type: string | nil
         required: false
       taxontype:
-        type: string?
+        type: string | nil
         required: false
       parametertypes:
         type: string[]

@@ -1,30 +1,40 @@
 {
-    "count": 4,
-    "links":
-    {
-      "prev": null,
-      "next": null
+    "totalObjectCount": 4,
+    "links": {
+        "self": "?page=1&pagesize=1000",
+        "prev": null,
+        "next": null,
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
     },
-    "maxPageSize": 10000,
-    "defaultPageSize": 1000,
-    "minPageSize": 1,
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "institutesListResponse"
+    },
     "result": [
         {
+            "changedate": "2018-01-01T00:00:00",
             "code": "ECS",
             "name": "EcoSys",
             "reference": "https://www.ecosys.nl"
         },
         {
+            "changedate": "2018-01-01T00:00:00",
             "code": "RWS",
             "name": "Rijkswaterstaat",
             "reference": "https://www.rijkswaterstaat.nl"
         },
         {
+            "changedate": "2018-01-01T00:00:00",
             "code": "IHW",
             "name": "Informatiehuis Water",
             "reference": "https://www.ihw.nl"
         },
         {
+            "changedate": "2018-01-01T00:00:00",
             "code": "CAS",
             "name": "American Chemical Society",
             "reference": "https://www.cas.org/"

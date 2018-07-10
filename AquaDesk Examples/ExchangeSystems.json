@@ -1,25 +1,34 @@
 {
-  "count": 3,
-  "links":
-  {
-    "prev": null,
-    "next": null
-  },
-  "maxPageSize": 10000,
-  "defaultPageSize": 1000,
-  "minPageSize": 1,
-  "result": [
-      {
-          "code": "EBEOSYS",
-          "name": "EBEOsys"
-      },
-      {
-          "code": "AQUADESK",
-          "name": "AquaDesk"
-      },
-      {
-          "code": "IM-METINGEN",
-          "name": "IM-Metingen"
-      }
-  ]
+    "totalObjectCount": 3,
+    "links": {
+        "self": "/eco/exchangesystems?page=1&pagesize=1000",
+        "prev": null,
+        "next": null,
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
+    },
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "ExchangeSystemsListResponse"
+    },
+    "result": [
+        {
+            "code": "EBEOSYS",
+            "name": "EBEOsys",
+            "changedate": "2018-07-09T16:33:05.643"
+        },
+        {
+            "code": "AQUADESK",
+            "name": "AquaDesk",
+            "changedate": "2018-07-09T16:33:05.643"
+        },
+        {
+            "code": "IM-METINGEN",
+            "name": "IM-Metingen",
+            "changedate": "2018-07-09T16:33:05.643"
+        }
+    ]
 }

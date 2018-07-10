@@ -1,47 +1,50 @@
 {
-    "count": 13,
-    "links":
-    {
-      "prev": null,
-      "next": "/eco/measurementpackages/expand?page=2&pagesize=3"
+    "totalObjectCount": 24,
+    "links": {
+        "self": "/eco/measurementpackages/expand?page=1&pagesize=3",
+        "prev": null,
+        "next": "/eco/measurementpackages/expand?page=2&pagesize=3",
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
     },
-    "maxPageSize": 10000,
-    "defaultPageSize": 1000,
-    "minPageSize": 1,
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "ExpandedMeasurementPackagesListResponse"
+    },
     "result": [
         {
-            "code": "FP.AC",
-            "name": "Fytoplankton abundantie (cellen)",
+            "code": "AF.AB",
+            "name": "Amfibieën abundantie",
             "description": null,
             "parametertypes": [
-                "DIATM",
-                "FYTPT"
+                "AMFBE"
             ],
-            "parameters": [],
             "quantitytypes": [
-                "AANTPVLME"
+                "AANTL"
             ],
             "attributetypes": [
-                "LV"
+                "LS",
+                "GS"
             ],
             "exchangesystems": [
-                "AQUADESK",
-                "IM-METINGEN"
+                "AQUADESK"
             ],
             "parameterpackage": null,
-            "changedate": "2018-04-11T13:45:15.147"
+            "definition": null,
+            "changedate": "2018-07-09T16:59:25.653"
         },
         {
-            "code": "DT.AB",
-            "name": "Diatomeeën abundantie",
+            "code": "BG.BD",
+            "name": "Biologische groepen bedekking",
             "description": null,
             "parametertypes": [
-                "DIATM"
+                "BIOTG"
             ],
-            "parameters": [],
             "quantitytypes": [
-                "AANTL",
-                "AANTFTE"
+                "BEDKG"
             ],
             "attributetypes": [
                 ""
@@ -50,28 +53,28 @@
                 "AQUADESK"
             ],
             "parameterpackage": null,
-            "changedate": "2018-04-11T13:45:15.147"
+            "definition": null,
+            "changedate": "2018-07-09T16:59:25.653"
         },
         {
-            "code": "ME.AB",
-            "name": "Macro-evertebraten abundantie",
+            "code": "CS.CC",
+            "name": "Chemische stoffen concentraties",
             "description": null,
             "parametertypes": [
-                "MACEV"
+                "CHEMS"
             ],
-            "parameters": [],
             "quantitytypes": [
-                "AANTL"
+                "CONCTTE"
             ],
             "attributetypes": [
-                "GS",
-                "LS"
+                ""
             ],
             "exchangesystems": [
                 "AQUADESK"
             ],
             "parameterpackage": null,
-            "changedate": "2018-04-11T13:45:15.147"
+            "definition": null,
+            "changedate": "2018-07-09T16:59:25.653"
         }
     ]
 }

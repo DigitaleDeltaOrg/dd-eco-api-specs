@@ -1,31 +1,446 @@
 {
-  "count": 62,
-  "links":
-  {
-    "prev": null,
-    "next": "/eco/taxongroups?page=2&pagesize=3"
-  },
-  "maxPageSize": 10000,
-  "defaultPageSize": 1000,
-  "minPageSize": 1,
-  "result": [
-      {
-          "code": "CRYPT",
-          "name": "Cryptophytes",
-          "taxontype": "FYTPT",
-          "taxontypename": "Phytoplankton"
-      },
-      {
-          "code": "PROKA",
-          "name": "Prokaryotes",
-          "taxontype": "FYTPT",
-          "taxontypename": "Phytoplankton"
-      },
-      {
-          "code": "EUGLE",
-          "name": "Euglenophytes",
-          "taxontype": "FYTPT",
-          "taxontypename": "Phytoplankton"
-      }
-  ]
+    "totalObjectCount": 61,
+    "links": {
+        "self": "/eco/taxongroups?page=1&pagesize=1000",
+        "prev": null,
+        "next": null,
+        "maxPageSize": 10000,
+        "defaultPageSize": 1000,
+        "minPageSize": 1
+    },
+    "provider": {
+        "name": "EcoSys",
+        "supportUrl": "www.ecosys.nl",
+        "apiVersion": "0.9.1",
+        "responseType": "TaxonGroupsListResponse"
+    },
+    "result": [
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "CRYPT",
+            "name": "Cryptophytes",
+            "taxontype": "FYTPT",
+            "taxontypename": "Phytoplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "PROKA",
+            "name": "Prokaryotes",
+            "taxontype": "FYTPT",
+            "taxontypename": "Phytoplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "EUGLE",
+            "name": "Euglenophytes",
+            "taxontype": "FYTPT",
+            "taxontypename": "Phytoplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "DESMI",
+            "name": "Desmids",
+            "taxontype": "FYTPT",
+            "taxontypename": "Phytoplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "CHRYS",
+            "name": "Chrysophytes",
+            "taxontype": "FYTPT",
+            "taxontypename": "Phytoplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "DINOF",
+            "name": "Dinoflagellates",
+            "taxontype": "FYTPT",
+            "taxontypename": "Phytoplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "MISCE",
+            "name": "Miscellaneous",
+            "taxontype": "FYTPT",
+            "taxontypename": "Phytoplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "HITAX",
+            "name": "Higher taxa",
+            "taxontype": "FYTPT",
+            "taxontypename": "Phytoplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "ANGIO",
+            "name": "Angiospermae",
+            "taxontype": "MACFT",
+            "taxontypename": "Macrophytes"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "MOSSE",
+            "name": "Mosses",
+            "taxontype": "MACFT",
+            "taxontypename": "Macrophytes"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "SPORO",
+            "name": "Sporophyta",
+            "taxontype": "MACFT",
+            "taxontypename": "Macrophytes"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "ALGAE",
+            "name": "Algae",
+            "taxontype": "MACFT",
+            "taxontypename": "Macrophytes"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "GYMNO",
+            "name": "Gymnospermea",
+            "taxontype": "MACFT",
+            "taxontypename": "Macrophytes"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "ROTIF",
+            "name": "Rotifera",
+            "taxontype": "ZOOPT",
+            "taxontypename": "Zooplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "BRANC",
+            "name": "Branchiopoda",
+            "taxontype": "ZOOPT",
+            "taxontypename": "Zooplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "CILIO",
+            "name": "Ciliophora",
+            "taxontype": "ZOOPT",
+            "taxontypename": "Zooplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "COPEP",
+            "name": "Copepoda",
+            "taxontype": "ZOOPT",
+            "taxontypename": "Zooplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "FORAM",
+            "name": "Foraminifera",
+            "taxontype": "ZOOPT",
+            "taxontypename": "Zooplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "HELIO",
+            "name": "Heliozoa",
+            "taxontype": "ZOOPT",
+            "taxontypename": "Zooplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "RHIZO",
+            "name": "Rhizopoda",
+            "taxontype": "ZOOPT",
+            "taxontypename": "Zooplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "INEPH",
+            "name": "Insecta - Ephemeroptera",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "INHET",
+            "name": "Insecta - Heteroptera",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "INODO",
+            "name": "Insecta - Odonata",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "INTRI",
+            "name": "Insecta - Trichoptera",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "INREM",
+            "name": "Insecta - Remaining",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "INCOL",
+            "name": "Insecta - Coleoptera",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "MOGAS",
+            "name": "Mollusca - Gastropoda",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "MOBIV",
+            "name": "Mollusca - Bivalvia",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "ARACH",
+            "name": "Arachnida",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "IDREM",
+            "name": "Insecta (Diptera) - Remaining",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "MOREM",
+            "name": "Mollusca - Remaining",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "ECHIN",
+            "name": "Echinodermata",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "IDSIM",
+            "name": "Insecta (Diptera) - Simuliidae",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "IDCHI",
+            "name": "Insecta (Diptera) - Chironomidae",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "BRHYP",
+            "name": "Bryozoa - Hydrozoa - Porifera",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "APPOL",
+            "name": "Annelida/Platyhelminthes - Polychaeta",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "CRAMP",
+            "name": "Crustacea - Amphipoda",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "APOLI",
+            "name": "Annelida/Platyhelminthes - Oligochaeta",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "MAREM",
+            "name": "Marien - Remaining",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "CRISO",
+            "name": "Crustacea - Isopoda",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "APTUR",
+            "name": "Annelida/Platyhelminthes - Turbellaria",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "CRDEC",
+            "name": "Crustacea - Decapoda",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "APHIR",
+            "name": "Annelida/Platyhelminthes - Hirudinea",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "INLEP",
+            "name": "Insecta - Lepidoptera",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "CRMYS",
+            "name": "Crustacea - Mysida",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "CRREM",
+            "name": "Crustacea - Remaining",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "COLMB",
+            "name": "Collembola",
+            "taxontype": "MACEV",
+            "taxontypename": "Macroinvertebrates"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "RAPHI",
+            "name": "Raphid pennate",
+            "taxontype": "DIATM",
+            "taxontypename": "Diatoms"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "RADIA",
+            "name": "Radial centric",
+            "taxontype": "DIATM",
+            "taxontypename": "Diatoms"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "ARAPH",
+            "name": "Araphid pennate",
+            "taxontype": "DIATM",
+            "taxontypename": "Diatoms"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "BIPOL",
+            "name": "Bipolar centric",
+            "taxontype": "DIATM",
+            "taxontypename": "Diatoms"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "HITAX",
+            "name": "Higher taxa",
+            "taxontype": "DIATM",
+            "taxontypename": "Diatoms"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "GASTR",
+            "name": "Gastrotricha",
+            "taxontype": "ZOOPT",
+            "taxontypename": "Zooplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "OSTRA",
+            "name": "Ostracoda",
+            "taxontype": "ZOOPT",
+            "taxontypename": "Zooplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "CHLOR",
+            "name": "Chlorophytes",
+            "taxontype": "MACAG",
+            "taxontypename": "Macroalgae"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "HITAX",
+            "name": "Higher taxa",
+            "taxontype": "MACAG",
+            "taxontypename": "Macroalgae"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "CHRYS",
+            "name": "Chrysophytes",
+            "taxontype": "MACAG",
+            "taxontypename": "Macroalgae"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "RHODO",
+            "name": "Rhodophytes",
+            "taxontype": "MACAG",
+            "taxontypename": "Macroalgae"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "HITAX",
+            "name": "Higher taxa",
+            "taxontype": "MACFT",
+            "taxontypename": "Macrophytes"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "RHODO",
+            "name": "Rhodophytes",
+            "taxontype": "FYTPT",
+            "taxontypename": "Phytoplankton"
+        },
+        {
+            "changedate": "2018-07-09T16:42:43.733",
+            "code": "CHLOR",
+            "name": "Chlorophytes",
+            "taxontype": "FYTPT",
+            "taxontypename": "Phytoplankton"
+        }
+    ]
 }
