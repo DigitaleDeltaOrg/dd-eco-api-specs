@@ -6,7 +6,7 @@ types:
     type: number
     format: double
 
-  LinkBlock:
+  PagingBlock:
     type: object
     description: Default block of links for navigation for all collection pages, except GeoJSON.
     properties:
@@ -40,6 +40,11 @@ types:
       minPageSize:
         type: integer
         description: Minimum page size, as defined by the provider. Cannot be less than 1.
+      totalObjectCount:
+        description: Number of records satisfying the query parameters.
+        type: integer
+        example: 1123
+        required: true
 
   BaseListResponse:
     type: object
@@ -48,13 +53,8 @@ types:
       provider:
         type: Provider
         required: false
-      totalObjectCount:
-        description: Number of records satisfying the query parameters.
-        type: integer
-        example: 1123
-        required: true
       links:
-        type: LinkBlock
+        type: PagingBlock
 
   Filter:
     type: object

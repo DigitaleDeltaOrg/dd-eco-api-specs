@@ -96,6 +96,21 @@ types:
         type: datetime-only | nil
         required: false
 
+  Literature:
+    type: object
+    description: Defines a literature reference to a taxon.
+    properties:
+      code:
+        type: string
+      reference:
+        type: string
+        required: true
+      citation:
+        type: string
+      changedate:
+        type: datetime-only | nil
+        required: false
+
   MeasurementAttribute:
     type: object
     description: Defines an attribute (property) of a measurement.
@@ -126,6 +141,9 @@ types:
       changedate:
         type: datetime-only | nil
         required: false
+      geometry:
+        description: Geographical location of the measurement object in WellKnownText (WKT) format.
+        type: string
 
   Organisation:
     type: object
@@ -177,6 +195,10 @@ types:
         required: false
       changedate:
         type: datetime-only | nil
+        required: false
+      taxonrank:
+        description: Taxonomic rank (if parameter is a taxon).
+        type: string
         required: false
 
   ParameterGroup:
@@ -572,6 +594,11 @@ types:
     type: Minimal.BaseListResponse
     properties:
       result: Institute[]
+
+  LiteratureListResponse:
+    type: Minimal.BaseListResponse
+    properties:
+      result: Literature[]
 
   MeasurementObjectsListResponse:
     type: Minimal.BaseListResponse

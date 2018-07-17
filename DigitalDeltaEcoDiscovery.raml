@@ -1,6 +1,6 @@
 #%RAML 1.0 Extension
   title: Digital Delta Eco Extensions - Discovery
-  version: 0.9
+  version: 0.9.2
   usage: Digital Delta Eco discovery interface. Extends Measurement.
   extends: DigitalDeltaEcoMeasurements.raml
   mediaType: [ application/json ]
@@ -77,6 +77,33 @@
                 application/json:
                   type: Minimal.Problem
                   example: !include AquaDesk Examples/Problem.json
+      /filters:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Minimal.Filter[]
+                  example: !include AquaDesk Examples/Filter.json
+
+    /literature:
+      description:
+        Retrieves a list of taxon literatures (TWN).
+      get:
+        is: [ Minimal.pageable, Minimal.filterable ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.LiteratureListResponse
+                example: !include AquaDesk Examples/Literature.json
+
+          400:
+            body:
+              application/json:
+                type: Minimal.Problem
+                example: !include AquaDesk Examples/Problem.json
+
       /filters:
         get:
           responses:
