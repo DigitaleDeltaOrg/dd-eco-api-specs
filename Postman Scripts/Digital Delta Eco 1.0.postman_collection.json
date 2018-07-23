@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Attributes",
+			"name": "Measurement attributes",
 			"description": "",
 			"item": [
 				{
@@ -15,13 +15,13 @@
 					"description": "",
 					"item": [
 						{
-							"name": "Attributes Filter Examples",
+							"name": "Measurement attributes Filter Examples",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"body": {},
 								"url": {
-									"raw": "https://ddecotest.aquadesk.nl/eco/attributes?filter=attributetype:eq:\"LV\"",
+									"raw": "https://ddecotest.aquadesk.nl/eco/measurementattributes?filter=attributetype:eq:\"LV\"",
 									"protocol": "https",
 									"host": [
 										"ddecotest.aquadesk.nl"
@@ -29,7 +29,7 @@
 									"port": "443",
 									"path": [
 										"eco",
-										"attributes"
+										"measurementattributes"
 									],
 									"query": [
 										{
@@ -38,7 +38,7 @@
 										}
 									]
 								},
-								"description": "Attributes filter Examples"
+								"description": "Measurement attributes filter Examples"
 							},
 							"response": []
 						}
@@ -46,13 +46,13 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Attributes",
+					"name": "Measurement attributes",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "https://ddecotest.aquadesk.nl/eco/attributes",
+							"raw": "https://ddecotest.aquadesk.nl/eco/measurementattributes",
 							"protocol": "https",
 							"host": [
 								"ddecotest.aquadesk.nl"
@@ -60,15 +60,15 @@
 							"port": "443",
 							"path": [
 								"eco",
-								"attributes"
+								"measurementattributes"
 							]
 						},
-						"description": "Attributes"
+						"description": "Measurement attributes"
 					},
 					"response": []
 				},
 				{
-					"name": "Attributes Expand",
+					"name": "Measurement attributes Expand",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -82,22 +82,22 @@
 							"port": "443",
 							"path": [
 								"eco",
-								"attributes",
+								"measurementattributes",
 								"expand"
 							]
 						},
-						"description": "Attributes Expand"
+						"description": "Measurement attributes Expand"
 					},
 					"response": []
 				},
 				{
-					"name": "Attributes Filters",
+					"name": "Measurement attributes Filters",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "https://ddecotest.aquadesk.nl/eco/attributes/filters",
+							"raw": "https://ddecotest.aquadesk.nl/eco/measurementattributes/filters",
 							"protocol": "https",
 							"host": [
 								"ddecotest.aquadesk.nl"
@@ -105,11 +105,11 @@
 							"port": "443",
 							"path": [
 								"eco",
-								"attributes",
+								"measurementattributes",
 								"filters"
 							]
 						},
-						"description": "Attributes Filters"
+						"description": "Measurement attributes Filters"
 					},
 					"response": []
 				}
