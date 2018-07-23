@@ -8,7 +8,7 @@ types:
 
   PagingBlock:
     type: object
-    description: Default block of links for navigation for all collection pages, except GeoJSON.
+    description: Default block of paging for navigation for all collection pages, except GeoJSON.
     properties:
       self:
         description: The URI of the current page.
@@ -53,7 +53,7 @@ types:
       provider:
         type: Provider
         required: false
-      links:
+      paging:
         type: PagingBlock
 
   Filter:
@@ -287,3 +287,11 @@ traits:
         type: integer
         required: false
         description: Page size. Minimum, maximum and default is defined by provider. Minimum can never be lower than 1.
+  filterResponse:
+    description: Response for requesting the supported filtering methods.
+    responses:
+      200:
+        body:
+          application/json:
+            type: Filter[]
+            example: !include ../AquaDesk Examples/Filter.json

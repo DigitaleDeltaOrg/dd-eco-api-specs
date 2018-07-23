@@ -4,6 +4,11 @@
   usage: Digital Delta Eco discovery interface. Extends Measurement.
   extends: DigitalDeltaEcoMeasurements.raml
   mediaType: [ application/json ]
+  securitySchemes:
+    basic:
+      type: Basic Authentication
+    oidc: ## OpenID Connect
+      type: OAuth 2.0
   documentation:
     - title: About
       content: !include https://raw.githubusercontent.com/wiki/DigitaleDeltaOrg/dd-eco-api-specs/About-Digital-Delta-Eco-API.md
@@ -21,15 +26,18 @@
       content: !include https://raw.githubusercontent.com/wiki/DigitaleDeltaOrg/dd-eco-api-specs/Change-History-(Specification).md
 
   uses: # Minimal types and definitions
-    Minimal: Libraries/Measurements.raml
+    Measurements: Libraries/Measurements.raml
     Extended: Libraries/Discovery.raml
+    Traits: Libraries/Traits.raml
 
   /eco:
+
+    # Public information.
     /endpoints:
       description:
         Retrieves a list of available endpoints.
       get:
-        is: [ Minimal.pageable ]
+        is: [ Traits.pageable, Traits.has500-ServerError ]
         responses:
           200:
             body:
@@ -37,17 +45,12 @@
                 type: Extended.EndpointsListResponse
                 example: !include AquaDesk Examples/Endpoints.json
 
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
 
     /compartments:
       description:
         Retrieves a list of compartments (AQUO).
       get:
-        is: [ Minimal.pageable, Minimal.filterable ]
+        is: [ Traits.pageable, Traits.filterable, Traits.has500-ServerError ]
         responses:
           200:
             body:
@@ -55,16 +58,12 @@
                 type: Extended.CompartmentsListResponse
                 example: !include AquaDesk Examples/Compartments.json
 
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
       /expand:
+        # public information
         description:
           Retrieves an expanded list of monitoring networks (a collection of measurement objects) within the provider's system.
         get:
-          is: [ Minimal.pageable, Minimal.filterable ]
+          is: [ Traits.pageable, Traits.filterable, Traits.has500-ServerError ]
           responses:
             200:
               body:
@@ -72,25 +71,15 @@
                   type: Extended.ExpandedCompartmentsListResponse
                   example: !include AquaDesk Examples/ExpandedCompartments.json
 
-            400:
-              body:
-                application/json:
-                  type: Minimal.Problem
-                  example: !include AquaDesk Examples/Problem.json
       /filters:
         get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
+          is: [ Traits.has500-ServerError, Traits.filterResponse ]
 
     /literature:
       description:
         Retrieves a list of taxon literatures (TWN).
       get:
-        is: [ Minimal.pageable, Minimal.filterable ]
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
         responses:
           200:
             body:
@@ -98,86 +87,15 @@
                 type: Extended.LiteratureListResponse
                 example: !include AquaDesk Examples/Literature.json
 
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
-
       /filters:
         get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
-
-    /measurementobjects:
-      description:
-        Retrieves a list of measurement objects within the provider's system.
-      get:
-        is: [ Minimal.pageable, Minimal.filterable ]
-        responses:
-          200:
-            body:
-              application/json:
-                type: Extended.MeasurementObjectsListResponse
-                example: !include AquaDesk Examples/MeasurementObjects.json
-
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
-      /geojson:
-        description:
-          Retrieves a list of measurement objects within the provider's system as a GeoJSON FeatureCollection.
-        get:
-          is: [ Minimal.pageable, Minimal.filterable ]
-          responses:
-            200:
-              body:
-                application/json:
-                  type: object
-                  example: !include AquaDesk Examples/MeasurementObjectsGeoJSON.json
-
-            400:
-              body:
-                application/json:
-                 type: Minimal.Problem
-                 example: !include AquaDesk Examples/Problem.json
-      /expand:
-        description:
-          Retrieves an expanded list of measurement objects within the provider's system.
-        get:
-          is: [ Minimal.pageable, Minimal.filterable ]
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Extended.ExpandedMeasurementObjectsListResponse
-                  example: !include AquaDesk Examples/ExpandedMeasurementObjects.json
-
-            400:
-              body:
-                application/json:
-                  type: Minimal.Problem
-                  example: !include AquaDesk Examples/Problem.json
-      /filters:
-        get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
 
     /organisations:
       description:
         Retrieves a list of organisations within the provider's system.
       get:
-        is: [ Minimal.pageable, Minimal.filterable ]
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
         responses:
           200:
             body:
@@ -185,16 +103,11 @@
                 type: Extended.OrganisationsListResponse
                 example: !include AquaDesk Examples/Organisations.json
 
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
       /expand:
         description:
           Retrieves an expanded list of organisations within the provider's system.
         get:
-          is: [ Minimal.pageable, Minimal.filterable ]
+          is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
           responses:
             200:
               body:
@@ -202,24 +115,15 @@
                   type: Extended.ExpandedOrganisationsListResponse
                   example: !include AquaDesk Examples/ExpandedOrganisations.json
 
-            400:
-              body:
-                application/json:
-                  type: Minimal.Problem
       /filters:
         get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
 
     /parameters:
       description:
         Retrieves a list of parameters available in the provider's system.
       get:
-        is: [ Minimal.pageable, Minimal.filterable ]
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
         responses:
           200:
             body:
@@ -227,42 +131,27 @@
                 type: Extended.ParametersListResponse
                 example: !include AquaDesk Examples/Parameters.json
 
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
       /expand:
         description:
           Retrieves an expanded list of parameters available in the provider's system.
         get:
-          is: [ Minimal.pageable, Minimal.filterable ]
+          is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
           responses:
             200:
               body:
                 application/json:
                   type: Extended.ExpandedParametersListResponse
                   example: !include AquaDesk Examples/ExpandedParameters.json
-
-            400:
-              body:
-                application/json:
-                 type: Minimal.Problem
-                 example: !include AquaDesk Examples/Problem.json
       /filters:
         get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
 
     /quantities:
+      # public information
       description:
         Retrieves a list of quantities available in the provider's system.
       get:
-        is: [ Minimal.pageable, Minimal.filterable ]
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
         responses:
           200:
             body:
@@ -270,16 +159,11 @@
                 type: Extended.QuantitiesListResponse
                 example: !include AquaDesk Examples/Quantities.json
 
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
       /expand:
         description:
           Retrieves an expanded list of quantities available in the provider's system.
         get:
-          is: [ Minimal.pageable, Minimal.filterable ]
+          is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
           responses:
             200:
               body:
@@ -287,25 +171,16 @@
                   type: Extended.ExpandedQuantitiesListResponse
                   example: !include AquaDesk Examples/ExpandedQuantities.json
 
-            400:
-              body:
-                application/json:
-                  type: Minimal.Problem
-                  example: !include AquaDesk Examples/Problem.json
       /filters:
         get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
 
     /units:
+      # public information
       description:
         Retrieves a list of units of masurement available in the provider's system.
       get:
-        is: [ Minimal.pageable, Minimal.filterable ]
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
         responses:
           200:
             body:
@@ -313,40 +188,26 @@
                 type: Extended.UnitsListResponse
                 example: !include AquaDesk Examples/Units.json
 
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
       /filters:
         get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
 
     /measurementpackages:
       description:
         Retrieves a list of measurement packages.
       get:
-        is: [ Minimal.pageable, Minimal.filterable ]
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
         responses:
           200:
             body:
               application/json:
                 type: Extended.MeasurementPackagesListResponse
                 example: !include AquaDesk Examples/MeasurementPackages.json
-          400:
-            body:
-              application/json:
-                  type: Minimal.Problem
       /expand:
         description:
           Retrieves an expanded list of monitoring networks (a collection of measurement objects) within the provider's system.
         get:
-          is: [ Minimal.pageable, Minimal.filterable ]
+          is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
           responses:
             200:
               body:
@@ -354,25 +215,16 @@
                   type: Extended.ExpandedMeasurementPackagesListResponse
                   example: !include AquaDesk Examples/ExpandedMeasurementPackages.json
 
-            400:
-              body:
-                application/json:
-                  type: Minimal.Problem
-                  example: !include AquaDesk Examples/Problem.json
       /filters:
         get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
 
     /exchangesystems:
+      # public information
       description:
         Retrieves a list of exchange systems available in the provider's system.
       get:
-        is: [ Minimal.pageable, Minimal.filterable ]
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError]
         responses:
           200:
             body:
@@ -380,25 +232,15 @@
                 type: Extended.ExchangeSystemsListResponse
                 example: !include AquaDesk Examples/ExchangeSystems.json
 
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
       /filters:
         get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
 
     /institutes:
       description:
         Retrieves a list of institutes within the provider's system. An institute defines or manages one or more standards.
       get:
-        is: [ Minimal.pageable, Minimal.filterable ]
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
         responses:
           200:
             body:
@@ -406,138 +248,15 @@
                 type: Extended.InstitutesListResponse
                 example: !include AquaDesk Examples/Institutes.json
 
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
-
       /filters:
         get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
-
-    /methods:
-      description:
-        Retrieves a list of methods used by the organisations in the provider's system.
-      get:
-        is: [ Minimal.pageable, Minimal.filterable ]
-        responses:
-          200:
-            body:
-              application/json:
-                type: Extended.MethodsListResponse
-                example: !include AquaDesk Examples/Methods.json
-
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
-      /expand:
-        description:
-          Retrieves an expanded list of methods used by the organisations in the provider's system.
-        get:
-          is: [ Minimal.pageable, Minimal.filterable ]
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Extended.ExpandedMethodsListResponse
-                  example: !include AquaDesk Examples/ExpandedMethods.json
-
-            400:
-              body:
-                application/json:
-                  type: Minimal.Problem
-                  example: !include AquaDesk Examples/Problem.json
-      /filters:
-        get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
-
-    /monitoringnetworks:
-      description:
-        Retrieves a list of monitoring networks (a collection of measurement objects) within the provider's system.
-      get:
-        is: [ Minimal.pageable, Minimal.filterable ]
-        responses:
-          200:
-            body:
-              application/json:
-                type: Extended.MonitoringNetworksListResponse
-                example: !include AquaDesk Examples/MonitoringNetworks.json
-
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
-      /expand:
-        description:
-          The expanded items include a list of measurement objects that are part of the monitoring network.
-        get:
-          is: [ Minimal.pageable, Minimal.filterable ]
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Extended.ExpandedMonitoringNetworksListResponse
-                  example: !include AquaDesk Examples/ExpandedMonitoringNetworks.json
-
-            400:
-              body:
-                application/json:
-                  type: Minimal.Problem
-                  example: !include AquaDesk Examples/Problem.json
-      /filters:
-        get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
-
-    /notes:
-      description:
-        Retrieves a standardised notes within organisations available in the provider's system.
-      get:
-        is: [ Minimal.pageable, Minimal.filterable ]
-        responses:
-          200:
-            body:
-              application/json:
-                type: Extended.OrganisationNotesListResponse
-                example: !include AquaDesk Examples/Notes.json
-
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
-      /filters:
-        get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
 
     /parameterpackages:
       description:
         Retrieves a list of parameter packages available in the provider's system.
       get:
-        is: [ Minimal.pageable, Minimal.filterable ]
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
         responses:
           200:
             body:
@@ -545,16 +264,11 @@
                 type: Extended.ParameterPackagesListResponse
                 example: !include AquaDesk Examples/ParameterPackages.json
 
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
       /expand:
         description:
           Retrieves an expanded list of parameter packages available in the provider's system.
         get:
-          is: [ Minimal.pageable, Minimal.filterable ]
+          is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
           responses:
             200:
               body:
@@ -562,25 +276,15 @@
                   type: Extended.ExpandedParameterPackagesListResponse
                   example: !include AquaDesk Examples/ExpandedParameterPackages.json
 
-            400:
-              body:
-                application/json:
-                  type: Minimal.Problem
-                  example: !include AquaDesk Examples/Problem.json
       /filters:
         get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
 
     /parametertypes:
       description:
         Retrieves a list of parameter types available in the provider's system.
       get:
-        is: [ Minimal.pageable, Minimal.filterable ]
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
         responses:
           200:
             body:
@@ -588,75 +292,16 @@
                 type: Extended.ParameterTypesListResponse
                 example: !include AquaDesk Examples/ParameterTypes.json
 
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
       /filters:
         get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
-
-    /purposes:
-      description:
-        Retrieves a list of (measurement)purposes available in the provider's system.
-      get:
-        is: [ Minimal.pageable, Minimal.filterable ]
-        responses:
-          200:
-            body:
-              application/json:
-                type: Extended.PurposesListResponse
-                example: !include AquaDesk Examples/Purposes.json
-
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
-      /filters:
-        get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
-
-    /projects:
-      get:
-        is: [ Minimal.pageable, Minimal.filterable ]
-        responses:
-          200:
-            body:
-              application/json:
-                type: Extended.ProjectsListResponse
-                example: !include AquaDesk Examples/Projects.json
-
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
-      /filters:
-          get:
-            responses:
-              200:
-                body:
-                  application/json:
-                    type: Minimal.Filter[]
-                    example: !include AquaDesk Examples/Filter.json
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
 
     /taxongroups:
+      securedBy: oidc
       description:
         Retrieves a list of taxon groups available in the provider's system.
       get:
-        is: [ Minimal.pageable, Minimal.filterable ]
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
         responses:
           200:
             body:
@@ -664,25 +309,16 @@
                 type: Extended.TaxonGroupsListResponse
                 example: !include AquaDesk Examples/TaxonGroups.json
 
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
       /filters:
         get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
 
     /taxontypes:
+      securedBy: oidc
       description:
         Retrieves a list of taxon types available in the provider's system.
       get:
-        is: [ Minimal.pageable, Minimal.filterable ]
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
         responses:
           200:
             body:
@@ -690,25 +326,15 @@
                 type: Extended.TaxonTypesListResponse
                 example: !include AquaDesk Examples/TaxonTypes.json
 
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
       /filters:
         get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: Minimal.Filter[]
-                  example: !include AquaDesk Examples/Filter.json
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
 
     /standards:
       description:
         Retrieves a list of standards within the provider's system.
       get:
-        is: [ Minimal.pageable, Minimal.filterable ]
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
         responses:
           200:
             body:
@@ -716,16 +342,157 @@
                 type: Extended.StandardsListResponse
                 example: !include AquaDesk Examples/Standards.json
 
-          400:
-            body:
-              application/json:
-                type: Minimal.Problem
-                example: !include AquaDesk Examples/Problem.json
       /filters:
         get:
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
+
+    # Organisation-specific information.
+    /measurementobjects:
+      securedBy: oidc
+      description:
+        Retrieves a list of measurement objects within the provider's system.
+      get:
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.MeasurementObjectsListResponse
+                example: !include AquaDesk Examples/MeasurementObjects.json
+      /geojson:
+        securedBy: oidc
+        description:
+          Retrieves a list of measurement objects within the provider's system as a GeoJSON FeatureCollection.
+        get:
+          is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
           responses:
             200:
               body:
                 application/json:
-                type: Minimal.Filter[]
-                example: !include AquaDesk Examples/Filter.json
+                  type: object
+                  example: !include AquaDesk Examples/MeasurementObjectsGeoJSON.json
+
+      /expand:
+        securedBy: oidc
+        description:
+          Retrieves an expanded list of measurement objects within the provider's system.
+        get:
+          is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Extended.ExpandedMeasurementObjectsListResponse
+                  example: !include AquaDesk Examples/ExpandedMeasurementObjects.json
+      /filters:
+        get:
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
+
+    /methods:
+      securedBy: oidc
+      description:
+        Retrieves a list of methods used by the organisations in the provider's system.
+      get:
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.MethodsListResponse
+                example: !include AquaDesk Examples/Methods.json
+
+      /expand:
+        securedBy: oidc
+        description:
+          Retrieves an expanded list of methods used by the organisations in the provider's system.
+        get:
+          is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Extended.ExpandedMethodsListResponse
+                  example: !include AquaDesk Examples/ExpandedMethods.json
+
+      /filters:
+        get:
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
+
+    /monitoringnetworks:
+      securedBy: oidc
+      description:
+        Retrieves a list of monitoring networks (a collection of measurement objects) within the provider's system.
+      get:
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.MonitoringNetworksListResponse
+                example: !include AquaDesk Examples/MonitoringNetworks.json
+
+      /expand:
+        securedBy: oidc
+        description:
+          The expanded items include a list of measurement objects that are part of the monitoring network.
+        get:
+          is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Extended.ExpandedMonitoringNetworksListResponse
+                  example: !include AquaDesk Examples/ExpandedMonitoringNetworks.json
+
+      /filters:
+        get:
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
+
+    /notes:
+      securedBy: oidc
+      description:
+        Retrieves a standardised notes within organisations available in the provider's system.
+      get:
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.OrganisationNotesListResponse
+                example: !include AquaDesk Examples/Notes.json
+
+      /filters:
+        get:
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
+
+    /purposes:
+      securedBy: oidc
+      description:
+        Retrieves a list of (measurement)purposes available in the provider's system.
+      get:
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.PurposesListResponse
+                example: !include AquaDesk Examples/Purposes.json
+
+      /filters:
+        get:
+          is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
+
+    /projects:
+      securedBy: oidc
+      get:
+        is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Extended.ProjectsListResponse
+                example: !include AquaDesk Examples/Projects.json
+
+      /filters:
+          get:
+            is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]

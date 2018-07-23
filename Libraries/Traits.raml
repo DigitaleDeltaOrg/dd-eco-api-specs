@@ -1,0 +1,76 @@
+#%RAML 1.0 Library
+# Error responses
+uses:
+  Measurements: Measurements.raml
+
+traits:
+  # Request traits
+  expandable:
+    description: Defines query parameters for expandable requests.
+    queryParameters:
+      expand:
+        type: string
+        required: false
+        description: Expands the data.
+
+  filterable:
+    description: Defines query parameters for filterable requests.
+    queryParameters:
+      filter:
+        type: string
+        required: false
+        description: Filter the data, based on the filter. See Search syntax.
+
+  pageable:
+    description: Defines query parameters for pageable requests.
+    queryParameters:
+      page:
+        type: integer
+        required: false
+        description: Page number, starting with 1.
+      pagesize:
+        type: integer
+        required: false
+        description: Page size. Minimum, maximum and default is defined by provider. Minimum can never be lower than 1.
+
+  # Response traits
+  filterResponse:
+    responses:
+      200:
+        body:
+          application/json:
+            type: Measurements.Filter[]
+            example: !include ../AquaDesk Examples/Filter.json
+
+  # HTTP Error response traits
+  has400-InvalidRequestError:
+    responses:
+      400:
+        body:
+          application/json:
+            type: Measurements.Problem
+            example: !include ../AquaDesk Examples/Problem.json
+
+  has403-AccessDeniedError:
+    responses:
+      403:
+        body:
+          application/json:
+            type: Measurements.Problem
+            example: !include ../AquaDesk Examples/Problem.json
+
+  has404-NotFoundError:
+    responses:
+      404:
+        body:
+          application/json:
+            type: Measurements.Problem
+            example: !include ../AquaDesk Examples/Problem.json
+
+  has500-ServerError:
+    responses:
+      500:
+        body:
+          application/json:
+            type: Measurements.Problem
+            example: !include ../AquaDesk Examples/Problem.json
