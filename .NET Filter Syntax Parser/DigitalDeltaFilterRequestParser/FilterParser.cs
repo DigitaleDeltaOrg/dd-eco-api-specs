@@ -87,6 +87,12 @@ namespace DigitalDeltaFilterRequestParser
 		private static List<string> SplitLine(string stringToSplit, char separator)
 		{
 
+			// If the last character is the separator, remove it.
+			if (stringToSplit.EndsWith(separator.ToString()))
+			{
+				stringToSplit = stringToSplit.Substring(0, stringToSplit.LastIndexOf(separator));
+			}
+
 			var characters = stringToSplit.ToCharArray();
 			var returnValueList = new List<string>();
 			var tempString = string.Empty;
