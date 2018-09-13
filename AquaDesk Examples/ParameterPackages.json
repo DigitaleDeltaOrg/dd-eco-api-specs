@@ -1,13 +1,11 @@
 {
-    "paging": {
-        "self": "/eco/parameterpackages?page=1&pagesize=3",
-        "prev": null,
-        "next": null,
-        "totalObjectCount": 1,
-        "maxPageSize": 10000,
-        "defaultPageSize": 1000,
-        "minPageSize": 1
-    },
+  "paging": {
+          "self": "dd-eco/1.0/parameterpackages?page=1&pagesize=1000",
+          "maxPageSize": 10000,
+          "defaultPageSize": 1000,
+          "minPageSize": 1,
+          "totalObjectCount": 1
+      },
     "provider": {
         "name": "EcoSys",
         "supportUrl": "www.ecosys.nl",

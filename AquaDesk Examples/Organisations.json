@@ -1,37 +1,38 @@
 {
     "paging": {
-        "self": "/eco/organisations?page=1&pagesize=1000",
-        "prev": null,
-        "next": null,
-        "totalObjectCount": 3,
+        "self": "dd-eco/1.0/organisations?page=1&pagesize=3",
         "maxPageSize": 10000,
         "defaultPageSize": 1000,
-        "minPageSize": 1
+        "minPageSize": 1,
+        "totalObjectCount": 3
     },
     "provider": {
         "name": "EcoSys",
         "supportUrl": "www.ecosys.nl",
-        "apiVersion": "0.9.2",
+        "apiVersion": "0.9.5",
         "responseType": "OrganisationsListResponse"
     },
     "result": [
         {
-            "changedate": "2018-07-09T16:38:57.123",
+            "changedate": "2018-09-13T10:30:45.86",
             "code": "RWS",
             "name": "Rijkswaterstaat",
-            "numericcode": 80
+            "numericcode": 80,
+            "sourcesystem": "AquaDesk"
         },
         {
-            "changedate": "2018-07-09T16:38:57.123",
+            "changedate": "2018-09-13T10:30:45.86",
             "code": "HHN",
             "name": "HHRS Hollands Noorderkwartier",
-            "numericcode": 12
+            "numericcode": 12,
+            "sourcesystem": "AquaDesk"
         },
         {
-            "changedate": "2018-07-09T16:38:57.123",
+            "changedate": "2018-09-13T10:30:45.86",
             "code": "ECS",
             "name": "EcoSys",
-            "numericcode": 1000
+            "numericcode": 1000,
+            "sourcesystem": "AquaDesk"
         }
     ]
 }

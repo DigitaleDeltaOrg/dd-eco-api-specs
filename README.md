@@ -1,6 +1,6 @@
 # Digital Delta Eco specification
 
-This specification describes the Digital Delta Eco API. It is meant for both implementers and consumers of the Digital Delta Eco specifications.
+This specification describes the Digital Delta Eco API (DD-ECO-API). It is meant for both implementers and consumers of the Digital Delta Eco specifications.
 
 ## About the Digital Delta Eco specification
 
@@ -10,7 +10,7 @@ Please see the [wiki](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki)
 ## Getting Started
 
 The specification is written in [RAML 1.0](https://raml.org), a 'language' to define [REST](https://nl.wikipedia.org/wiki/Representational_state_transfer) (REpresentational State Transfer) service.
-It is a specification, that means, there is no full implementation of this specification available in this repository.
+It is a specification. This means that there is no full implementation of this specification available in this repository.
 There are, however, [result samples](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/tree/master/AquaDesk%20Examples) and a .NET sample implementation of the [Filter Syntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics).
 
 To read the RAML specification, some [tools](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Tools) are recommended. Some tools are also capable of generating documentation, or code skeletons for both consumers and implementers.

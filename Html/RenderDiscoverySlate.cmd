@@ -1,2 +1,1 @@
-raml2html -i ..\DigitalDeltaEcoDiscovery.raml -o DigitalDeltaEcoDiscoverySlate.html --theme raml2html-slate-theme
-
+raml2html -i ..\digitaldeltaecodiscovery.raml -o digitaldeltaecodiscoveryslate.html --theme raml2html-slate-theme

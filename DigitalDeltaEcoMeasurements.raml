@@ -1,6 +1,6 @@
 #%RAML 1.0
 title: Digital Delta Eco Extensions - Measurements
-version: 0.9.2
+version: 0.9.5
 securitySchemes:
   basic:
     type: Basic Authentication
@@ -23,11 +23,12 @@ documentation:
     content: !include https://raw.githubusercontent.com/wiki/DigitaleDeltaOrg/dd-eco-api-specs/Change-History-(Specification).md
 
 uses: # Minimal types and definitions
-  Measurements: Libraries/Measurements.raml
-  Traits: Libraries/Traits.raml
+  Measurements: libraries/measurements.raml
+  Traits: libraries/traits.raml
 
 /eco:
   /measurements:
+    securedBy: oidc
     description:
       Retrieves a list of measurements.
     get:
@@ -38,8 +39,22 @@ uses: # Minimal types and definitions
           body:
             application/json:
               type: Measurements.MeasurementsListResponse
-              example: !include AquaDesk Examples/Measurements.json
-
+              example: !include aquadesk examples/measurements.json
+    /areidspresent:
+      securedBy: oidc
+      description:
+        Checks if the specified ids are present in the service. Returns only the
+        list of ids from the list that are still present.
+      get:
+        is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
+        queryParameters:
+          ids:
+            type: string[]
+        responses:
+          200:
+            body:
+              application/json:
+                type: string[]
     /geojson:
       securedBy: oidc
       description:
@@ -52,8 +67,7 @@ uses: # Minimal types and definitions
             body:
               application/json:
                 type: object
-                example: !include AquaDesk Examples/MeasurementsGeoJSON.json
-
+                example: !include aquadesk examples/measurementsgeojson.json
     /filters:
       get:
-        is: [ Traits.filterResponse]
+        is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]

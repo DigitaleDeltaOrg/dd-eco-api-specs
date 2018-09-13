@@ -1,7 +1,7 @@
 #%RAML 1.0 Library
 # Types for the extended definition.
 uses:
-  Minimal: Measurements.raml
+  Minimal: measurements.raml
 
 types:
 # Base items
@@ -11,10 +11,15 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   Definition:
@@ -64,6 +69,9 @@ types:
         required: true
         type: boolean
         description: Supports the /geojson specifier.
+      sourcesystem:
+        type: string
+        required: false
 
   ExchangeSystem:
     type: object
@@ -71,10 +79,15 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   Institute:
@@ -96,6 +109,9 @@ types:
       changedate:
         type: datetime-only | nil
         required: false
+      sourcesystem:
+        type: string
+        required: false
 
   Literature:
     type: object
@@ -103,13 +119,18 @@ types:
     properties:
       code:
         type: string
+        required: true
       reference:
         type: string
         required: true
       citation:
         type: string
+        required: true
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   MeasurementAttribute:
@@ -118,14 +139,21 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       attributetype:
         type: string
+        required: true
       attributetypeName:
         type: string
+        required: true
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   MeasurementObject:
@@ -134,17 +162,23 @@ types:
     properties:
       code:
         type: string
+        required: true
       description:
         type: string | nil
         required: false
       organisation:
         type: string
+        required: true
       changedate:
         type: datetime-only | nil
         required: false
       geometry:
-        description: Geographical location of the measurement object in WellKnownText (WKT) format.
+        description: Geographical location of the measurement object in GeoJSON format.
+        type: object
+        required: true
+      sourcesystem:
         type: string
+        required: false
 
   Organisation:
     type: object
@@ -152,13 +186,18 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       numericcode:
         type: number
         required: false
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   OrganisationNote:
@@ -167,12 +206,18 @@ types:
     properties:
       code:
         type: string
+        required: true
       note:
         type: string
+        required: true
       organisation:
         type: string
+        required: true
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   Parameter:
@@ -181,10 +226,13 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       type:
         type: string
+        required: true
       taxontype:
         type: string | nil
         required: false
@@ -201,6 +249,12 @@ types:
         description: Taxonomic rank (if parameter is a taxon).
         type: string
         required: false
+      sourcesystem:
+        type: string
+        required: false
+      localname:
+        type: string
+        required: false
 
   ParameterGroup:
     type: object
@@ -208,10 +262,15 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   ParameterPackage:
@@ -220,8 +279,10 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       changedate:
         type: datetime-only | nil
         required: false
@@ -231,6 +292,9 @@ types:
       parameters:
         type: string[]
         required: false
+      sourcesystem:
+        type: string
+        required: false
 
   ParameterType:
     type: object
@@ -238,10 +302,15 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   Quantity:
@@ -250,12 +319,18 @@ types:
     properties:
       name:
         type: string
+        required: true
       code:
         type: string
+        required: true
       values:
         type: string[]
+        required: false
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   Unit:
@@ -264,13 +339,18 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       symbol:
         type: string?
         required: false
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   MeasurementPackage:
@@ -279,13 +359,18 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       description:
         type: string | nil
         required: false
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   MeasurementPurpose:
@@ -294,10 +379,15 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   Method:
@@ -306,8 +396,10 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       organisation:
         type: string | nil
         required: false
@@ -323,6 +415,9 @@ types:
       changedate:
         type: datetime-only | nil
         required: false
+      sourcesystem:
+        type: string
+        required: false
 
   MonitoringNetwork:
     type: object
@@ -330,15 +425,21 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       description:
         type: string | nil
         required: false
       organisation:
         type: string
+        required: true
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   Project:
@@ -347,17 +448,24 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       organisation:
         type: string
+        required: true
       start:
         type: date-only
+        required: true
       end:
         type: date-only | nil
         required: false
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   Purpose:
@@ -366,10 +474,15 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   Standard:
@@ -379,6 +492,7 @@ types:
       institute:
         description: Code of the institute.
         type: string
+        required: true
       standardcode:
         description: code of the instituteCode.
         type: string
@@ -394,6 +508,9 @@ types:
       changedate:
         type: datetime-only | nil
         required: false
+      sourcesystem:
+        type: string
+        required: false
 
   TaxonGroup:
     type: object
@@ -401,14 +518,21 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       taxontype:
         type: string
+        required: true
       taxontypename:
         type: string
+        required: true
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
   TaxonType:
@@ -417,10 +541,15 @@ types:
     properties:
       code:
         type: string
+        required: true
       name:
         type: string
+        required: true
       changedate:
         type: datetime-only | nil
+        required: false
+      sourcesystem:
+        type: string
         required: false
 
 # Expanded items
@@ -457,13 +586,14 @@ types:
         required: true
       monitoringnetworks:
         type: string[]
+        required: false
 
   ExpandedMeasurementPackage:
     type: MeasurementPackage
     properties:
       definition:
         type: ExpandedEntityBase | nil
-        required: true
+        required: false
       parametertypes:
         type: string[]
         required: false
@@ -502,6 +632,7 @@ types:
         required: true
       locations:
         type: string[]
+        required: false
 
   ExpandedOrganisation:
     type: Organisation

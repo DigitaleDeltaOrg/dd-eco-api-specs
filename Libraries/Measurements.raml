@@ -37,9 +37,11 @@ types:
       defaultPageSize:
         type: integer
         description: Default page size that the provider uses, if not provided by the consumer.
+        required: true
       minPageSize:
         type: integer
         description: Minimum page size, as defined by the provider. Cannot be less than 1.
+        required: true
       totalObjectCount:
         description: Number of records satisfying the query parameters.
         type: integer
@@ -55,6 +57,7 @@ types:
         required: false
       paging:
         type: PagingBlock
+        required: true
 
   Filter:
     type: object
@@ -63,22 +66,33 @@ types:
       FieldName:
         description: Field name.
         type: string
+        required: true
       Comparer:
         description: Filter comparer.
         type: string
+        required: true
       DataType:
         description: Filter data type.
         type: string
+        required: true
 
   Provider:
     type: object
     description: Information regarding the system that is responible for the response.
       Provides support contact information in case there are issues with response format or content.
     properties:
-      name?: string
-      supportUrl: string
-      apiVersion?: string
-      responseType?: string
+      name:
+        type: string
+        required: false
+      supportUrl:
+        type: string
+        required: false
+      apiVersion:
+        type: string
+        required: false
+      responseType:
+        type: string
+        required: false
 
   Problem:
     type: object
@@ -86,6 +100,7 @@ types:
     properties:
       provider:
         type: Provider
+        required: false
       type:
         description: Error type.
         required: true
@@ -118,12 +133,17 @@ types:
     type: object
     description: Defines the field of an error in the filtering syntax.
     properties:
-      errortype: string
-      context: string
+      errortype:
+        type: string
+        required: false
+      context:
+        type: string
+        required: false
 
   GeoJSON:
     description: A geometry in GeoJSON format.
     type: string
+    required: true
 
   Geometry:
     type: object
@@ -133,29 +153,37 @@ types:
         description: The geometry type. Must have the value "Point".
         type: string
         example: "Point"
+        required: true
       coordinates:
         type: Double[]
         description: An array of doubles, representing a coordinate.
         example: [ 4.234, 52.3423 ]
+        required: true
 
   Measurement:
     type: object
     description: Defines a single measurement.
     properties:
+      id:
+        description: The ID of a measurement, unique within the service/organisation-combination.
+        type: string
+        required: false
       organisation:
         description: The code of the organisations that owns the data.
         type: string
+        required: true
       measurementobject:
         description: The location where the measurements were sampled.
         type: string
+        required: true
       locationgeography:
         description: Coordinates of the measurementobject associated with the measurement if it
                      differentiates from the measurement object.
-        type: GeoJSON
+        type: object
         required: false
       measurementgeography:
         description: Coordinates of the geographycal position on which the measurement took place.
-        type: GeoJSON
+        type: object
         required: false
       measurementpackage:
         description: The measurement package used for the measurement.
@@ -179,9 +207,11 @@ types:
       measurementdate:
         description: Date/time of the measurement.
         type: datetime-only
+        required: true
       quantity:
         description: The quantity the measured value is expressed in.
         type: string
+        required: true
       parametertype:
         description: Type of parameter measured.
         type: string | nil
@@ -213,6 +243,7 @@ types:
       measuredunit:
         description: The unit of the measured value.
         type: string
+        required: true
       calculatedvalue:
         description: The calculated value (mostly micro-biology).
         type: number | nil
@@ -253,12 +284,17 @@ types:
         description: Measurement set attributes.
         type: string[]
         required: false
+      sourcesystem:
+        type: string
+        required: false
 
   MeasurementsListResponse:
     description: Base list response for measurements.
     type: BaseListResponse
     properties:
-      result: Measurement[]
+      result:
+        type: Measurement[]
+        required: true
 
 # Define the traits.
 traits:

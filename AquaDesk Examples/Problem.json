@@ -1,19 +1,26 @@
 {
     "type": "Filter query syntax",
-    "typeinfo": null,
     "title": "Query syntax",
     "status": 400,
     "detail": "See 'errors' attribute.",
-    "instance": null,
     "provider": {
         "name": "EcoSys",
         "supportUrl": "www.ecosys.nl",
-        "apiVersion": "0.9.1"
+        "apiVersion": "0.9.5",
+        "responseType": "EndPointsListResponse"
     },
     "errors": [
         {
             "errortype": "InvalidSyntax",
-            "context": "unsupportedfiltertest"
+            "context": "test"
+        },
+        {
+            "errortype": "InvalidSyntax",
+            "context": "eq"
+        },
+        {
+            "errortype": "InvalidSyntax",
+            "context": "bla"
         }
     ]
 }

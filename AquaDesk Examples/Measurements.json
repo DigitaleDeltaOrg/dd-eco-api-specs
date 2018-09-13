@@ -1,41 +1,52 @@
 {
     "paging": {
-        "self": "/eco/measurements?page=1&pagesize=3",
-        "prev": null,
-        "next": "/eco/measurements?page=2&pagesize=3",
-        "totalObjectCount": 376494,
+        "self": "dd-eco/1.0/measurements?page=1&pagesize=3",
+        "next": "dd-eco/1.0/measurements?page=2&pagesize=3",
         "maxPageSize": 10000,
         "defaultPageSize": 1000,
-        "minPageSize": 1
+        "minPageSize": 1,
+        "totalObjectCount": 552868
     },
     "provider": {
         "name": "EcoSys",
         "supportUrl": "www.ecosys.nl",
-        "apiVersion": "0.9.2",
+        "apiVersion": "0.9.5",
         "responseType": "MeasurementsListResponse"
     },
     "result": [
         {
-            "calculatedunit": "N/ML",
+            "calculatedunit": "n/ml",
             "calculatedvalue": 17,
             "changedate": "2018-02-23T11:11:35",
             "classifiedvalue": "",
             "collectiondate": "2009-03-10T13:00:00",
             "compartment": "OW",
-            "locationgeography": "POINT (6.11332785564352 51.3186009063121)",
-            "measurementgeography": "POINT (6.11332785564352 51.3186009063121)",
-            "limitsymbol": "0",
-            "measuredunit": "N",
+            "locationgeography": {
+                "type": "Point",
+                "coordinates": [
+                    51.3186009063121,
+                    6.11332785564352,
+                    0
+                ]
+            },
+            "measurementgeography": {
+                "type": "Point",
+                "coordinates": [
+                    51.3186009063121,
+                    6.11332785564352,
+                    0
+                ]
+            },
+            "measuredunit": "n",
             "measuredvalue": 1,
             "measurementattributes": [
                 "LV-CEL"
             ],
             "measurementdate": "2009-03-10T13:00:00",
             "measurementobject": "ZNDMS_0001",
-            "measurementpackage": null,
+            "measurementpackage": "FP.AC",
             "measurementpurpose": "MT",
             "methods": [],
-            "note": null,
             "organisation": "RWS",
             "parameter": "Ceratoneis closterium",
             "parametertype": "Taxon",
@@ -48,26 +59,41 @@
             "measurementsetattributes": [
                 "AM=FYTPT_A006",
                 "MM=FYTPT_S003"
-            ]
+            ],
+            "id": "1259211",
+            "sourcesystem": "AquaDesk"
         },
         {
-            "calculatedunit": "N/ML",
+            "calculatedunit": "n/ml",
             "calculatedvalue": 17,
             "changedate": "2018-02-23T11:11:35",
             "classifiedvalue": "",
             "collectiondate": "2009-03-10T13:00:00",
             "compartment": "OW",
-            "locationgeography": "POINT (6.11332785564352 51.3186009063121)",
-            "measurementgeography": "POINT (6.11332785564352 51.3186009063121)",
-            "limitsymbol": "0",
-            "measuredunit": "N",
+            "locationgeography": {
+                "type": "Point",
+                "coordinates": [
+                    51.3186009063121,
+                    6.11332785564352,
+                    0
+                ]
+            },
+            "measurementgeography": {
+                "type": "Point",
+                "coordinates": [
+                    51.3186009063121,
+                    6.11332785564352,
+                    0
+                ]
+            },
+            "measuredunit": "n",
             "measuredvalue": 1,
             "measurementattributes": [
                 "LV-CEL"
             ],
             "measurementdate": "2009-03-10T13:00:00",
             "measurementobject": "ZNDMS_0001",
-            "measurementpackage": null,
+            "measurementpackage": "FP.AC",
             "measurementpurpose": "MT",
             "methods": [],
             "note": "Pc022",
@@ -83,29 +109,43 @@
             "measurementsetattributes": [
                 "AM=FYTPT_A006",
                 "MM=FYTPT_S003"
-            ]
+            ],
+            "id": "1259212",
+            "sourcesystem": "AquaDesk"
         },
         {
-            "calculatedunit": "N/ML",
+            "calculatedunit": "n/ml",
             "calculatedvalue": 17,
             "changedate": "2018-02-23T11:11:35",
             "classifiedvalue": "",
             "collectiondate": "2009-03-10T13:00:00",
             "compartment": "OW",
-            "locationgeography": "POINT (6.11332785564352 51.3186009063121)",
-            "measurementgeography": "POINT (6.11332785564352 51.3186009063121)",
-            "limitsymbol": "0",
-            "measuredunit": "N",
+            "locationgeography": {
+                "type": "Point",
+                "coordinates": [
+                    51.3186009063121,
+                    6.11332785564352,
+                    0
+                ]
+            },
+            "measurementgeography": {
+                "type": "Point",
+                "coordinates": [
+                    51.3186009063121,
+                    6.11332785564352,
+                    0
+                ]
+            },
+            "measuredunit": "n",
             "measuredvalue": 1,
             "measurementattributes": [
                 "LV-CEL"
             ],
             "measurementdate": "2009-03-10T13:00:00",
             "measurementobject": "ZNDMS_0001",
-            "measurementpackage": null,
+            "measurementpackage": "FP.AC",
             "measurementpurpose": "MT",
             "methods": [],
-            "note": null,
             "organisation": "RWS",
             "parameter": "Chromulina",
             "parametertype": "Taxon",
@@ -118,7 +158,9 @@
             "measurementsetattributes": [
                 "AM=FYTPT_A006",
                 "MM=FYTPT_S003"
-            ]
+            ],
+            "id": "1259213",
+            "sourcesystem": "AquaDesk"
         }
     ]
 }

@@ -15,16 +15,16 @@
                 "measuredvalue": 1,
                 "classifiedvalue": "",
                 "calculatedvalue": 17,
-                "measuredunit": "N",
-                "calculatedunit": "N/ML",
+                "measuredunit": "n",
+                "calculatedunit": "n/ml",
                 "compartment": "OW",
-                "limitsymbol": "0",
+                "limitsymbol": null,
                 "measurementattributes": [
                     "LV-CEL"
                 ],
                 "measurementdate": "2009-03-10T13:00:00",
                 "measurementobject": "ZNDMS_0001",
-                "measurementpackage": null,
+                "measurementpackage": "FP.AC",
                 "measurementpurpose": "MT",
                 "methods": [],
                 "note": null,
@@ -43,7 +43,9 @@
                 "measurementsetattributes": [
                     "AM=FYTPT_A006",
                     "MM=FYTPT_S003"
-                ]
+                ],
+                "id": "1259211",
+                "sourcesystem": "AquaDesk"
             }
         },
         {
@@ -60,16 +62,16 @@
                 "measuredvalue": 1,
                 "classifiedvalue": "",
                 "calculatedvalue": 17,
-                "measuredunit": "N",
-                "calculatedunit": "N/ML",
+                "measuredunit": "n",
+                "calculatedunit": "n/ml",
                 "compartment": "OW",
-                "limitsymbol": "0",
+                "limitsymbol": null,
                 "measurementattributes": [
                     "LV-CEL"
                 ],
                 "measurementdate": "2009-03-10T13:00:00",
                 "measurementobject": "ZNDMS_0001",
-                "measurementpackage": null,
+                "measurementpackage": "FP.AC",
                 "measurementpurpose": "MT",
                 "methods": [],
                 "note": "Pc022",
@@ -88,7 +90,9 @@
                 "measurementsetattributes": [
                     "AM=FYTPT_A006",
                     "MM=FYTPT_S003"
-                ]
+                ],
+                "id": "1259212",
+                "sourcesystem": "AquaDesk"
             }
         },
         {
@@ -105,16 +109,16 @@
                 "measuredvalue": 1,
                 "classifiedvalue": "",
                 "calculatedvalue": 17,
-                "measuredunit": "N",
-                "calculatedunit": "N/ML",
+                "measuredunit": "n",
+                "calculatedunit": "n/ml",
                 "compartment": "OW",
-                "limitsymbol": "0",
+                "limitsymbol": null,
                 "measurementattributes": [
                     "LV-CEL"
                 ],
                 "measurementdate": "2009-03-10T13:00:00",
                 "measurementobject": "ZNDMS_0001",
-                "measurementpackage": null,
+                "measurementpackage": "FP.AC",
                 "measurementpurpose": "MT",
                 "methods": [],
                 "note": null,
@@ -133,7 +137,9 @@
                 "measurementsetattributes": [
                     "AM=FYTPT_A006",
                     "MM=FYTPT_S003"
-                ]
+                ],
+                "id": "1259213",
+                "sourcesystem": "AquaDesk"
             }
         }
     ]

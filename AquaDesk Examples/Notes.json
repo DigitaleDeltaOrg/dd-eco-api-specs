@@ -1,37 +1,39 @@
 {
     "paging": {
-        "self": "/eco/notes?page=1&pagesize=3",
-        "prev": null,
-        "next": "/eco/notes?page=2&pagesize=3",
-        "totalObjectCount": 149,
+        "self": "dd-eco/1.0/notes?page=1&pagesize=3",
+        "next": "dd-eco/1.0/notes?page=2&pagesize=3",
         "maxPageSize": 10000,
         "defaultPageSize": 1000,
-        "minPageSize": 1
+        "minPageSize": 1,
+        "totalObjectCount": 146
     },
     "provider": {
         "name": "EcoSys",
         "supportUrl": "www.ecosys.nl",
-        "apiVersion": "0.9.2",
+        "apiVersion": "0.9.5",
         "responseType": "NotesListResponse"
     },
     "result": [
         {
-            "changedate": "2018-07-09T16:38:47.61",
+            "changedate": "2018-09-13T10:55:45.847",
             "code": "Mc501",
             "note": "Lumbrineris cf 'near cingulata' sensu Oug 2012",
-            "organisation": "RWS"
+            "organisation": "RWS",
+            "sourcesystem": "AquaDesk"
         },
         {
-            "changedate": "2018-07-09T16:38:47.61",
+            "changedate": "2018-09-13T10:55:45.847",
             "code": "Pc001",
             "note": "Actinastrum cf aciculare [4]",
-            "organisation": "RWS"
+            "organisation": "RWS",
+            "sourcesystem": "AquaDesk"
         },
         {
-            "changedate": "2018-07-09T16:38:47.61",
+            "changedate": "2018-09-13T10:55:45.847",
             "code": "Pc002",
             "note": "Aphanocapsa cf delicatissima",
-            "organisation": "RWS"
+            "organisation": "RWS",
+            "sourcesystem": "AquaDesk"
         }
     ]
 }

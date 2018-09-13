@@ -1,40 +1,42 @@
 {
     "paging": {
-        "self": "/eco/attributes?page=1&pagesize=3",
-        "prev": null,
-        "next": "/eco/attributes?page=2&pagesize=3",
-        "totalObjectCount": 19,
+        "self": "dd-eco/1.0/measurementattributes?page=1&pagesize=3",
+        "next": "dd-eco/1.0/measurementattributes?page=2&pagesize=3",
         "maxPageSize": 10000,
         "defaultPageSize": 1000,
-        "minPageSize": 1
+        "minPageSize": 1,
+        "totalObjectCount": 19
     },
     "provider": {
         "name": "EcoSys",
         "supportUrl": "www.ecosys.nl",
-        "apiVersion": "0.9.2",
+        "apiVersion": "0.9.5",
         "responseType": "MeasurementAttributesListResponse"
     },
     "result": [
         {
-            "changedate": "2018-07-09T16:31:13.92",
+            "changedate": "2018-09-13T10:42:43.653",
             "code": "LV-CEL",
             "attributetype": "LV",
             "attributetypename": "Levensvorm",
-            "name": "Cel"
+            "name": "Cel",
+            "sourcesystem": "AquaDesk"
         },
         {
-            "changedate": "2018-07-09T16:31:13.92",
+            "changedate": "2018-09-13T10:42:43.653",
             "code": "LV-COE",
             "attributetype": "LV",
             "attributetypename": "Levensvorm",
-            "name": "Coenobium"
+            "name": "Coenobium",
+            "sourcesystem": "AquaDesk"
         },
         {
-            "changedate": "2018-07-09T16:31:13.92",
+            "changedate": "2018-09-13T10:42:43.653",
             "code": "LV-FIL",
             "attributetype": "LV",
             "attributetypename": "Levensvorm",
-            "name": "Filament"
+            "name": "Filament",
+            "sourcesystem": "AquaDesk"
         }
     ]
 }

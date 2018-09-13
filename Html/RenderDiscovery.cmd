@@ -1,1 +1,1 @@
-raml2html -i ..\DigitalDeltaEcoDiscovery.raml -o DigitalDeltaEcoDiscovery.html
+raml2html -i ..\digitalDeltaecodiscovery.raml -o digitaldeltaecodiscovery.html

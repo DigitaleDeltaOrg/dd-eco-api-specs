@@ -1,24 +1,23 @@
 {
     "paging": {
-        "self": "/eco/compartments/expand?page=1&pagesize=3",
-        "prev": null,
-        "next": "/eco/compartments/expand?page=2&pagesize=3",
-        "totalObjectCount": 20,
+        "self": "/dd-eco/1.0/compartments/expand?page=1&pagesize=3",
+        "next": "/dd-eco/1.0/compartments/expand?page=2&pagesize=3",
         "maxPageSize": 10000,
         "defaultPageSize": 1000,
-        "minPageSize": 1
+        "minPageSize": 1,
+        "totalObjectCount": 22
     },
     "provider": {
         "name": "EcoSys",
         "supportUrl": "www.ecosys.nl",
-        "apiVersion": "0.9.2",
+        "apiVersion": "0.9.5",
         "responseType": "ExpandedCompartmentsListResponse"
     },
     "result": [
         {
             "code": "BS",
             "name": "Bodem / Sediment",
-            "changedate": "2018-07-09T16:33:35.773",
+            "changedate": "2018-09-13T10:24:56.177",
             "definition": [
                 {
                     "standardCode": "AQUO",
@@ -26,12 +25,13 @@
                     "reference": "http://domeintabellen-idsw.rws.nl/",
                     "changedate": "0001-01-01T00:00:00"
                 }
-            ]
+            ],
+            "sourcesystem": "AquaDesk"
         },
         {
             "code": "LT",
             "name": "Lucht",
-            "changedate": "2018-07-09T16:33:35.773",
+            "changedate": "2018-09-13T10:24:56.177",
             "definition": [
                 {
                     "standardCode": "AQUO",
@@ -39,12 +39,13 @@
                     "reference": "http://domeintabellen-idsw.rws.nl/",
                     "changedate": "0001-01-01T00:00:00"
                 }
-            ]
+            ],
+            "sourcesystem": "AquaDesk"
         },
         {
             "code": "NT",
             "name": "Niet van toepassing",
-            "changedate": "2018-07-09T16:33:35.773",
+            "changedate": "2018-09-13T10:24:56.177",
             "definition": [
                 {
                     "standardCode": "AQUO",
@@ -52,7 +53,8 @@
                     "reference": "http://domeintabellen-idsw.rws.nl/",
                     "changedate": "0001-01-01T00:00:00"
                 }
-            ]
+            ],
+            "sourcesystem": "AquaDesk"
         }
     ]
 }

@@ -1,8 +1,8 @@
 #%RAML 1.0 Extension
   title: Digital Delta Eco Extensions - Discovery
-  version: 0.9.2
+  version: 0.9.5
   usage: Digital Delta Eco discovery interface. Extends Measurement.
-  extends: DigitalDeltaEcoMeasurements.raml
+  extends: digitaldeltaecomeasurements.raml
   mediaType: [ application/json ]
   securitySchemes:
     basic:
@@ -26,12 +26,11 @@
       content: !include https://raw.githubusercontent.com/wiki/DigitaleDeltaOrg/dd-eco-api-specs/Change-History-(Specification).md
 
   uses: # Minimal types and definitions
-    Measurements: Libraries/Measurements.raml
-    Extended: Libraries/Discovery.raml
-    Traits: Libraries/Traits.raml
+    Measurements: libraries/measurements.raml
+    Extended: libraries/discovery.raml
+    Traits: libraries/traits.raml
 
   /eco:
-
     # Public information.
     /endpoints:
       description:
@@ -43,8 +42,7 @@
             body:
               application/json:
                 type: Extended.EndpointsListResponse
-                example: !include AquaDesk Examples/Endpoints.json
-
+                example: !include aquadesk examples/endpoints.json
 
     /compartments:
       description:
@@ -56,8 +54,7 @@
             body:
               application/json:
                 type: Extended.CompartmentsListResponse
-                example: !include AquaDesk Examples/Compartments.json
-
+                example: !include aquadesk examples/compartments.json
       /expand:
         # public information
         description:
@@ -69,8 +66,7 @@
               body:
                 application/json:
                   type: Extended.ExpandedCompartmentsListResponse
-                  example: !include AquaDesk Examples/ExpandedCompartments.json
-
+                  example: !include aquadesk examples/expandedcompartments.json
       /filters:
         get:
           is: [ Traits.has500-ServerError, Traits.filterResponse ]
@@ -85,7 +81,7 @@
             body:
               application/json:
                 type: Extended.LiteratureListResponse
-                example: !include AquaDesk Examples/Literature.json
+                example: !include aquadesk examples/literature.json
 
       /filters:
         get:
@@ -101,8 +97,7 @@
             body:
               application/json:
                 type: Extended.OrganisationsListResponse
-                example: !include AquaDesk Examples/Organisations.json
-
+                example: !include aquadesk examples/organisations.json
       /expand:
         description:
           Retrieves an expanded list of organisations within the provider's system.
@@ -113,8 +108,7 @@
               body:
                 application/json:
                   type: Extended.ExpandedOrganisationsListResponse
-                  example: !include AquaDesk Examples/ExpandedOrganisations.json
-
+                  example: !include aquadesk examples/expandedorganisations.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -129,8 +123,7 @@
             body:
               application/json:
                 type: Extended.ParametersListResponse
-                example: !include AquaDesk Examples/Parameters.json
-
+                example: !include aquadesk examples/parameters.json
       /expand:
         description:
           Retrieves an expanded list of parameters available in the provider's system.
@@ -141,7 +134,7 @@
               body:
                 application/json:
                   type: Extended.ExpandedParametersListResponse
-                  example: !include AquaDesk Examples/ExpandedParameters.json
+                  example: !include aquadesk examples/expandedparameters.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -157,8 +150,7 @@
             body:
               application/json:
                 type: Extended.QuantitiesListResponse
-                example: !include AquaDesk Examples/Quantities.json
-
+                example: !include aquadesk examples/quantities.json
       /expand:
         description:
           Retrieves an expanded list of quantities available in the provider's system.
@@ -169,8 +161,7 @@
               body:
                 application/json:
                   type: Extended.ExpandedQuantitiesListResponse
-                  example: !include AquaDesk Examples/ExpandedQuantities.json
-
+                  example: !include aquadesk examples/expandedquantities.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -186,8 +177,7 @@
             body:
               application/json:
                 type: Extended.UnitsListResponse
-                example: !include AquaDesk Examples/Units.json
-
+                example: !include aquadesk examples/units.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -202,7 +192,7 @@
             body:
               application/json:
                 type: Extended.MeasurementPackagesListResponse
-                example: !include AquaDesk Examples/MeasurementPackages.json
+                example: !include aquadesk examples/measurementpackages.json
       /expand:
         description:
           Retrieves an expanded list of monitoring networks (a collection of measurement objects) within the provider's system.
@@ -213,8 +203,7 @@
               body:
                 application/json:
                   type: Extended.ExpandedMeasurementPackagesListResponse
-                  example: !include AquaDesk Examples/ExpandedMeasurementPackages.json
-
+                  example: !include aquadesk examples/expandedmeasurementpackages.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -230,8 +219,7 @@
             body:
               application/json:
                 type: Extended.ExchangeSystemsListResponse
-                example: !include AquaDesk Examples/ExchangeSystems.json
-
+                example: !include aquadesk examples/exchangesystems.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -246,8 +234,7 @@
             body:
               application/json:
                 type: Extended.InstitutesListResponse
-                example: !include AquaDesk Examples/Institutes.json
-
+                example: !include aquadesk examples/institutes.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -262,8 +249,7 @@
             body:
               application/json:
                 type: Extended.ParameterPackagesListResponse
-                example: !include AquaDesk Examples/ParameterPackages.json
-
+                example: !include aquadesk examples/parameterpackages.json
       /expand:
         description:
           Retrieves an expanded list of parameter packages available in the provider's system.
@@ -274,8 +260,7 @@
               body:
                 application/json:
                   type: Extended.ExpandedParameterPackagesListResponse
-                  example: !include AquaDesk Examples/ExpandedParameterPackages.json
-
+                  example: !include aquadesk examples/expandedparameterpackages.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -290,8 +275,7 @@
             body:
               application/json:
                 type: Extended.ParameterTypesListResponse
-                example: !include AquaDesk Examples/ParameterTypes.json
-
+                example: !include aquadesk examples/parametertypes.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -307,8 +291,7 @@
             body:
               application/json:
                 type: Extended.TaxonGroupsListResponse
-                example: !include AquaDesk Examples/TaxonGroups.json
-
+                example: !include aquadesk examples/taxongroups.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -324,8 +307,7 @@
             body:
               application/json:
                 type: Extended.TaxonTypesListResponse
-                example: !include AquaDesk Examples/TaxonTypes.json
-
+                example: !include aquadesk examples/taxontypes.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -340,7 +322,7 @@
             body:
               application/json:
                 type: Extended.StandardsListResponse
-                example: !include AquaDesk Examples/Standards.json
+                example: !include aquadesk examples/standards.json
 
       /filters:
         get:
@@ -358,7 +340,7 @@
             body:
               application/json:
                 type: Extended.MeasurementObjectsListResponse
-                example: !include AquaDesk Examples/MeasurementObjects.json
+                example: !include aquadesk examples/measurementobjects.json
       /geojson:
         securedBy: oidc
         description:
@@ -370,8 +352,7 @@
               body:
                 application/json:
                   type: object
-                  example: !include AquaDesk Examples/MeasurementObjectsGeoJSON.json
-
+                  example: !include aquadesk examples/measurementobjectsgeojson.json
       /expand:
         securedBy: oidc
         description:
@@ -383,7 +364,7 @@
               body:
                 application/json:
                   type: Extended.ExpandedMeasurementObjectsListResponse
-                  example: !include AquaDesk Examples/ExpandedMeasurementObjects.json
+                  example: !include aquadesk examples/expandedmeasurementobjects.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -399,8 +380,7 @@
             body:
               application/json:
                 type: Extended.MethodsListResponse
-                example: !include AquaDesk Examples/Methods.json
-
+                example: !include aquadesk examples/methods.json
       /expand:
         securedBy: oidc
         description:
@@ -412,8 +392,7 @@
               body:
                 application/json:
                   type: Extended.ExpandedMethodsListResponse
-                  example: !include AquaDesk Examples/ExpandedMethods.json
-
+                  example: !include aquadesk examples/expandedmethods.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -429,8 +408,7 @@
             body:
               application/json:
                 type: Extended.MonitoringNetworksListResponse
-                example: !include AquaDesk Examples/MonitoringNetworks.json
-
+                example: !include aquadesk examples/monitoringnetworks.json
       /expand:
         securedBy: oidc
         description:
@@ -442,8 +420,7 @@
               body:
                 application/json:
                   type: Extended.ExpandedMonitoringNetworksListResponse
-                  example: !include AquaDesk Examples/ExpandedMonitoringNetworks.json
-
+                  example: !include aquadesk examples/expandedmonitoringnetworks.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -459,8 +436,7 @@
             body:
               application/json:
                 type: Extended.OrganisationNotesListResponse
-                example: !include AquaDesk Examples/Notes.json
-
+                example: !include aquadesk examples/notes.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -476,8 +452,7 @@
             body:
               application/json:
                 type: Extended.PurposesListResponse
-                example: !include AquaDesk Examples/Purposes.json
-
+                example: !include aquadesk examples/purposes.json
       /filters:
         get:
           is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
@@ -491,8 +466,7 @@
             body:
               application/json:
                 type: Extended.ProjectsListResponse
-                example: !include AquaDesk Examples/Projects.json
-
+                example: !include aquadesk examples/projects.json
       /filters:
           get:
             is: [ Traits.has403-AccessDeniedError, Traits.has500-ServerError, Traits.filterResponse ]
