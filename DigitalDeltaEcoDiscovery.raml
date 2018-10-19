@@ -353,6 +353,29 @@
                 application/json:
                   type: object
                   example: !include aquadesk examples/measurementobjectsgeojson.json
+      /geojsonfile:
+        securedBy: oidc
+        description:
+          Retrieves a list of measurement objects as a GeoJSON FeatureCollection.
+        get:
+          queryParameters:
+            fileName:
+              type: string
+              required: false
+          is: [ Traits.pageable, Traits.filterable, Traits.has403-AccessDeniedError, Traits.has500-ServerError ]
+          securedBy: oidc
+          responses:
+            200:
+              description: Download GeoJSON response
+              headers:
+                Content-type:
+                  displayName: Content-type
+                  description: GeoJSON
+                  type: string
+                  required: true
+              body:
+                application/json:
+                  type: file
       /expand:
         securedBy: oidc
         description:
