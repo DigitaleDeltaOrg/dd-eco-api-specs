@@ -1,0 +1,5558 @@
+{
+"openapi": "3.0.1",
+"info": {
+"title": "DD-ECO-API (AquaDesk)",
+"description": "DD-ECO-API provider for AquaDesk",
+"contact": {
+"name": "EcoSys",
+"url": "https://www.ecosys.nl",
+"email": "info@ecosys.nl"
+},
+"version": "v1"
+},
+"paths": {
+"/v1/measurementattributes/filters": {
+"get": {
+"tags": [
+"Attribute"
+],
+"summary": "Retrieves properties and their comparers that can be used for the attributes endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetAttributeFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/measurementattributes": {
+"get": {
+"tags": [
+"Attribute"
+],
+"summary": "Retrieves attributes, properties of a measurement. This is mostly used in parameters of types taxon and biological groups.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetAttributes",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered attributes",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/AttributeBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/compartments/filters": {
+"get": {
+"tags": [
+"Compartment"
+],
+"summary": "Retrieves properties and their comparers that can be used for the compartments endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetCompartmentFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/compartments": {
+"get": {
+"tags": [
+"Compartment"
+],
+"summary": "Retrieves compartments, in which measurements can be made.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetCompartments",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered compartments",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/CompartmentBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/endpoints": {
+"get": {
+"tags": [
+"EndPoints"
+],
+"summary": "Endpoints provided by this service.",
+"operationId": "GetEndpoints",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"description": "Page number",
+"format": "int32",
+"default": 1
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"description": "Page size",
+"format": "int32",
+"default": 10000
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/institutes/filters": {
+"get": {
+"tags": [
+"Institute"
+],
+"summary": "Retrieves properties and their comparers that can be used for the insitutes endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetInstituteFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/institutes": {
+"get": {
+"tags": [
+"Institute"
+],
+"summary": "Retrieves institutes which can define standards.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetInstitutes",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered compartments",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/InstituteBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/literature/filters": {
+"get": {
+"tags": [
+"Literature"
+],
+"summary": "Retrieves properties and their comparers that can be used for the literature endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetLiteratureFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/literature": {
+"get": {
+"tags": [
+"Literature"
+],
+"summary": "Retrieves literature, documents that describe taxons.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetLiterature",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered literature",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/LiteratureBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/measurementcycles/filters": {
+"get": {
+"tags": [
+"MeasurementCycle"
+],
+"summary": "Retrieves properties and their comparers that can be used for the measurement cycles endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetMeasurementCycleFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/measurementcycles": {
+"get": {
+"tags": [
+"MeasurementCycle"
+],
+"summary": "Retrieves measurement cycles: when and how often samples should be taken.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetMeasurementCycles",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered measurement cycles",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/MeasurementCycleBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/measurementobjects/filters": {
+"get": {
+"tags": [
+"MeasurementObjects"
+],
+"summary": "Retrieves properties and their comparers that can be used for the measurement objects endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetMeasurementObjectFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/measurementobjects": {
+"get": {
+"tags": [
+"MeasurementObjects"
+],
+"summary": "Retrieves measurement objects that comply to the specified parameters.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetMeasurementObjects",
+"parameters": [
+{
+"name": "x-api-key",
+"in": "header",
+"description": "API-Key (header)",
+"required": true,
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered measurement objects",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/MeasurementObjectBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+},
+"403": {
+"description": "Incorrect API Key",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/measurementobjects/geojson": {
+"get": {
+"tags": [
+"MeasurementObjects"
+],
+"summary": "Retrieves measurement objectss that comply to the specified parameters. Output is in GeoJson format",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetMeasurementObjects",
+"parameters": [
+{
+"name": "x-api-key",
+"in": "header",
+"description": "API-Key (header)",
+"required": true,
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered measurements",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/MeasurementObjectBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+},
+"403": {
+"description": "Incorrect API Key",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/measurementpackages/filters": {
+"get": {
+"tags": [
+"MeasurementPackage"
+],
+"summary": "Retrieves properties and their comparers that can be used for the measurement packages endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetMeasurementPackageFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/measurementpackages": {
+"get": {
+"tags": [
+"MeasurementPackage"
+],
+"summary": "Retrieves measurement packages, a combination of several items to define exact requirements for measurements.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetMeasurementPackages",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered taxon types",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/MeasurementPackageBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/measurements/filters": {
+"get": {
+"tags": [
+"Measurements"
+],
+"summary": "Retrieves properties and their comparers that can be used for the measurements endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetMeasurementFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/measurements": {
+"get": {
+"tags": [
+"Measurements"
+],
+"summary": "Retrieves measurements that comply to the specified parameters.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetMeasurements",
+"parameters": [
+{
+"name": "x-api-key",
+"in": "header",
+"description": "API-Key (header)",
+"required": true,
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered measurements",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/MeasurementBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+},
+"403": {
+"description": "Incorrect API Key",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/measurements/timeseries": {
+"get": {
+"tags": [
+"Measurements"
+],
+"summary": "Retrieves measurements that comply to the specified parameters as time series.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetTimeseriess",
+"parameters": [
+{
+"name": "x-api-key",
+"in": "header",
+"description": "API-Key (header)",
+"required": true,
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered timeseries",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/TimeSeriesBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+},
+"403": {
+"description": "Incorrect API Key",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/measurements/geojson": {
+"get": {
+"tags": [
+"Measurements"
+],
+"summary": "Retrieves measurements that comply to the specified parameters. Output is in GeoJson format",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetMeasurements",
+"parameters": [
+{
+"name": "x-api-key",
+"in": "header",
+"description": "API-Key (header)",
+"required": true,
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered measurements",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/MeasurementBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+},
+"403": {
+"description": "Incorrect API Key",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/methods/filters": {
+"get": {
+"tags": [
+"Method"
+],
+"summary": "Retrieves properties and their comparers that can be used for the methods endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetMethodFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/methods": {
+"get": {
+"tags": [
+"Method"
+],
+"summary": "Retrieves methods that comply to the specified methods.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetMethods",
+"parameters": [
+{
+"name": "x-api-key",
+"in": "header",
+"description": "API-Key (header)",
+"required": true,
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered method",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/MethodBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+},
+"403": {
+"description": "Incorrect API Key",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/monitoringnetworks/filters": {
+"get": {
+"tags": [
+"MonitoringNetwork"
+],
+"summary": "Retrieves properties and their comparers that can be used for the monitoring networks endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetMonitoringNetworkFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/monitoringnetworks": {
+"get": {
+"tags": [
+"MonitoringNetwork"
+],
+"summary": "Retrieves monitoring networks that comply to the specified parameters.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetMonitoringNetworks",
+"parameters": [
+{
+"name": "x-api-key",
+"in": "header",
+"description": "API-Key (header)",
+"required": true,
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered monitoring networks",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/MonitoringNetworkBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+},
+"403": {
+"description": "Incorrect API Key",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/notes/filters": {
+"get": {
+"tags": [
+"Note"
+],
+"summary": "Retrieves properties and their comparers that can be used for the notes endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetNoteFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/notes": {
+"get": {
+"tags": [
+"Note"
+],
+"summary": "Retrieves notes that comply to the specified parameters.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetNotes",
+"parameters": [
+{
+"name": "x-api-key",
+"in": "header",
+"description": "API-Key (header)",
+"required": true,
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered notes",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/NoteBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+},
+"403": {
+"description": "Incorrect API Key",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/organisations/filters": {
+"get": {
+"tags": [
+"Organisation"
+],
+"summary": "Retrieves properties and their comparers that can be used for the organisations endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetCompartmentFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/organisations": {
+"get": {
+"tags": [
+"Organisation"
+],
+"summary": "Retrieves organisations that have measurement in AquaDesk and use the DD-ECO-API module.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetOrganisations",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered organisations",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/OrganisationBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/parameters/filters": {
+"get": {
+"tags": [
+"Parameter"
+],
+"summary": "Retrieves properties and their comparers that can be used for the parameters endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetParameterFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/parameters": {
+"get": {
+"tags": [
+"Parameter"
+],
+"summary": "Retrieves parameters, which can be measured.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetParameters",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered parameters",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/ParameterBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/parameterpackages/filters": {
+"get": {
+"tags": [
+"ParameterPackage"
+],
+"summary": "Retrieves properties and their comparers that can be used for the measurement packages endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetParameterPackageFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/parameterpackages": {
+"get": {
+"tags": [
+"ParameterPackage"
+],
+"summary": "Retrieves measurement packages, a combination of several items to define exact requirements for measurements.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetParameterPackages",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered taxon types",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/ParameterPackageBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/parametertypes/filters": {
+"get": {
+"tags": [
+"ParameterType"
+],
+"summary": "Retrieves properties and their comparers that can be used for the parameter types endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetParameterTypeFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/parametertypes": {
+"get": {
+"tags": [
+"ParameterType"
+],
+"summary": "Retrieves parameter types, a division of parameters.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetParameterTypes",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered parameter types",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/ParameterTypeBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/projects/filters": {
+"get": {
+"tags": [
+"Project"
+],
+"summary": "Retrieves properties and their comparers that can be used for the projects endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetProjectFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/projects": {
+"get": {
+"tags": [
+"Project"
+],
+"summary": "Retrieves projects that comply to the specified parameters.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetProjects",
+"parameters": [
+{
+"name": "x-api-key",
+"in": "header",
+"description": "API-Key (header)",
+"required": true,
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered projects",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/ProjectBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+},
+"403": {
+"description": "Incorrect API Key",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/purposes/filters": {
+"get": {
+"tags": [
+"Purpose"
+],
+"summary": "Retrieves properties and their comparers that can be used for the purposes endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetPurposeFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/purposes": {
+"get": {
+"tags": [
+"Purpose"
+],
+"summary": "Retrieves purposes: the 'why' a measurement was performed.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetPurposes",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered purposes",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PurposeBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/quantities/filters": {
+"get": {
+"tags": [
+"Quantity"
+],
+"summary": "Retrieves properties and their comparers that can be used for the quantities endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetQuantityFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/quantities": {
+"get": {
+"tags": [
+"Quantity"
+],
+"summary": "Retrieves quantities.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetQuantities",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered quantities",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/QuantityBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/sources/filters": {
+"get": {
+"tags": [
+"Source"
+],
+"summary": "Retrieves properties and their comparers that can be used for the sources endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetSourceFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/sources": {
+"get": {
+"tags": [
+"Source"
+],
+"summary": "Retrieves sources which can produce measurements.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetSources",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered sources",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/SourceBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/standards/filters": {
+"get": {
+"tags": [
+"Standard"
+],
+"summary": "Retrieves properties and their comparers that can be used for the standards endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetStandardsFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/standards": {
+"get": {
+"tags": [
+"Standard"
+],
+"summary": "Standards used for measurements, parameters, units, quantities, attributes, etc.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetStandards",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered sources",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/StandardBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/taxongroups/filters": {
+"get": {
+"tags": [
+"TaxonGroup"
+],
+"summary": "Retrieves properties and their comparers that can be used for the taxon groups endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetTaxonGroupFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/taxongroups": {
+"get": {
+"tags": [
+"TaxonGroup"
+],
+"summary": "Retrieves taxon groups, a division of taxon types.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetTaxonGroups",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered parameter types",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/TaxonGroupBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/taxontypes/filters": {
+"get": {
+"tags": [
+"TaxonType"
+],
+"summary": "Retrieves properties and their comparers that can be used for the taxon types endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetTaxonTypeFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/taxontypes": {
+"get": {
+"tags": [
+"TaxonType"
+],
+"summary": "Retrieves taxon types, a division of parameters of type taxon.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetTaxonTypes",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered taxon types",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/TaxonTypeBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/units/filters": {
+"get": {
+"tags": [
+"Unit"
+],
+"summary": "Retrieves properties and their comparers that can be used for the units endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetSourceFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/units": {
+"get": {
+"tags": [
+"Unit"
+],
+"summary": "Retrieves a filtered list of units of measurements.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetUnits",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered units",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/UnitBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+},
+"/v1/watertypes/filters": {
+"get": {
+"tags": [
+"WaterType"
+],
+"summary": "Retrieves properties and their comparers that can be used for the water types endpoint.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetWaterTypeFilters",
+"responses": {
+"200": {
+"description": "List of properties and operators",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FilterOption"
+}
+}
+}
+}
+}
+}
+}
+},
+"/v1/watertypes": {
+"get": {
+"tags": [
+"WaterType"
+],
+"summary": "Retrieves water types, that describe a body of water.",
+"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+"operationId": "GetWaterTypes",
+"parameters": [
+{
+"name": "page",
+"in": "query",
+"description": "Page number",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 1,
+"nullable": true
+}
+},
+{
+"name": "pagesize",
+"in": "query",
+"description": "Page size",
+"schema": {
+"type": "integer",
+"format": "int32",
+"default": 10000,
+"nullable": true
+}
+},
+{
+"name": "filter",
+"in": "query",
+"description": "Query filter",
+"schema": {
+"type": "string",
+"nullable": true
+}
+},
+{
+"name": "skipproperties",
+"in": "query",
+"description": "Properties to skip",
+"schema": {
+"type": "string",
+"default": "",
+"nullable": true
+}
+},
+{
+"name": "nocount",
+"in": "query",
+"description": "Skip totalobjectcount (increases performance)",
+"schema": {
+"type": "boolean",
+"default": false
+}
+},
+{
+"name": "nopagingblock",
+"in": "query",
+"description": "Alias of nocount",
+"schema": {
+"type": "boolean",
+"default": false
+}
+}
+],
+"responses": {
+"200": {
+"description": "List of filtered water types",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/WaterTypeBaseListResponse"
+}
+}
+}
+},
+"400": {
+"description": "Errors in filter",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/Problem"
+}
+}
+}
+}
+}
+}
+}
+},
+"components": {
+"schemas": {
+"FilterOption": {
+"type": "object",
+"properties": {
+"fieldName": {
+"type": "string",
+"description": "Name of the field.",
+"nullable": true,
+"readOnly": true,
+"example": "quantity"
+},
+"comparer": {
+"type": "string",
+"description": "Comparer, i.e. ge, eq, lt",
+"nullable": true,
+"readOnly": true,
+"example": "eq"
+},
+"dataType": {
+"type": "string",
+"description": "Data type allowed for field/comparer combination.",
+"nullable": true,
+"readOnly": true,
+"example": "string"
+}
+},
+"additionalProperties": false
+},
+"Links": {
+"required": [
+"defaultPageSize"
+],
+"type": "object",
+"properties": {
+"self": {
+"type": "string",
+"description": "Hyperlink of the current page.",
+"nullable": true,
+"example": "/v1/measurements?page=2&pagesize=100&filter=quantity:eq:'AANTAL'"
+},
+"prev": {
+"type": "string",
+"description": "Hyperlink of the previous page, if present.",
+"nullable": true,
+"example": ""
+},
+"next": {
+"type": "string",
+"description": "Hyperlink of the next page, if present.",
+"nullable": true,
+"example": "/v1/measurements?page=3&pagesize=100&filter=quantity:eq:'AANTAL'"
+},
+"maxPageSize": {
+"type": "integer",
+"description": "Maximum page size.",
+"format": "int32",
+"nullable": true,
+"example": 10000
+},
+"defaultPageSize": {
+"type": "integer",
+"description": "Default page size.",
+"format": "int32",
+"example": 1000
+},
+"minPageSize": {
+"type": "integer",
+"description": "Minimum page size.",
+"format": "int32",
+"example": 1
+},
+"totalObjectCount": {
+"type": "integer",
+"description": "Count of all entities that satisfy the filter requirements. Will be left out when nocount=true is specified.",
+"format": "int32",
+"nullable": true,
+"example": 53452
+}
+},
+"additionalProperties": false,
+"description": "Provides information for paging."
+},
+"ProviderBlock": {
+"type": "object",
+"properties": {
+"name": {
+"type": "string",
+"description": "Name of the provider.",
+"nullable": true,
+"example": "EcoSys"
+},
+"supportUrl": {
+"type": "string",
+"description": "Support website of the provider.",
+"nullable": true,
+"example": "https://titans.ladesk.com/"
+},
+"apiVersion": {
+"type": "string",
+"description": "Version of the API.",
+"nullable": true,
+"example": "1.1"
+},
+"responseType": {
+"type": "string",
+"description": "Definition of the response type.",
+"nullable": true,
+"example": "MeasurementListResponse"
+}
+},
+"additionalProperties": false,
+"description": "Gives information regarding the provider of the service."
+},
+"Attribute": {
+"required": [
+"changeDate",
+"code",
+"externalKey",
+"name",
+"typeCode",
+"typeName"
+],
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the attribute.",
+"example": "LV-CEL"
+},
+"name": {
+"type": "string",
+"description": "Name of the attribute.",
+"example": "Cel"
+},
+"typeCode": {
+"type": "string",
+"description": "Type (code) of the attribute.",
+"example": "LV"
+},
+"typeName": {
+"type": "string",
+"description": "Type (name) of the attribute.",
+"example": "Levensvorm"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the compartment.",
+"format": "uuid"
+}
+},
+"additionalProperties": false,
+"description": "Describes a attribute of a measurement."
+},
+"AttributeBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Attribute"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"FriendlyError": {
+"type": "object",
+"properties": {
+"errorType": {
+"type": "string",
+"description": "Error type of the error.",
+"nullable": true,
+"example": "UnknownValue"
+},
+"context": {
+"type": "string",
+"description": "Error context.",
+"nullable": true,
+"example": "quantity/DEFX"
+}
+},
+"additionalProperties": false,
+"description": "Friendly version of the error."
+},
+"Problem": {
+"required": [
+"detail",
+"status",
+"title"
+],
+"type": "object",
+"properties": {
+"typeInfo": {
+"type": "string",
+"description": "Additional information.",
+"nullable": true
+},
+"title": {
+"type": "string",
+"description": "Title of the error.",
+"example": "Query filter error."
+},
+"status": {
+"type": "integer",
+"description": "Status code (HTTP).",
+"format": "int32"
+},
+"detail": {
+"type": "string",
+"description": "Problem details.",
+"example": ""
+},
+"instance": {
+"type": "string",
+"description": "Provides information to track the problem at the side of the provider.",
+"nullable": true
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"errors": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/FriendlyError"
+},
+"description": "Errors encountered.",
+"nullable": true
+}
+},
+"additionalProperties": false,
+"description": "Describes the problem the service ran into."
+},
+"Compartment": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the compartment.",
+"nullable": true,
+"example": "OW"
+},
+"name": {
+"type": "string",
+"description": "Name of the compartment.",
+"nullable": true,
+"example": "Oppervlaktewater"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the compartment.",
+"format": "uuid"
+}
+},
+"additionalProperties": false,
+"description": "Describes a compartment in which something was measured."
+},
+"CompartmentBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Compartment"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"Institute": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the source.",
+"nullable": true,
+"example": "AQUADESK.MANUALIMPORT.CSV"
+},
+"name": {
+"type": "string",
+"description": "Name of the source.",
+"nullable": true,
+"example": "Manual import in AquaDesk CSV format"
+},
+"reference": {
+"type": "string",
+"description": "Reference.",
+"nullable": true,
+"example": "Url of the institute"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+}
+},
+"additionalProperties": false,
+"description": "Describes an institute that can define standards."
+},
+"InstituteBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Institute"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"Literature": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the literature.",
+"nullable": true,
+"example": "B0001"
+},
+"citation": {
+"type": "string",
+"description": "Citation of the literature: authors of the paper.",
+"nullable": true,
+"example": "Sangster, G. et al. (1998)"
+},
+"reference": {
+"type": "string",
+"description": "Reference to the literature: consice reference tot the title..",
+"nullable": true,
+"example": "Sangster, G., Hazevoet, C.J., Van den Berg, A.B. & Roselaar, C.S. (1998): Dutch avifaunal list: species concepts, taxonomic instability, and taxonomic changes in 1998. Dutch Birding 20(1): 22-32 (CSNA-mededeling)."
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the source.",
+"format": "uuid"
+}
+},
+"additionalProperties": false,
+"description": "Describes a taxon literature."
+},
+"LiteratureBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Literature"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"MeasurementCycle": {
+"type": "object",
+"properties": {
+"name": {
+"type": "string",
+"description": "Name of the measurement cycle.",
+"nullable": true,
+"example": "Winter"
+},
+"fromMonth": {
+"type": "integer",
+"description": "From month.",
+"format": "int32",
+"example": 10
+},
+"toMonth": {
+"type": "integer",
+"description": "To month.",
+"format": "int32",
+"example": 3
+},
+"fromDay": {
+"type": "integer",
+"description": "From day.",
+"format": "int32",
+"example": 1
+},
+"toDay": {
+"type": "integer",
+"description": "To day.",
+"format": "int32",
+"example": 31
+},
+"numberOfMeasurements": {
+"type": "integer",
+"description": "Number of measurements to be taken within the cycle.",
+"format": "int32",
+"example": 1
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the compartment.",
+"format": "uuid"
+}
+},
+"additionalProperties": false,
+"description": "Describes a measurement cycle: when and how often samples are taken."
+},
+"MeasurementCycleBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/MeasurementCycle"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"MeasurementObject": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the measurement object.",
+"nullable": true,
+"example": "AFGDM_0001"
+},
+"name": {
+"type": "string",
+"description": "Name of the measurement object.",
+"nullable": true,
+"example": "NEDHMT"
+},
+"srId": {
+"type": "integer",
+"description": "SrId (coordinate system) of the measurement object.",
+"format": "int32",
+"example": 4326
+},
+"geography": {
+"description": "Geography.",
+"nullable": true
+},
+"waterTypes": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"description": "Geography.",
+"nullable": true
+},
+"shape": {
+"description": "Shape of the measurement object.",
+"nullable": true
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the parameter type.",
+"format": "uuid"
+},
+"monitoringNetworks": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"description": "Part of monitoring networks.",
+"nullable": true
+},
+"geographyWkt": {
+"type": "string",
+"nullable": true
+},
+"shapeWkt": {
+"type": "string",
+"nullable": true
+},
+"waterTypeIds": {
+"type": "string",
+"nullable": true
+},
+"monitoringNetworkIds": {
+"type": "string",
+"nullable": true
+}
+},
+"additionalProperties": false,
+"description": "Describes a location where a sample has been taken."
+},
+"MeasurementObjectBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/MeasurementObject"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"MeasurementPackage": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the nmeasurement package.",
+"nullable": true,
+"example": "CS.CC"
+},
+"name": {
+"type": "string",
+"description": "Name of the measurement package.",
+"nullable": true,
+"example": "Chemische stoffen concentraties"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the source.",
+"format": "uuid"
+},
+"parameterTypes": {
+"description": "List the possible parameter types.",
+"nullable": true
+},
+"taxonTypes": {
+"description": "List the possible taxon types.",
+"nullable": true
+},
+"quantities": {
+"description": "List the possible quantities.",
+"nullable": true
+},
+"attributeTypes": {
+"description": "List the possible attribute types.",
+"nullable": true
+},
+"parameterTypeIds": {
+"type": "string",
+"nullable": true
+},
+"quantityIds": {
+"type": "string",
+"nullable": true
+},
+"taxonTypeIds": {
+"type": "string",
+"nullable": true
+},
+"attributeTypeIds": {
+"type": "string",
+"nullable": true
+}
+},
+"additionalProperties": false,
+"description": "Describes a measurement package: a composition of items to create the required information for measurements."
+},
+"MeasurementPackageBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/MeasurementPackage"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"MethodTypeAndCode": {
+"type": "object",
+"properties": {
+"methodCode": {
+"type": "string",
+"description": "Method code.",
+"nullable": true,
+"example": "DIATM_A010"
+},
+"methodTypeCode": {
+"type": "string",
+"description": "Method type.",
+"nullable": true,
+"example": "AM"
+}
+},
+"additionalProperties": false,
+"description": "Describes a combination of measurement method and its type."
+},
+"Measurement": {
+"type": "object",
+"properties": {
+"calculatedUnit": {
+"type": "string",
+"description": "Describes the unit in which the calculated value was expressed.",
+"nullable": true,
+"example": "%"
+},
+"calculatedValue": {
+"type": "number",
+"description": "The value that was calculated, based on the measured value.",
+"format": "double",
+"nullable": true,
+"example": 3
+},
+"changeDate": {
+"type": "string",
+"description": "Date of last change. [REQUIRED]",
+"format": "date-time",
+"example": "2-7-2016 12:13:14 +02:00"
+},
+"classifiedValue": {
+"type": "string",
+"description": "Classified value. Used for measurements expressed in quantities that cannot be expressed in numeric values, such as GEUR.",
+"nullable": true
+},
+"collectionDate": {
+"type": "string",
+"description": "Date/time on which the sample was collected. [REQUIRED]",
+"format": "date-time",
+"example": "2-6-2016 12:13:14 +02:00"
+},
+"compartment": {
+"type": "string",
+"description": "Compartment in which the sample was collected. [REQUIRED]",
+"nullable": true,
+"example": "OW"
+},
+"locationGeography": {
+"description": "Collection location (GeoJSON)",
+"nullable": true
+},
+"measurementGeography": {
+"description": "Measurement location (GeoJSON)",
+"nullable": true
+},
+"limitSymbol": {
+"type": "string",
+"description": "Limit symbol.",
+"nullable": true,
+"example": "="
+},
+"measuredUnit": {
+"type": "string",
+"description": "The unit where the measured value was expressed in.",
+"nullable": true,
+"example": "N"
+},
+"measuredValue": {
+"type": "number",
+"description": "The value measured.",
+"format": "double",
+"nullable": true,
+"example": 1
+},
+"measurementAttributes": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"description": "Qualifiers for the measurement.",
+"nullable": true
+},
+"measurementDate": {
+"type": "string",
+"description": "Measurement date. [REQUIRED]",
+"format": "date-time",
+"example": "2-7-2016 12:13:14 +02:00"
+},
+"measurementObject": {
+"type": "string",
+"description": "Measurement object (location) [REQUIRED]",
+"nullable": true,
+"example": "76928"
+},
+"measurementPackage": {
+"type": "string",
+"description": "Part of measurement package.",
+"nullable": true,
+"example": "DT.AB"
+},
+"measurementPurpose": {
+"type": "string",
+"description": "Purpose of the measurement.",
+"nullable": true,
+"example": "MT"
+},
+"methods": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/MethodTypeAndCode"
+},
+"description": "Methods used to gather the sample or determining the measurement.",
+"nullable": true
+},
+"note": {
+"type": "string",
+"description": "Additional measurement notes.",
+"nullable": true,
+"example": "Dc036"
+},
+"organisation": {
+"type": "string",
+"description": "Organisation that owns the measurement.",
+"nullable": true,
+"example": "RWS"
+},
+"parameter": {
+"type": "string",
+"description": "The measured parameter.",
+"nullable": true,
+"example": "Cyclotella [1]"
+},
+"parameterType": {
+"type": "string",
+"description": "The parameter type of the measured entity.",
+"nullable": true,
+"example": "Taxon"
+},
+"projects": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"description": "Projects that the measurement was performed for.",
+"nullable": true
+},
+"quantity": {
+"type": "string",
+"description": "The quantity that the measurement was expressed in.",
+"nullable": true,
+"example": "AANTL"
+},
+"status": {
+"type": "string",
+"description": "Status of the measurement. This is a numeric value, indicating the status of a measurement.\r\n- SamplingDone = 25\r\n- SampleInPreparation = 30\r\n- SampleAvailable = 35\r\n- AnalysisInProgress = 40\r\n- AnalysisFinished = 45\r\n- AnalysisValidated = 50\r\n- AnalysisReleased = 55\r\n- AnalysisAccepted = 60\r\n- AnalysisForPublication = 65\r\n- InternalOnly = 70\r\n- AnalysisRejected = 80\r\n- AnalysisPostponed = 85\r\n- AnalysisRemoved = 90",
+"nullable": true,
+"example": "65"
+},
+"taxonType": {
+"type": "string",
+"description": "Taxon type (if parameter is a taxon)",
+"nullable": true,
+"example": "DIATM"
+},
+"taxonGroup": {
+"type": "string",
+"description": "Taxon group (if parameter is a taxon)",
+"nullable": true,
+"example": "RADIA"
+},
+"externalReference": {
+"type": "string",
+"description": "External reference of the sample.",
+"nullable": true,
+"example": "2012006754"
+},
+"measurementSetNumber": {
+"type": "integer",
+"description": "Measurement set number.",
+"format": "int64",
+"example": 1235421
+},
+"measurementSetAttributes": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/MethodTypeAndCode"
+},
+"description": "Methods used for gathering or analysing the sample. Alias for methods. Deprecated.",
+"nullable": true
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the measurement.",
+"nullable": true
+},
+"id": {
+"type": "string",
+"description": "Id of the measurement. Deprecated.",
+"nullable": true
+},
+"sourceSystem": {
+"type": "string",
+"description": "System providing the data.",
+"nullable": true
+},
+"measurementObjectArea": {
+"description": "Area of the measurement object.",
+"nullable": true
+},
+"geo": {
+"type": "string",
+"nullable": true
+},
+"shape": {
+"type": "string",
+"nullable": true
+}
+},
+"additionalProperties": false,
+"description": "Describes a measurement.\r\nMeasurements describe why, what, when, where and how the data was gathered.\r\n- Why: purpose, project\r\n- What:quantity, unit meaured, unit calculated, classified value, measured value, calculated value, attributes.\r\n- When: collection date, measurement date, change date.\r\n- Where: location, location geography, measurement geography.\r\n- How: methods."
+},
+"MeasurementBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Measurement"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"TimeSeriesMeasurement": {
+"type": "object",
+"properties": {
+"calculatedUnit": {
+"type": "string",
+"description": "Describes the unit in which the calculated value was expressed.",
+"nullable": true,
+"example": "%"
+},
+"calculatedValue": {
+"type": "number",
+"description": "The value that was calculated, based on the measured value.",
+"format": "double",
+"nullable": true,
+"example": 3
+},
+"collectionDate": {
+"type": "string",
+"description": "Date of last change. [REQUIRED]",
+"format": "date-time",
+"example": "2-7-2016 12:13:14 +02:00"
+},
+"classifiedValue": {
+"type": "string",
+"description": "Classified value. Used for measurements expressed in quantities that cannot be expressed in numeric values, such as GEUR.",
+"nullable": true
+},
+"limitSymbol": {
+"type": "string",
+"description": "Limit symbol.",
+"nullable": true,
+"example": "="
+},
+"measuredValue": {
+"type": "number",
+"description": "The value measured.",
+"format": "double",
+"nullable": true,
+"example": 1
+},
+"measurementAttributes": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"description": "Qualifiers for the measurement.",
+"nullable": true
+},
+"note": {
+"type": "string",
+"description": "Additional measurement notes.",
+"nullable": true,
+"example": "Dc036"
+},
+"projects": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"description": "Projects that the measurement was performed for.",
+"nullable": true
+},
+"status": {
+"type": "string",
+"description": "Status of the measurement. This is a numeric value, indicating the status of a measurement.\r\n- SamplingDone = 25\r\n- SampleInPreparation = 30\r\n- SampleAvailable = 35\r\n- AnalysisInProgress = 40\r\n- AnalysisFinished = 45\r\n- AnalysisValidated = 50\r\n- AnalysisReleased = 55\r\n- AnalysisAccepted = 60\r\n- AnalysisForPublication = 65\r\n- InternalOnly = 70\r\n- AnalysisRejected = 80\r\n- AnalysisPostponed = 85\r\n- AnalysisRemoved = 90",
+"nullable": true,
+"example": "65"
+},
+"measurementSetAttributes": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/MethodTypeAndCode"
+},
+"description": "Methods used for gathering or analysing the sample. Alias for methods. Deprecated.",
+"nullable": true
+},
+"methods": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/MethodTypeAndCode"
+},
+"description": "Methods used to gather the sample or determining the measurement.",
+"nullable": true
+},
+"geo": {
+"type": "string",
+"nullable": true
+},
+"shape": {
+"type": "string",
+"nullable": true
+}
+},
+"additionalProperties": false,
+"description": "Describes a measurement.\r\nMeasurements describe why, what, when, where and how the data was gathered.\r\n- Why: purpose, project\r\n- What:quantity, unit meaured, unit calculated, classified value, measured value, calculated value, attributes.\r\n- When: collection date, measurement date, change date.\r\n- Where: location, location geography, measurement geography.\r\n- How: methods."
+},
+"TimeSeries": {
+"type": "object",
+"properties": {
+"compartment": {
+"type": "string",
+"description": "Compartment in which the sample was collected. [REQUIRED]",
+"nullable": true,
+"example": "OW"
+},
+"measurementObject": {
+"type": "string",
+"description": "Measurement object (location) [REQUIRED]",
+"nullable": true,
+"example": "76928"
+},
+"locationGeography": {
+"description": "Collection location (GeoJSON)",
+"nullable": true
+},
+"measurementPackage": {
+"type": "string",
+"description": "Part of measurement package.",
+"nullable": true,
+"example": "DT.AB"
+},
+"measurementPurpose": {
+"type": "string",
+"description": "Purpose of the measurement.",
+"nullable": true,
+"example": "MT"
+},
+"organisation": {
+"type": "string",
+"description": "Organisation that owns the measurement.",
+"nullable": true,
+"example": "RWS"
+},
+"parameter": {
+"type": "string",
+"description": "The measured parameter.",
+"nullable": true,
+"example": "Cyclotella [1]"
+},
+"parameterType": {
+"type": "string",
+"description": "The parameter type of the measured entity.",
+"nullable": true,
+"example": "Taxon"
+},
+"quantity": {
+"type": "string",
+"description": "The quantity that the measurement was expressed in.",
+"nullable": true,
+"example": "AANTL"
+},
+"taxonType": {
+"type": "string",
+"description": "Taxon type (if parameter is a taxon)",
+"nullable": true,
+"example": "DIATM"
+},
+"taxonGroup": {
+"type": "string",
+"description": "Taxon group (if parameter is a taxon)",
+"nullable": true,
+"example": "RADIA"
+},
+"externalReference": {
+"type": "string",
+"description": "External reference of the sample.",
+"nullable": true,
+"example": "2012006754"
+},
+"sourceSystem": {
+"type": "string",
+"description": "System providing the data.",
+"nullable": true
+},
+"measurements": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/TimeSeriesMeasurement"
+},
+"description": "Measurements.",
+"nullable": true
+}
+},
+"additionalProperties": false
+},
+"TimeSeriesBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/TimeSeries"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"Method": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the method.",
+"nullable": true,
+"example": "MACEV_S001"
+},
+"name": {
+"type": "string",
+"description": "Name of the method.",
+"nullable": true,
+"example": "913.00.B005 vs 1.0 dd 31-12-1996"
+},
+"literature": {
+"type": "string",
+"description": "Reference to literature describing the method.",
+"nullable": true
+},
+"methodCategory": {
+"type": "string",
+"description": "Method category.",
+"nullable": true,
+"example": "MIFA"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the parameter type.",
+"format": "uuid"
+},
+"methodCategoryId": {
+"type": "integer",
+"format": "int64"
+}
+},
+"additionalProperties": false,
+"description": "Describes a method, specifying how a sample was obtained."
+},
+"MethodBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Method"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"MonitoringNetwork": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the monitoring network.",
+"nullable": true,
+"example": "NVO-MAAS"
+},
+"name": {
+"type": "string",
+"description": "Name of the monitoring network.",
+"nullable": true,
+"example": "Natuur Vriendelijke Oevers Maas"
+},
+"shape": {
+"description": "Shape of the monitoring network.",
+"nullable": true
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the parameter type.",
+"format": "uuid"
+},
+"measurementObjects": {
+"type": "array",
+"items": {
+"type": "string"
+},
+"description": "Part of monitoring networks.",
+"nullable": true
+},
+"measurementObjectIds": {
+"type": "string",
+"nullable": true
+},
+"shapeWkt": {
+"type": "string",
+"nullable": true
+}
+},
+"additionalProperties": false,
+"description": "Defines a set of measurement objects."
+},
+"MonitoringNetworkBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/MonitoringNetwork"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"Note": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the compartment.",
+"nullable": true,
+"example": "Mc501"
+},
+"content": {
+"type": "string",
+"description": "Name of the compartment.",
+"nullable": true,
+"example": "Lumbrineris cf 'near cingulata' sensu Oug 2012"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the compartment.",
+"format": "uuid"
+}
+},
+"additionalProperties": false,
+"description": "Describes an organisation note, describing specific comments for a measurement."
+},
+"NoteBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Note"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"EntityStatus": {
+"enum": [
+0,
+1,
+2
+],
+"type": "integer",
+"format": "int32"
+},
+"Organisation": {
+"type": "object",
+"properties": {
+"id": {
+"type": "integer",
+"format": "int64"
+},
+"externalKey": {
+"type": "string",
+"format": "uuid"
+},
+"rowVersion": {
+"type": "string",
+"format": "byte",
+"nullable": true
+},
+"modifiedById": {
+"type": "integer",
+"format": "int64",
+"nullable": true
+},
+"modifiedOn": {
+"type": "string",
+"format": "date-time"
+},
+"status": {
+"$ref": "#/components/schemas/EntityStatus"
+},
+"licensePackageId": {
+"type": "integer",
+"format": "int64",
+"nullable": true
+},
+"numericCode": {
+"type": "integer",
+"format": "int32"
+},
+"connectionString": {
+"type": "string",
+"nullable": true
+},
+"code": {
+"type": "string",
+"nullable": true
+},
+"name": {
+"type": "string",
+"nullable": true
+},
+"retentionPeriod": {
+"type": "integer",
+"format": "int32"
+},
+"storageReference": {
+"type": "string",
+"nullable": true
+}
+},
+"additionalProperties": false
+},
+"OrganisationBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Organisation"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"Parameter": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the parameter (same as name for taxa).",
+"nullable": true,
+"example": "Actinocyclus octonarius"
+},
+"name": {
+"type": "string",
+"description": "Name of the parameter.",
+"nullable": true,
+"example": "Actinocyclus octonarius"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the measurement.",
+"format": "uuid"
+},
+"parameterType": {
+"type": "string",
+"description": "Code of the parameter type.",
+"nullable": true,
+"example": "TAXON"
+},
+"taxonMainType": {
+"type": "string",
+"description": "Code of the taxon main type. (taxa only)",
+"nullable": true,
+"example": "MIFA"
+},
+"taxonType": {
+"type": "string",
+"description": "Code of the taxon type. (taxa only)",
+"nullable": true,
+"example": "DIATM"
+},
+"taxonGroup": {
+"type": "string",
+"description": "Code of the taxon group. (taxa only)",
+"nullable": true,
+"example": "RADIA"
+},
+"authors": {
+"type": "string",
+"description": "Authors (taxa only)",
+"nullable": true,
+"example": "C.G. Ehrenberg 1837"
+},
+"taxonRank": {
+"type": "string",
+"description": "Rank (taxa only)",
+"nullable": true,
+"example": "Species"
+},
+"parentName": {
+"type": "string",
+"description": "Name of the parent of the taxon.",
+"nullable": true,
+"example": "Actinocyclus"
+},
+"parentAuthors": {
+"type": "string",
+"description": "Author of the parent of the taxon.",
+"nullable": true,
+"example": "C.G. Ehrenberg 1837"
+},
+"literature": {
+"description": "Literature (taxa only)",
+"nullable": true
+},
+"statusCode": {
+"type": "integer",
+"description": "Status (taxa only)",
+"format": "int32"
+},
+"literatureIds": {
+"type": "string",
+"description": "Literature (taxa only)",
+"nullable": true,
+"example": "Species"
+},
+"standards": {
+"description": "Maps to standards",
+"nullable": true
+},
+"standardsString": {
+"type": "string",
+"nullable": true
+}
+},
+"additionalProperties": false,
+"description": "Describes an item that could be measured."
+},
+"ParameterBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Parameter"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"ParameterPackage": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the parameter package.",
+"nullable": true,
+"example": "CS-KRW"
+},
+"name": {
+"type": "string",
+"description": "Name of the parameter package.",
+"nullable": true,
+"example": "Chemische stoffen volgens KRW"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the source.",
+"format": "uuid"
+},
+"parameters": {
+"description": "List the parameters.",
+"nullable": true
+},
+"parameterIds": {
+"type": "string",
+"nullable": true
+}
+},
+"additionalProperties": false,
+"description": "Describes parameters that belong together under certain circumstances."
+},
+"ParameterPackageBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/ParameterPackage"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"ParameterType": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the parameter type.",
+"nullable": true,
+"example": "TAXON"
+},
+"name": {
+"type": "string",
+"description": "Name of the parameter type.",
+"nullable": true,
+"example": "Taxon"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the parameter type.",
+"format": "uuid"
+}
+},
+"additionalProperties": false,
+"description": "Describes the type of a parameter."
+},
+"ParameterTypeBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/ParameterType"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"Project": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the project.",
+"nullable": true,
+"example": "PILT_D2002"
+},
+"name": {
+"type": "string",
+"description": "Name of the project.",
+"nullable": true,
+"example": "MWTL-Diatomeeën 2002 pilot"
+},
+"startDate": {
+"type": "string",
+"description": "Start date of the project (inclusive).",
+"format": "date-time",
+"example": "1-1-2002 12:23:45 +02:00"
+},
+"endDate": {
+"type": "string",
+"description": "End date of the project (exlusive).",
+"format": "date-time",
+"example": "1-1-2003 12:23:45 +02:00"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the compartment.",
+"format": "uuid"
+}
+},
+"additionalProperties": false,
+"description": "Describes a project, a reason why a measurement was performed."
+},
+"ProjectBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Project"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"Purpose": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the purpose.",
+"nullable": true,
+"example": "MT"
+},
+"name": {
+"type": "string",
+"description": "Name of the purpose.",
+"nullable": true,
+"example": "Monitoring"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the parameter type.",
+"format": "uuid"
+}
+},
+"additionalProperties": false,
+"description": "Describes the purpose of a measurement."
+},
+"PurposeBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Purpose"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"Quantity": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the standard.",
+"nullable": true,
+"example": "AQUO"
+},
+"name": {
+"type": "string",
+"description": "Name of the standard.",
+"nullable": true,
+"example": "Aquo-standaard"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the source.",
+"format": "uuid"
+},
+"quantityValues": {
+"description": "List the possible, non-numeric values that the quantity can have.",
+"nullable": true
+},
+"quantityUnits": {
+"description": "List the possible units that the quantity can be described in.",
+"nullable": true
+},
+"quantityValueIds": {
+"type": "string",
+"nullable": true
+},
+"quantityUnitIds": {
+"type": "string",
+"nullable": true
+}
+},
+"additionalProperties": false,
+"description": "Describes a quantity."
+},
+"QuantityBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Quantity"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"Source": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the source.",
+"nullable": true,
+"example": "AQUADESK.MANUALIMPORT.CSV"
+},
+"name": {
+"type": "string",
+"description": "Name of the source.",
+"nullable": true,
+"example": "Manual import in AquaDesk CSV format"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the source.",
+"format": "uuid"
+}
+},
+"additionalProperties": false,
+"description": "Describes a source of measurements."
+},
+"SourceBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Source"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"Standard": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the standard.",
+"nullable": true,
+"example": "AQUO"
+},
+"name": {
+"type": "string",
+"description": "Name of the standard.",
+"nullable": true,
+"example": "Aquo-standaard"
+},
+"url": {
+"type": "string",
+"description": "Url to the standard definition.",
+"nullable": true,
+"example": "https://www.aquo.nl"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the source.",
+"format": "uuid"
+}
+},
+"additionalProperties": false,
+"description": "Describes a standard."
+},
+"StandardBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Standard"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"TaxonGroup": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the taxon group.",
+"nullable": true,
+"example": "CRYPT"
+},
+"name": {
+"type": "string",
+"description": "Name of the taxon group.",
+"nullable": true,
+"example": "Cryptophytes"
+},
+"typeCode": {
+"type": "string",
+"description": "Code of the type of the taxon group.",
+"nullable": true,
+"example": "FYTPT"
+},
+"typeName": {
+"type": "string",
+"description": "Name of the type of the Taxon group.",
+"nullable": true,
+"example": "Phytoplankton"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the parameter type.",
+"format": "uuid"
+}
+},
+"additionalProperties": false,
+"description": "Describes the group of a taxon, a division of taxon types."
+},
+"TaxonGroupBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/TaxonGroup"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"TaxonType": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the taxon type.",
+"nullable": true,
+"example": "ZOOPT"
+},
+"name": {
+"type": "string",
+"description": "Name of the taxon type.",
+"nullable": true,
+"example": "Zooplankton"
+},
+"mainTypeCode": {
+"type": "string",
+"description": "Code of the main type of the taxon type.",
+"nullable": true,
+"example": "MIFA"
+},
+"mainTypeName": {
+"type": "string",
+"description": "Name of the main type of the Taxon type.",
+"nullable": true,
+"example": "MicroFauna"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the parameter type.",
+"format": "uuid"
+}
+},
+"additionalProperties": false,
+"description": "Describes the type of a taxon."
+},
+"TaxonTypeBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/TaxonType"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"Unit": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the unit.",
+"nullable": true,
+"example": "N/L"
+},
+"name": {
+"type": "string",
+"description": "Name of the unit.",
+"nullable": true,
+"example": "Aantal/Liter"
+},
+"symbol": {
+"type": "string",
+"description": "Symbol.",
+"nullable": true,
+"example": "n/l"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the source.",
+"format": "uuid"
+}
+},
+"additionalProperties": false,
+"description": "Describes a unit of measurement."
+},
+"UnitBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Unit"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+},
+"WaterType": {
+"type": "object",
+"properties": {
+"code": {
+"type": "string",
+"description": "Code of the water type.",
+"nullable": true,
+"example": "K0"
+},
+"name": {
+"type": "string",
+"description": "Name of the water type.",
+"nullable": true,
+"example": "Territoriaal kustwater buiten 1-mijlzone"
+},
+"definitionCode": {
+"type": "string",
+"description": "Defined in (code).",
+"nullable": true,
+"example": "KRW"
+},
+"definitionName": {
+"type": "string",
+"description": "Defined in (name).",
+"nullable": true,
+"example": "Kader Richtlijn Water"
+},
+"changeDate": {
+"type": "string",
+"description": "Date of the last change.",
+"format": "date-time",
+"example": "1-1-2010 12:23:45 +02:00"
+},
+"externalKey": {
+"type": "string",
+"description": "The external key can be used to uniquely identify the parameter type.",
+"format": "uuid"
+}
+},
+"additionalProperties": false,
+"description": "Describes the type of a water, used to define bodies of water, such as measurement objects."
+},
+"WaterTypeBaseListResponse": {
+"required": [
+"links",
+"result"
+],
+"type": "object",
+"properties": {
+"links": {
+"$ref": "#/components/schemas/Links"
+},
+"provider": {
+"$ref": "#/components/schemas/ProviderBlock"
+},
+"result": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/WaterType"
+},
+"description": "Query results."
+}
+},
+"additionalProperties": false,
+"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+}
+}
+}
+}
