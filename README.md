@@ -9,11 +9,16 @@ Please see the [wiki](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki)
 
 ## Getting Started
 
-The specification is written in [RAML 1.0](https://raml.org), a 'language' to define [REST](https://nl.wikipedia.org/wiki/Representational_state_transfer) (REpresentational State Transfer) service.
+The RAML specifications are now obsolete.
+~~The specification is written in [RAML 1.0](https://raml.org), a 'language' to define [REST](https://nl.wikipedia.org/wiki/Representational_state_transfer) (REpresentational State Transfer) service.
 It is a specification. This means that there is no full implementation of this specification available in this repository.
 There are, however, [result samples](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/tree/master/AquaDesk%20Examples) and a .NET sample implementation of the [Filter Syntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics).
 
-To read the RAML specification, some [tools](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Tools) are recommended. Some tools are also capable of generating documentation, or code skeletons for both consumers and implementers.
+~~To read the RAML specification, some [tools](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Tools) are recommended. Some tools are also capable of generating documentation, or code skeletons for both consumers and implementers.
+
+A minimal version of the DD-ECO-API in OAS 3.x format can be viewed [here](http://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/DigitaleDeltaOrg/dd-eco-api-specs/master/Minimal%20DD-ECO-API.json).
+
+An expanded version, as implemented by AquaDesk, can be viewed [here](http://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/DigitaleDeltaOrg/dd-eco-api-specs/master/FullFeaturedAquaDeskDefinition.json).
 
 The [HTML specifications](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/tree/master/Html) can also be used and may be easier to read.
 
@@ -32,9 +37,6 @@ A good environment for editing and compiling that solution, is [Visual Studio 20
 
 The unit tests are written in [NUnit](http://nunit.org/).
 
-A minimal version of the DD-ECO-API can be viewed [here](http://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/DigitaleDeltaOrg/dd-eco-api-specs/master/Minimal%20DD-ECO-API.json).
-
-An expanded version, as implemented by AquaDesk, can be viewed [here](http://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/DigitaleDeltaOrg/dd-eco-api-specs/master/FullFeaturedAquaDeskDefinition.json).
 
 ## Authors
 
