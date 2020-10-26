@@ -32,9 +32,9 @@ A good environment for editing and compiling that solution, is [Visual Studio 20
 
 The unit tests are written in [NUnit](http://nunit.org/).
 
-A minimal version of the DD-ECO-API can be viewed [here](https://preview.readme.io/reference/?url=https%3A%2F%2Fraw.githubusercontent.com%2FDigitaleDeltaOrg%2Fdd-eco-api-specs%2Fmaster%2FMinimal%2520DD-ECO-API.json#v1-endpoints).
+A minimal version of the DD-ECO-API can be viewed [here](http://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/DigitaleDeltaOrg/dd-eco-api-specs/master/Minimal%20DD-ECO-API.json).
 
-An expanded version, as implemented by AquaDesk, can be viewed [here](https://preview.readme.io/reference/?url=https%3A%2F%2Fraw.githubusercontent.com%2FDigitaleDeltaOrg%2Fdd-eco-api-specs%2Fmaster%2FFullFeaturedAquaDeskDefinition.json#v1-measurementpackages-filters).
+An expanded version, as implemented by AquaDesk, can be viewed [here](http://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/DigitaleDeltaOrg/dd-eco-api-specs/master/FullFeaturedAquaDeskDefinition.json).
 
 ## Authors
 
