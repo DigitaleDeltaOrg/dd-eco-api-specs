@@ -1,0 +1,599 @@
+{
+	"openapi": "3.0.1",
+	"info": {
+		"title": "DD-ECO-API (Generic, minimal)",
+		"description": "Generic, minimal DD-ECO-API provider",
+		"version": "v1"
+	},
+	"paths": {
+		"/v1/endpoints": {
+			"get": {
+				"tags": [
+					"EndPoints"
+				],
+				"summary": "Endpoints provided by this service.",
+				"operationId": "GetEndpoints",
+				"parameters": [
+					{
+						"name": "page",
+						"in": "query",
+						"description": "Page number",
+						"schema": {
+							"type": "integer",
+							"description": "Page number",
+							"format": "int32",
+							"default": 1
+						}
+					},
+					{
+						"name": "pagesize",
+						"in": "query",
+						"description": "Page size",
+						"schema": {
+							"type": "integer",
+							"description": "Page size",
+							"format": "int32",
+							"default": 10000
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "List of properties and operators",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/FilterOption"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/measurements/filters": {
+			"get": {
+				"tags": [
+					"Measurements"
+				],
+				"summary": "Retrieves properties and their comparers that can be used for the measurements endpoint.",
+				"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+				"operationId": "GetMeasurementFilters",
+				"responses": {
+					"200": {
+						"description": "List of properties and operators",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/FilterOption"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/measurements": {
+			"get": {
+				"tags": [
+					"Measurements"
+				],
+				"summary": "Retrieves measurements that comply to the specified parameters.",
+				"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics). Skipproperties can be used to exclude properties from the results.",
+				"operationId": "GetMeasurements",
+				"parameters": [
+					{
+						"name": "x-api-key",
+						"in": "header",
+						"description": "API-Key (header)",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"nullable": true
+						}
+					},
+					{
+						"name": "page",
+						"in": "query",
+						"description": "Page number",
+						"schema": {
+							"type": "integer",
+							"format": "int32",
+							"default": 1,
+							"nullable": true
+						}
+					},
+					{
+						"name": "pagesize",
+						"in": "query",
+						"description": "Page size",
+						"schema": {
+							"type": "integer",
+							"format": "int32",
+							"default": 10000,
+							"nullable": true
+						}
+					},
+					{
+						"name": "filter",
+						"in": "query",
+						"description": "Query filter",
+						"schema": {
+							"type": "string",
+							"nullable": true
+						}
+					},
+					{
+						"name": "skipproperties",
+						"in": "query",
+						"description": "Properties to skip",
+						"schema": {
+							"type": "string",
+							"default": "",
+							"nullable": true
+						}
+					},
+					{
+						"name": "nocount",
+						"in": "query",
+						"description": "Skip totalobjectcount (increases performance)",
+						"schema": {
+							"type": "boolean",
+							"default": false
+						}
+					},
+					{
+						"name": "nopagingblock",
+						"in": "query",
+						"description": "Alias of nocount",
+						"schema": {
+							"type": "boolean",
+							"default": false
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "List of filtered measurements",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/MeasurementBaseListResponse"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Errors in filter",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Problem"
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "Incorrect API Key",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Problem"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/measurements/geojson": {
+			"get": {
+				"tags": [
+					"Measurements"
+				],
+				"summary": "Retrieves measurements that comply to the specified parameters. Output is in GeoJson format",
+				"description": "Filtering uses the [FilterSyntax](https://github.com/DigitaleDeltaOrg/dd-eco-api-specs/wiki/Implementation-Topics).",
+				"operationId": "GetMeasurements",
+				"parameters": [
+					{
+						"name": "x-api-key",
+						"in": "header",
+						"description": "API-Key (header)",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"nullable": true
+						}
+					},
+					{
+						"name": "page",
+						"in": "query",
+						"description": "Page number",
+						"schema": {
+							"type": "integer",
+							"format": "int32",
+							"default": 1,
+							"nullable": true
+						}
+					},
+					{
+						"name": "pagesize",
+						"in": "query",
+						"description": "Page size",
+						"schema": {
+							"type": "integer",
+							"format": "int32",
+							"default": 10000,
+							"nullable": true
+						}
+					},
+					{
+						"name": "filter",
+						"in": "query",
+						"description": "Query filter",
+						"schema": {
+							"type": "string",
+							"nullable": true
+						}
+					},
+					{
+						"name": "skipproperties",
+						"in": "query",
+						"description": "Properties to skip",
+						"schema": {
+							"type": "string",
+							"default": "",
+							"nullable": true
+						}
+					},
+					{
+						"name": "nocount",
+						"in": "query",
+						"description": "Skip totalobjectcount (increases performance)",
+						"schema": {
+							"type": "boolean",
+							"default": false
+						}
+					},
+					{
+						"name": "nopagingblock",
+						"in": "query",
+						"description": "Alias of nocount",
+						"schema": {
+							"type": "boolean",
+							"default": false
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "List of filtered measurements",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/MeasurementBaseListResponse"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Errors in filter",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Problem"
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "Incorrect API Key",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Problem"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"FilterOption": {
+				"type": "object",
+				"properties": {
+					"fieldName": {
+						"type": "string",
+						"description": "Name of the field.",
+						"nullable": true,
+						"readOnly": true,
+						"example": "quantity"
+					},
+					"comparer": {
+						"type": "string",
+						"description": "Comparer, i.e. ge, eq, lt",
+						"nullable": true,
+						"readOnly": true,
+						"example": "eq"
+					},
+					"dataType": {
+						"type": "string",
+						"description": "Data type allowed for field/comparer combination.",
+						"nullable": true,
+						"readOnly": true,
+						"example": "string"
+					}
+				},
+				"additionalProperties": false
+			},
+			"Links": {
+				"required": [
+					"defaultPageSize"
+				],
+				"type": "object",
+				"properties": {
+					"self": {
+						"type": "string",
+						"description": "Hyperlink of the current page.",
+						"nullable": true,
+						"example": "/v1/measurements?page=2&pagesize=100&filter=quantity:eq:'AANTAL'"
+					},
+					"prev": {
+						"type": "string",
+						"description": "Hyperlink of the previous page, if present.",
+						"nullable": true,
+						"example": ""
+					},
+					"next": {
+						"type": "string",
+						"description": "Hyperlink of the next page, if present.",
+						"nullable": true,
+						"example": "/v1/measurements?page=3&pagesize=100&filter=quantity:eq:'AANTAL'"
+					},
+					"maxPageSize": {
+						"type": "integer",
+						"description": "Maximum page size.",
+						"format": "int32",
+						"nullable": true,
+						"example": 10000
+					},
+					"defaultPageSize": {
+						"type": "integer",
+						"description": "Default page size.",
+						"format": "int32",
+						"example": 1000
+					},
+					"minPageSize": {
+						"type": "integer",
+						"description": "Minimum page size.",
+						"format": "int32",
+						"example": 1
+					},
+					"totalObjectCount": {
+						"type": "integer",
+						"description": "Count of all entities that satisfy the filter requirements. Will be left out when nocount=true is specified.",
+						"format": "int32",
+						"nullable": true,
+						"example": 53452
+					}
+				},
+				"additionalProperties": false,
+				"description": "Provides information for paging."
+			},
+			"ProviderBlock": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "Name of the provider.",
+						"nullable": true,
+						"example": "EcoSys"
+					},
+					"supportUrl": {
+						"type": "string",
+						"description": "Support website of the provider.",
+						"nullable": true,
+						"example": "https://titans.ladesk.com/"
+					},
+					"apiVersion": {
+						"type": "string",
+						"description": "Version of the API.",
+						"nullable": true,
+						"example": "1.1"
+					},
+					"responseType": {
+						"type": "string",
+						"description": "Definition of the response type.",
+						"nullable": true,
+						"example": "MeasurementListResponse"
+					}
+				},
+				"additionalProperties": false,
+				"description": "Gives information regarding the provider of the service."
+			},
+			"FriendlyError": {
+				"type": "object",
+				"properties": {
+					"errorType": {
+						"type": "string",
+						"description": "Error type of the error.",
+						"nullable": true,
+						"example": "UnknownValue"
+					},
+					"context": {
+						"type": "string",
+						"description": "Error context.",
+						"nullable": true,
+						"example": "quantity/DEFX"
+					}
+				},
+				"additionalProperties": false,
+				"description": "Friendly version of the error."
+			},
+			"Problem": {
+				"required": [
+					"detail",
+					"status",
+					"title"
+				],
+				"type": "object",
+				"properties": {
+					"typeInfo": {
+						"type": "string",
+						"description": "Additional information.",
+						"nullable": true
+					},
+					"title": {
+						"type": "string",
+						"description": "Title of the error.",
+						"example": "Query filter error."
+					},
+					"status": {
+						"type": "integer",
+						"description": "Status code (HTTP).",
+						"format": "int32"
+					},
+					"detail": {
+						"type": "string",
+						"description": "Problem details.",
+						"example": ""
+					},
+					"instance": {
+						"type": "string",
+						"description": "Provides information to track the problem at the side of the provider.",
+						"nullable": true
+					},
+					"provider": {
+						"$ref": "#/components/schemas/ProviderBlock"
+					},
+					"errors": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/FriendlyError"
+						},
+						"description": "Errors encountered.",
+						"nullable": true
+					}
+				},
+				"additionalProperties": false,
+				"description": "Describes the problem the service ran into."
+			},
+			"Measurement": {
+				"type": "object",
+				"properties": {
+					"changeDate": {
+						"type": "string",
+						"description": "Date of last change. [REQUIRED]",
+						"format": "date-time",
+						"example": "2-7-2016 12:13:14 +02:00"
+					},
+					"classifiedValue": {
+						"type": "string",
+						"description": "Classified value. Used for measurements expressed in quantities that cannot be expressed in numeric values, such as GEUR.",
+						"nullable": true
+					},
+					"collectionDate": {
+						"type": "string",
+						"description": "Date/time on which the sample was collected. [REQUIRED]",
+						"format": "date-time",
+						"example": "2-6-2016 12:13:14 +02:00"
+					},
+					"compartment": {
+						"type": "string",
+						"description": "Compartment in which the sample was collected. [REQUIRED]",
+						"nullable": true,
+						"example": "OW"
+					},
+					"measuredUnit": {
+						"type": "string",
+						"description": "The unit where the measured value was expressed in.",
+						"nullable": true,
+						"example": "N"
+					},
+					"measuredValue": {
+						"type": "number",
+						"description": "The value measured.",
+						"format": "double",
+						"nullable": true,
+						"example": 1
+					},
+					"measurementDate": {
+						"type": "string",
+						"description": "Measurement date. [REQUIRED]",
+						"format": "date-time",
+						"example": "2-7-2016 12:13:14 +02:00"
+					},
+					"measurementObject": {
+						"type": "string",
+						"description": "Measurement object (location) [REQUIRED]",
+						"nullable": true,
+						"example": "76928"
+					},
+					"organisation": {
+						"type": "string",
+						"description": "Organisation that owns the measurement.",
+						"nullable": true,
+						"example": "RWS"
+					},
+					"parameter": {
+						"type": "string",
+						"description": "The measured parameter.",
+						"nullable": true,
+						"example": "Cyclotella [1]"
+					},
+					"quantity": {
+						"type": "string",
+						"description": "The quantity that the measurement was expressed in.",
+						"nullable": true,
+						"example": "AANTL"
+					},
+					"externalKey": {
+						"type": "string",
+						"description": "The external key can be used to uniquely identify the measurement.",
+						"nullable": true
+					},
+					"id": {
+						"type": "string",
+						"description": "Id of the measurement. Deprecated.",
+						"nullable": true
+					}
+				},
+				"additionalProperties": false,
+				"description": "Describes a measurement.\r\nMeasurements describe why, what, when, where and how the data was gathered.\r\n- Why: purpose, project\r\n- What:quantity, unit measured, measured value.\r\n- When: collection date, measurement date, change date.\r\n- Where: location."
+			},
+			"MeasurementBaseListResponse": {
+				"required": [
+					"links",
+					"result"
+				],
+				"type": "object",
+				"properties": {
+					"links": {
+						"$ref": "#/components/schemas/Links"
+					},
+					"provider": {
+						"$ref": "#/components/schemas/ProviderBlock"
+					},
+					"result": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Measurement"
+						},
+						"description": "Query results."
+					}
+				},
+				"additionalProperties": false,
+				"description": "Base class for list responses. It is comprised of a block with links, a block with provider data, and a list of entities that are retrieved."
+			}
+		}
+	}
+}
